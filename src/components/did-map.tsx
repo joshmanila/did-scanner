@@ -77,17 +77,22 @@ function HeatLayer({ points }: { points: [number, number, number][] }) {
   useEffect(() => {
     if (points.length === 0) return;
     const heat = L.heatLayer(points, {
-      radius: 30,
-      blur: 20,
-      maxZoom: 10,
-      minOpacity: 0.3,
+      radius: 50,
+      blur: 35,
+      maxZoom: 8,
+      max: 0.6,
+      minOpacity: 0.35,
       gradient: {
-        0.0: "#001a00",
-        0.2: "#004d00",
-        0.4: "#00cc44",
-        0.6: "#39ff14",
-        0.8: "#ffdd00",
-        1.0: "#ff003c",
+        0.0: "#0000ff",
+        0.15: "#0066ff",
+        0.3: "#00ccff",
+        0.45: "#00ff88",
+        0.55: "#66ff00",
+        0.65: "#ccff00",
+        0.75: "#ffff00",
+        0.85: "#ffaa00",
+        0.95: "#ff4400",
+        1.0: "#ff0000",
       },
     });
     heat.addTo(map);
@@ -344,7 +349,7 @@ export default function DIDMap({ groups, gapAnalysis }: DIDMapProps) {
                 className="h-2 flex-1 rounded-sm"
                 style={{
                   width: 80,
-                  background: "linear-gradient(90deg, #001a00, #004d00, #00cc44, #39ff14, #ffdd00, #ff003c)",
+                  background: "linear-gradient(90deg, #0000ff, #00ccff, #00ff88, #ccff00, #ffff00, #ffaa00, #ff4400, #ff0000)",
                 }}
               />
               <span className="font-mono text-[0.55rem] text-white/40">High</span>
