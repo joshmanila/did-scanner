@@ -190,20 +190,9 @@ export default function Home() {
               </section>
             )}
 
-            {/* Map */}
+            {/* Maps */}
             {hasData && (
               <section>
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#39ff14]"
-                    style={{
-                      textShadow: "0 0 6px rgba(57, 255, 20, 0.6)",
-                    }}
-                  >
-                    [ GEOGRAPHIC DISTRIBUTION ]
-                  </div>
-                  <div className="flex-1 hud-divider" />
-                </div>
                 <DIDMap groups={groups} />
               </section>
             )}
@@ -228,19 +217,8 @@ export default function Home() {
               />
             </section>
 
-            {/* Gap Map */}
+            {/* Gap Maps */}
             <section>
-              <div className="flex items-center gap-3 mb-3">
-                <div
-                  className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#00bfff]"
-                  style={{
-                    textShadow: "0 0 6px rgba(0, 191, 255, 0.6)",
-                  }}
-                >
-                  [ COVERAGE MAP ]
-                </div>
-                <div className="flex-1 hud-divider" />
-              </div>
               <DIDMap groups={groups} gapAnalysis={gapAnalysis} />
             </section>
 
