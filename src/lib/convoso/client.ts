@@ -1,4 +1,41 @@
-import type { ConvosoClientConfig, ConvosoLogResponse } from "./types";
+import { decryptToken } from "@/lib/crypto";
+import type { Dialer } from "@/db/schema";
+import type {
+  ConvosoCallLog,
+  ConvosoClientConfig,
+  ConvosoLogResponse,
+} from "./types";
+import { getFixtureCallLogs } from "./fixtures";
+
+function useFixtures(): boolean {
+  return process.env.CONVOSO_USE_FIXTURES === "true";
+}
+
+function isInboundCallType(callType: string | null | undefined): boolean {
+  if (!callType) return false;
+  return callType.trim().toUpperCase() === "INBOUND";
+}
+
+function filterOutboundOnly(
+  logs: ConvosoCallLog[]
+): ConvosoCallLog[] {
+  const filtered: ConvosoCallLog[] = [];
+  for (const log of logs) {
+    if (isInboundCallType(log.call_type)) continue;
+    filtered.push(log);
+  }
+  return filtered;
+}
+
+function assertNoInbound(logs: ConvosoCallLog[]): void {
+  for (const log of logs) {
+    if (isInboundCallType(log.call_type)) {
+      throw new Error(
+        "Outbound-only contract violated: inbound call_type leaked past the Convoso client layer."
+      );
+    }
+  }
+}
 
 export class ConvosoClient {
   private config: ConvosoClientConfig;
@@ -38,7 +75,7 @@ export class ConvosoClient {
       );
     }
 
-    return json.data ?? json;
+    return (json.data ?? json) as T;
   }
 
   async getCallLogs(params: {
@@ -47,14 +84,93 @@ export class ConvosoClient {
     limit: string;
     offset: string;
   }): Promise<ConvosoLogResponse> {
-    return this.request<ConvosoLogResponse>(
+    if (useFixtures()) {
+      return getFixturePage(params);
+    }
+    const raw = await this.request<ConvosoLogResponse>(
       "/log/retrieve",
       params as Record<string, string>
     );
+    const results = filterOutboundOnly(raw.results ?? []);
+    assertNoInbound(results);
+    return {
+      ...raw,
+      entries: results.length,
+      results,
+    };
+  }
+
+  async *streamCallLogs(params: {
+    start_date: string;
+    end_date: string;
+    pageSize?: number;
+  }): AsyncGenerator<ConvosoLogResponse, void, void> {
+    const limit = params.pageSize ?? 1000;
+    let offset = 0;
+    while (true) {
+      const page = await this.getCallLogs({
+        start_date: params.start_date,
+        end_date: params.end_date,
+        limit: String(limit),
+        offset: String(offset),
+      });
+      yield page;
+      if (!page.results || page.results.length === 0) return;
+      if (page.results.length < limit) return;
+      offset += limit;
+    }
   }
 }
 
+function getFixturePage(params: {
+  start_date: string;
+  end_date: string;
+  limit: string;
+  offset: string;
+}): ConvosoLogResponse {
+  const pages = getFixtureCallLogs();
+  const limit = parseInt(params.limit, 10) || 1000;
+  const offset = parseInt(params.offset, 10) || 0;
+
+  const allResults: ConvosoCallLog[] = [];
+  for (const page of pages) {
+    allResults.push(...page.results);
+  }
+
+  const fromMs = parseConvosoDate(params.start_date);
+  const toMs = parseConvosoDate(params.end_date);
+  const windowed = allResults.filter((log) => {
+    const t = parseConvosoDate(log.call_date);
+    return t >= fromMs && t <= toMs;
+  });
+
+  const outbound = filterOutboundOnly(windowed);
+  assertNoInbound(outbound);
+
+  const slice = outbound.slice(offset, offset + limit);
+  return {
+    offset,
+    limit,
+    total_found: outbound.length,
+    entries: slice.length,
+    results: slice,
+  };
+}
+
+function parseConvosoDate(s: string): number {
+  const [datePart, timePart = "00:00:00"] = s.split(" ");
+  const [y, m, d] = datePart.split("-").map((n) => parseInt(n, 10));
+  const [hh, mm, ss] = timePart.split(":").map((n) => parseInt(n, 10));
+  return Date.UTC(y, m - 1, d, hh, mm, ss);
+}
+
 export function createConvosoClient(): ConvosoClient | null {
+  if (useFixtures()) {
+    return new ConvosoClient({
+      apiUrl: "https://fixtures.local",
+      authToken: "fixture-token",
+    });
+  }
   const apiUrl = process.env.CONVOSO_API_URL;
   const authToken = process.env.CONVOSO_AUTH_TOKEN;
 
@@ -63,4 +179,18 @@ export function createConvosoClient(): ConvosoClient | null {
   }
 
   return new ConvosoClient({ apiUrl, authToken });
+}
+
+export function createConvosoClientForDialer(dialer: Dialer): ConvosoClient {
+  if (useFixtures()) {
+    return new ConvosoClient({
+      apiUrl: dialer.convosoApiUrl || "https://fixtures.local",
+      authToken: "fixture-token",
+    });
+  }
+  const token = decryptToken(dialer.convosoAuthTokenEncrypted);
+  return new ConvosoClient({
+    apiUrl: dialer.convosoApiUrl,
+    authToken: token,
+  });
 }

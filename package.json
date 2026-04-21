@@ -6,17 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:generate": "drizzle-kit generate",
+    "db:seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "drizzle-kit": "^0.31.10",
+    "drizzle-orm": "^0.45.2",
     "leaflet": "^1.9.4",
     "leaflet.heat": "^0.2.0",
     "next": "16.1.6",
     "papaparse": "^5.5.3",
+    "postgres": "^3.4.9",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-leaflet": "^5.0.0",
-    "react-leaflet-cluster": "^4.0.0"
+    "react-leaflet-cluster": "^4.0.0",
+    "tsx": "^4.21.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
