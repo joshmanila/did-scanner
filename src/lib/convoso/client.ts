@@ -7,7 +7,7 @@ import type {
 } from "./types";
 import { getFixtureCallLogs } from "./fixtures";
 
-function useFixtures(): boolean {
+function shouldUseFixtures(): boolean {
   return process.env.CONVOSO_USE_FIXTURES === "true";
 }
 
@@ -84,7 +84,7 @@ export class ConvosoClient {
     limit: string;
     offset: string;
   }): Promise<ConvosoLogResponse> {
-    if (useFixtures()) {
+    if (shouldUseFixtures()) {
       return getFixturePage(params);
     }
     const raw = await this.request<ConvosoLogResponse>(
@@ -165,7 +165,7 @@ function parseConvosoDate(s: string): number {
 }
 
 export function createConvosoClient(): ConvosoClient | null {
-  if (useFixtures()) {
+  if (shouldUseFixtures()) {
     return new ConvosoClient({
       apiUrl: "https://fixtures.local",
       authToken: "fixture-token",
@@ -182,7 +182,7 @@ export function createConvosoClient(): ConvosoClient | null {
 }
 
 export function createConvosoClientForDialer(dialer: Dialer): ConvosoClient {
-  if (useFixtures()) {
+  if (shouldUseFixtures()) {
     return new ConvosoClient({
       apiUrl: dialer.convosoApiUrl || "https://fixtures.local",
       authToken: "fixture-token",

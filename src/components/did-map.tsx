@@ -126,29 +126,6 @@ function MapShell({
   );
 }
 
-// ── Section header ──
-
-function SectionLabel({
-  label,
-  color = GREEN,
-}: {
-  label: string;
-  color?: string;
-}) {
-  const rgb = RGB_MAP[color] || "57, 255, 20";
-  return (
-    <div className="flex items-center gap-3 mb-3">
-      <div
-        className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase"
-        style={{ color, textShadow: `0 0 6px rgba(${rgb}, 0.6)` }}
-      >
-        [ {label} ]
-      </div>
-      <div className="flex-1 hud-divider" />
-    </div>
-  );
-}
-
 // ── Main component ──
 
 interface DIDMapProps {
