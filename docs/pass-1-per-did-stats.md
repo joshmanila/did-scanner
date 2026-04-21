@@ -62,9 +62,7 @@ The only API data we get in Pass 1 is what `/log/retrieve` already returns (`src
 |---|---|
 | Timezone for "last used at" | Treat Convoso's `call_date` as-is, display in the user's local timezone via `toLocaleString()`. Do not do timezone math. |
 | How to detect "answered" | Use `call_length` parsed to number > 0. Ignore `status_name` for the answered flag (status taxonomy varies per account). |
-| Dormant threshold | `dials === 0` in the synced window. |
-| Underused threshold | `1 ≤ dials ≤ 10` in the synced window. |
-| Healthy threshold | `dials > 10` in the synced window. |
+| Utilization bands (rate-based) | Compute `dialsPerDay = dials / windowDays` where `windowDays = max(1, ceil((dateTo - dateFrom) / 1 day))`. Then: `dormant` when `dials === 0`; `underused` when `0 < dialsPerDay < 10`; `healthy` when `10 ≤ dialsPerDay ≤ 50`; `overused` when `dialsPerDay > 50`. Rationale: the business rule is "no DID should average more than 50 dials/day"; going over is a soft warning (spam-flag risk), not critical. |
 | If `number_dialed` is empty/null on a log row | Skip the row for per-DID stats; still count it in area-code stats. |
 | If `number_dialed` cleans to < 10 digits | Skip. |
 | Cleaning rule | Strip non-digits, drop a leading `1` only when resulting length is 11. |
@@ -105,13 +103,14 @@ export interface PerDIDStats {
   did: string;              // 10-digit cleaned
   areaCode: string;         // first 3 of did
   dials: number;
+  dialsPerDay: number;      // dials / windowDays, rounded to 1 decimal
   answered: number;         // call_length > 0
   avgCallLength: number;    // seconds, 0 if answered === 0
   lastUsedAt: string | null; // ISO string of latest call_date, null if never
   statusBreakdown: Record<string, number>; // status_name -> count
 }
 
-export type DIDUtilization = "dormant" | "underused" | "healthy";
+export type DIDUtilization = "dormant" | "underused" | "healthy" | "overused";
 ```
 
 Do not modify `ConvosoCallLog` or `ConvosoLogResponse`.
@@ -123,13 +122,15 @@ Per section 5. Keep `client.ts` clean — the fixture check is a 5-line branch a
 ### 6.3 Aggregator — `src/lib/did-stats.ts` (new file)
 
 ```ts
-export function aggregatePerDID(logs: ConvosoCallLog[]): PerDIDStats[]
+export function aggregatePerDID(logs: ConvosoCallLog[], windowDays: number): PerDIDStats[]
 export function classifyUtilization(stats: PerDIDStats): DIDUtilization
 ```
 
 - Iterate logs once, bucket by cleaned `number_dialed`.
 - Skip rows where cleaned length < 10.
 - `avgCallLength` divides by `answered`, not by `dials`; 0 when `answered === 0`.
+- `dialsPerDay = Math.round((dials / windowDays) * 10) / 10` (one decimal).
+- `classifyUtilization` implements the bands from §4 exactly — dormant / underused / healthy / overused.
 - Sort result by `dials` descending.
 - Add a second export `joinWithACIDList(stats: PerDIDStats[], acidListDIDs: string[]): { inList: PerDIDStats[]; onlyInCalls: PerDIDStats[]; onlyInList: string[] }` — this is the three-way Venn used by the UI.
 
@@ -141,13 +142,15 @@ Mirror the shape of the existing `call-distribution/route.ts`:
 
 - Same pagination / parallel-page pattern (`PAGE_SIZE = 1000`, `PARALLEL_PAGES = 3`, `MAX_PAGES = 50`, `maxDuration = 60`).
 - Same `dateFrom` / `dateTo` query params with same defaults.
-- Differences: instead of bucketing by area code, build a `ConvosoCallLog[]` of every row and pass it through `aggregatePerDID`.
+- Differences: instead of bucketing by area code, build a `ConvosoCallLog[]` of every row and pass it through `aggregatePerDID(logs, windowDays)`.
+- `windowDays` is computed from the parsed `dateFrom` / `dateTo` as `max(1, Math.ceil((to.getTime() - from.getTime()) / 86_400_000))`.
 - Response shape:
   ```ts
   {
     perDID: PerDIDStats[];
     totalCalls: number;        // total logs processed (pre-filter)
     uniqueDIDs: number;        // perDID.length
+    windowDays: number;        // the denominator used for dialsPerDay
     dateFrom: string;
     dateTo: string;
     pagesProcessed: number;
@@ -165,15 +168,16 @@ Styled like `src/components/gap-analysis-table.tsx` (read that file first — co
 | DID | 10-digit formatted `(aaa) bbb-cccc` |
 | Area Code | From existing `area-codes.json` lookup for city/state if present |
 | Dials | Number, right-aligned |
+| Dials/Day | `dialsPerDay`, one decimal, right-aligned |
 | Answered | Number + percentage (e.g. `182 (34%)`) |
 | Avg Length | `mm:ss` |
 | Last Used | `toLocaleString()` or "Never" |
-| Status | Pill showing `dormant` / `underused` / `healthy` — colors: dormant = `#ff3860` (red), underused = `#ffdd57` (yellow), healthy = `#39ff14` (existing green) |
+| Status | Pill showing `dormant` / `underused` / `healthy` / `overused` — colors: dormant = `#ff3860` (red), underused = `#ffdd57` (yellow), healthy = `#39ff14` (existing green), overused = `#ff9500` (orange) |
 | In ACID List | Check / dash. Passed in as a `Set<string>` prop for O(1) lookup. |
 
 Sortable by every numeric column (click header). Default sort: `dials desc`. Simple client-side sort, no virtualization (≤ a few thousand rows is fine).
 
-Top bar has a filter toggle row: `[All] [Dormant] [Underused] [Healthy] [Only in list] [Only in calls, not in list]`. Single-select toggle, default All.
+Top bar has a filter toggle row: `[All] [Dormant] [Underused] [Healthy] [Overused] [Only in list] [Only in calls, not in list]`. Single-select toggle, default All.
 
 ### 6.6 UI — export buttons
 
