@@ -218,6 +218,25 @@ export async function getAllAcidListDidsForDialer(
   return new Set(rows.map((r) => r.did));
 }
 
+export async function getAcidListMembershipByDid(
+  dialerId: string
+): Promise<Record<string, string[]>> {
+  const db = getDb();
+  const rows = await db
+    .select({
+      did: acidListDids.did,
+      acidListId: acidListDids.acidListId,
+    })
+    .from(acidListDids)
+    .innerJoin(acidLists, eq(acidListDids.acidListId, acidLists.id))
+    .where(eq(acidLists.dialerId, dialerId));
+  const byDid: Record<string, string[]> = {};
+  for (const r of rows) {
+    (byDid[r.did] ??= []).push(r.acidListId);
+  }
+  return byDid;
+}
+
 export interface DidRollup {
   didId: string;
   did: string;

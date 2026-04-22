@@ -22,9 +22,17 @@ type Filter =
   | "inList"
   | "notInList";
 
+interface AcidListOption {
+  id: string;
+  name: string;
+  didCount: number;
+}
+
 interface PerDidTableProps {
   rows: DidRowForTable[];
   dialerName: string;
+  acidLists: AcidListOption[];
+  membershipByDid: Record<string, string[]>;
 }
 
 function fmtDid(raw: string): string {
@@ -51,14 +59,25 @@ type SortKey =
   | "avgLengthSec"
   | "lastUsedDate";
 
-export default function PerDidTable({ rows, dialerName }: PerDidTableProps) {
+export default function PerDidTable({
+  rows,
+  dialerName,
+  acidLists,
+  membershipByDid,
+}: PerDidTableProps) {
   const [filter, setFilter] = useState<Filter>("all");
+  const [acidListId, setAcidListId] = useState<string>("all");
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("totalDials");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
 
   const filtered = useMemo(() => {
     let result = rows;
+    if (acidListId !== "all") {
+      result = result.filter((r) =>
+        (membershipByDid[r.did] ?? []).includes(acidListId)
+      );
+    }
     switch (filter) {
       case "dormant":
         result = result.filter((r) => r.band === "dormant");
@@ -102,7 +121,7 @@ export default function PerDidTable({ rows, dialerName }: PerDidTableProps) {
       return sortDir === "desc" ? -cmp : cmp;
     });
     return sorted;
-  }, [rows, filter, search, sortKey, sortDir]);
+  }, [rows, filter, acidListId, membershipByDid, search, sortKey, sortDir]);
 
   function handleSort(key: SortKey) {
     if (sortKey === key) {
@@ -174,6 +193,21 @@ export default function PerDidTable({ rows, dialerName }: PerDidTableProps) {
           })}
         </div>
         <div className="flex items-center gap-2">
+          {acidLists.length > 0 ? (
+            <select
+              value={acidListId}
+              onChange={(e) => setAcidListId(e.target.value)}
+              className="bg-black/60 border border-white/20 rounded px-2 py-1.5 text-xs font-mono text-white focus:outline-none focus:border-[#00bfff]/50"
+              aria-label="ACID list"
+            >
+              <option value="all">All lists</option>
+              {acidLists.map((l) => (
+                <option key={l.id} value={l.id}>
+                  {l.name} ({l.didCount.toLocaleString()})
+                </option>
+              ))}
+            </select>
+          ) : null}
           <input
             type="text"
             placeholder="Search DID or area code..."

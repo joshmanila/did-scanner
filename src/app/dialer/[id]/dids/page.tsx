@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import PerDidTable from "@/components/dialer/per-did-table";
-import { getDialerById, getAllAcidListDidsForDialer } from "@/lib/queries";
+import {
+  getDialerById,
+  getAllAcidListDidsForDialer,
+  getAcidListsForDialer,
+  getAcidListMembershipByDid,
+} from "@/lib/queries";
 import { getDidRowsForDialer } from "@/lib/aggregates";
 import { nyDateStringDaysAgo, nyTodayString } from "@/lib/ny-time";
 
@@ -16,11 +21,24 @@ export default async function DidsPage({
   if (!dialer) notFound();
   const from = nyDateStringDaysAgo(30);
   const to = nyTodayString();
-  const acidSet = await getAllAcidListDidsForDialer(id);
+  const [acidSet, acidLists, membershipByDid] = await Promise.all([
+    getAllAcidListDidsForDialer(id),
+    getAcidListsForDialer(id),
+    getAcidListMembershipByDid(id),
+  ]);
   const rows = await getDidRowsForDialer(id, from, to, acidSet);
   return (
     <div className="space-y-4">
-      <PerDidTable rows={rows} dialerName={dialer.name} />
+      <PerDidTable
+        rows={rows}
+        dialerName={dialer.name}
+        acidLists={acidLists.map((l) => ({
+          id: l.id,
+          name: l.name,
+          didCount: l.didCount,
+        }))}
+        membershipByDid={membershipByDid}
+      />
     </div>
   );
 }
