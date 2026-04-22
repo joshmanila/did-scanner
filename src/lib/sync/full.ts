@@ -183,7 +183,7 @@ function processRow(
   dialerBuckets: Map<string, DialerDailyBucket>,
   campaignMap: Map<string, CampaignSeen>
 ) {
-  const did = cleanDid(row.number_dialed);
+  const did = cleanDid(row.caller_id) ?? cleanDid(row.number_dialed);
   if (!did) return;
   const areaCode = did.slice(0, 3);
   const callDateMs = parseConvosoDateAsUtcMs(row.call_date);
