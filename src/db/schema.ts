@@ -11,6 +11,7 @@ import {
   primaryKey,
   uniqueIndex,
   pgEnum,
+  type AnyPgColumn,
 } from "drizzle-orm/pg-core";
 
 export const dialers = pgTable(
@@ -21,6 +22,10 @@ export const dialers = pgTable(
     convosoApiUrl: text("convoso_api_url").notNull(),
     convosoAuthTokenEncrypted: text("convoso_auth_token_encrypted").notNull(),
     isActive: boolean("is_active").notNull().default(true),
+    activeAcidListId: uuid("active_acid_list_id").references(
+      (): AnyPgColumn => acidLists.id,
+      { onDelete: "set null" }
+    ),
     createdAt: timestamp("created_at", { withTimezone: true })
       .notNull()
       .defaultNow(),

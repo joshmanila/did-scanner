@@ -15,6 +15,13 @@
       "when": 1776827874734,
       "tag": "0001_alert_events",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1776896863836,
+      "tag": "0002_add_active_acid_list_id",
+      "breakpoints": true
     }
   ]
 }

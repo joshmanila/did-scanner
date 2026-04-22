@@ -1,0 +1,2 @@
+ALTER TABLE "dialers" ADD COLUMN "active_acid_list_id" uuid;--> statement-breakpoint
+ALTER TABLE "dialers" ADD CONSTRAINT "dialers_active_acid_list_id_acid_lists_id_fk" FOREIGN KEY ("active_acid_list_id") REFERENCES "public"."acid_lists"("id") ON DELETE set null ON UPDATE no action;
