@@ -9,6 +9,10 @@ import EditDialerModal from "./edit-dialer-modal";
 
 interface DialersTableProps {
   dialers: Dialer[];
+  acidListsByDialer: Record<
+    string,
+    Array<{ id: string; name: string; didCount: number }>
+  >;
   recentSyncs: Array<{
     dialerId: string;
     status: "running" | "success" | "failed";
@@ -32,6 +36,7 @@ function timeAgo(date: Date | null): string {
 
 export default function DialersTable({
   dialers,
+  acidListsByDialer,
   recentSyncs,
 }: DialersTableProps) {
   const router = useRouter();
@@ -212,6 +217,7 @@ export default function DialersTable({
       {editing && (
         <EditDialerModal
           dialer={editing}
+          acidLists={acidListsByDialer[editing.id] ?? []}
           onClose={() => setEditing(null)}
         />
       )}

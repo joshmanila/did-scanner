@@ -206,6 +206,97 @@ export async function getAcidListDids(acidListId: string) {
     .where(eq(acidListDids.acidListId, acidListId));
 }
 
+export async function getActiveAcidList(dialerId: string) {
+  const db = getDb();
+  const rows = await db
+    .select({
+      id: acidLists.id,
+      dialerId: acidLists.dialerId,
+      name: acidLists.name,
+      uploadedAt: acidLists.uploadedAt,
+    })
+    .from(dialers)
+    .innerJoin(acidLists, eq(dialers.activeAcidListId, acidLists.id))
+    .where(eq(dialers.id, dialerId));
+  return rows[0] ?? null;
+}
+
+export async function getActiveAcidListDids(
+  dialerId: string
+): Promise<Set<string>> {
+  const db = getDb();
+  const rows = await db
+    .select({ did: acidListDids.did })
+    .from(dialers)
+    .innerJoin(acidListDids, eq(dialers.activeAcidListId, acidListDids.acidListId))
+    .where(eq(dialers.id, dialerId));
+  return new Set(rows.map((r) => r.did));
+}
+
+export interface DriftDid {
+  did: string;
+  areaCode: string;
+  firstSeenAt: Date;
+  totalDials: number;
+  lastUsedDate: string | null;
+}
+
+export async function getDriftDidsForDialer(
+  dialerId: string
+): Promise<DriftDid[]> {
+  const active = await getActiveAcidListDids(dialerId);
+  if (active.size === 0) return [];
+  const db = getDb();
+  const rows = await db
+    .select({
+      did: dids.did,
+      areaCode: dids.areaCode,
+      firstSeenAt: dids.firstSeenAt,
+      totalDials: sql<number>`COALESCE(SUM(${didDailyStats.dials}), 0)::int`,
+      lastUsedDate: sql<string | null>`MAX(${didDailyStats.statDate})::text`,
+    })
+    .from(dids)
+    .leftJoin(didDailyStats, eq(dids.id, didDailyStats.didId))
+    .where(eq(dids.dialerId, dialerId))
+    .groupBy(dids.id, dids.did, dids.areaCode, dids.firstSeenAt);
+  return rows
+    .filter((r) => !active.has(r.did))
+    .map((r) => ({
+      did: r.did,
+      areaCode: r.areaCode,
+      firstSeenAt: r.firstSeenAt,
+      totalDials: Number(r.totalDials ?? 0),
+      lastUsedDate: r.lastUsedDate,
+    }))
+    .sort((a, b) => b.totalDials - a.totalDials);
+}
+
+export interface DialerDriftSummary {
+  dialerId: string;
+  dialerName: string;
+  driftCount: number;
+  activeListName: string;
+}
+
+export async function getDialersWithDrift(): Promise<DialerDriftSummary[]> {
+  const active = await getActiveDialers();
+  const results: DialerDriftSummary[] = [];
+  for (const d of active) {
+    if (!d.activeAcidListId) continue;
+    const list = await getActiveAcidList(d.id);
+    if (!list) continue;
+    const drift = await getDriftDidsForDialer(d.id);
+    if (drift.length === 0) continue;
+    results.push({
+      dialerId: d.id,
+      dialerName: d.name,
+      driftCount: drift.length,
+      activeListName: list.name,
+    });
+  }
+  return results;
+}
+
 export async function getAllAcidListDidsForDialer(
   dialerId: string
 ): Promise<Set<string>> {

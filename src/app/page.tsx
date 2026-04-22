@@ -4,9 +4,11 @@ import AggregateStrip from "@/components/dashboard/aggregate-strip";
 import DialerCard from "@/components/dashboard/dialer-card";
 import AutoRefresh from "@/components/dashboard/auto-refresh";
 import SyncFailureBanner from "@/components/dashboard/sync-failure-banner";
+import DriftBanner from "@/components/dashboard/drift-banner";
 import { getDashboardAggregates } from "@/lib/aggregates";
 import {
   getAllDialers,
+  getDialersWithDrift,
   getDialersWithRecentSyncFailure,
 } from "@/lib/queries";
 
@@ -18,9 +20,10 @@ export default async function DashboardPage() {
     redirect("/settings");
   }
 
-  const [{ cards, totals }, syncFailures] = await Promise.all([
+  const [{ cards, totals }, syncFailures, driftDialers] = await Promise.all([
     getDashboardAggregates(),
     getDialersWithRecentSyncFailure(),
+    getDialersWithDrift(),
   ]);
 
   return (
@@ -40,6 +43,7 @@ export default async function DashboardPage() {
         </header>
 
         <SyncFailureBanner failures={syncFailures} />
+        <DriftBanner dialers={driftDialers} />
 
         <AggregateStrip
           dialsToday={totals.dialsToday}

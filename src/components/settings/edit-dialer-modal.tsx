@@ -7,17 +7,22 @@ import type { Dialer } from "@/db/schema";
 
 interface EditDialerModalProps {
   dialer: Dialer;
+  acidLists: Array<{ id: string; name: string; didCount: number }>;
   onClose: () => void;
 }
 
 export default function EditDialerModal({
   dialer,
+  acidLists,
   onClose,
 }: EditDialerModalProps) {
   const router = useRouter();
   const [name, setName] = useState(dialer.name);
   const [apiUrl, setApiUrl] = useState(dialer.convosoApiUrl);
   const [isActive, setIsActive] = useState(dialer.isActive);
+  const [activeAcidListId, setActiveAcidListId] = useState<string>(
+    dialer.activeAcidListId ?? ""
+  );
   const [authToken, setAuthToken] = useState("");
   const [replaceToken, setReplaceToken] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -32,7 +37,12 @@ export default function EditDialerModal({
     setError(null);
     setIsSubmitting(true);
     try {
-      const body: Record<string, unknown> = { name, apiUrl, isActive };
+      const body: Record<string, unknown> = {
+        name,
+        apiUrl,
+        isActive,
+        activeAcidListId: activeAcidListId === "" ? null : activeAcidListId,
+      };
       if (replaceToken && authToken) {
         body.authToken = authToken;
       }
@@ -100,6 +110,29 @@ export default function EditDialerModal({
             onChange={(e) => setIsActive(e.target.checked)}
           />
           <span className="font-mono text-xs text-white/70">Active</span>
+        </label>
+        <label className="block space-y-1.5">
+          <span className="font-mono text-xs uppercase tracking-wider text-white/60">
+            Active ACID List
+          </span>
+          <select
+            value={activeAcidListId}
+            onChange={(e) => setActiveAcidListId(e.target.value)}
+            className="w-full bg-black/60 border border-white/20 rounded px-3 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-[#00bfff]/60"
+          >
+            <option value="">— none (ACID feature disabled) —</option>
+            {acidLists.map((l) => (
+              <option key={l.id} value={l.id}>
+                {l.name} ({l.didCount.toLocaleString()} DIDs)
+              </option>
+            ))}
+          </select>
+          {acidLists.length === 0 && (
+            <span className="block font-mono text-[0.6rem] text-white/40">
+              No ACID lists uploaded for this dialer yet. Upload one from the
+              dialer&rsquo;s ACID Lists tab.
+            </span>
+          )}
         </label>
         <div className="space-y-2">
           <label className="flex items-center gap-2">

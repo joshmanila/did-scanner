@@ -1,6 +1,10 @@
 import TopNav from "@/components/nav/top-nav";
 import DialersTable from "@/components/settings/dialers-table";
-import { getAllDialers, getRecentSyncRuns } from "@/lib/queries";
+import {
+  getAcidListsForDialer,
+  getAllDialers,
+  getRecentSyncRuns,
+} from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +13,20 @@ export default async function SettingsPage() {
     getAllDialers(),
     getRecentSyncRuns(50),
   ]);
+  const acidListsByDialer: Record<
+    string,
+    Array<{ id: string; name: string; didCount: number }>
+  > = {};
+  await Promise.all(
+    dialers.map(async (d) => {
+      const lists = await getAcidListsForDialer(d.id);
+      acidListsByDialer[d.id] = lists.map((l) => ({
+        id: l.id,
+        name: l.name,
+        didCount: l.didCount,
+      }));
+    })
+  );
 
   return (
     <>
@@ -25,6 +43,7 @@ export default async function SettingsPage() {
 
         <DialersTable
           dialers={dialers}
+          acidListsByDialer={acidListsByDialer}
           recentSyncs={recentSyncs.map((r) => ({
             dialerId: r.dialerId,
             status: r.status,

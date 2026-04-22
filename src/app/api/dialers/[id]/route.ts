@@ -9,6 +9,7 @@ interface UpdateDialerBody {
   apiUrl?: string;
   authToken?: string;
   isActive?: boolean;
+  activeAcidListId?: string | null;
 }
 
 export async function PATCH(
@@ -26,6 +27,12 @@ export async function PATCH(
   if (body.name !== undefined) update.name = body.name.trim();
   if (body.apiUrl !== undefined) update.convosoApiUrl = body.apiUrl.trim();
   if (body.isActive !== undefined) update.isActive = body.isActive;
+  if (body.activeAcidListId !== undefined) {
+    update.activeAcidListId =
+      body.activeAcidListId === null || body.activeAcidListId === ""
+        ? null
+        : body.activeAcidListId;
+  }
   if (body.authToken !== undefined && body.authToken.trim() !== "") {
     try {
       update.convosoAuthTokenEncrypted = encryptToken(body.authToken.trim());
