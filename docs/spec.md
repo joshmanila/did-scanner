@@ -76,6 +76,29 @@ VERCEL_CRON_SECRET        shared secret so cron routes can verify the caller is 
 
 Drop the old `CONVOSO_API_URL` and `CONVOSO_AUTH_TOKEN` env vars once the dialer table is the source of truth. Keep them only as a one-time seeding fallback in migrations.
 
+### 5.1 Status thresholds (dashboard)
+
+All exported as named constants from `src/lib/status.ts`. Values are placeholders until enough production data exists to tune them. Changes here are product-level decisions — update this table when the constants move.
+
+**Per-DID utilization band** (`utilBand`, based on average dials/day across the DID's active dialing days):
+
+| Band | Rule | Color |
+|---|---|---|
+| `dormant` | total dials ≤ 0 | `#ff3860` red |
+| `underused` | avg/day < `UTIL_UNDERUSED_MAX_PER_DAY` (10) | `#ffdd57` yellow |
+| `healthy` | `UTIL_UNDERUSED_MAX_PER_DAY` ≤ avg/day ≤ `UTIL_HEALTHY_MAX_PER_DAY` (50) | `#39ff14` green |
+| `overused` | avg/day > `UTIL_HEALTHY_MAX_PER_DAY` (50) | `#ff9500` orange |
+
+**Dialer health dot** (`dialerHealth`, evaluated top-down — first match wins):
+
+| Result | Rule |
+|---|---|
+| `error` | last successful sync > `HEALTH_STALE_SYNC_HOURS` (24) hours ago |
+| `error` | NY hour is in `[HEALTH_BUSINESS_HOUR_START, HEALTH_BUSINESS_HOUR_END)` (8–20) **and** `lastHourDials === 0` |
+| `warning` | `overCapCount > HEALTH_OVER_CAP_WARN_COUNT` (5) |
+| `warning` | contact-rate drop vs prior-7d baseline > `HEALTH_CONTACT_RATE_DROP_WARN` (30%) |
+| `healthy` | none of the above triggered |
+
 ## 6. Fixture mode (REQUIRED)
 
 The overnight agent won't have live Convoso credentials. Implement fixture mode exactly as in the previous Pass 1 spec:

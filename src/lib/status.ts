@@ -1,3 +1,15 @@
+// Dashboard status thresholds. Placeholder values — tune against real
+// production data once a few weeks of traffic are seeded.
+
+export const UTIL_UNDERUSED_MAX_PER_DAY = 10;
+export const UTIL_HEALTHY_MAX_PER_DAY = 50;
+
+export const HEALTH_STALE_SYNC_HOURS = 24;
+export const HEALTH_BUSINESS_HOUR_START = 8;
+export const HEALTH_BUSINESS_HOUR_END = 20;
+export const HEALTH_OVER_CAP_WARN_COUNT = 5;
+export const HEALTH_CONTACT_RATE_DROP_WARN = 0.3;
+
 export type UtilBand = "dormant" | "underused" | "healthy" | "overused";
 
 export interface UtilBandInfo {
@@ -16,8 +28,8 @@ const BANDS: Record<UtilBand, UtilBandInfo> = {
 export function utilBand(totalDials: number, activeDays: number): UtilBandInfo {
   if (totalDials <= 0) return BANDS.dormant;
   const perDay = activeDays > 0 ? totalDials / activeDays : totalDials;
-  if (perDay < 10) return BANDS.underused;
-  if (perDay <= 50) return BANDS.healthy;
+  if (perDay < UTIL_UNDERUSED_MAX_PER_DAY) return BANDS.underused;
+  if (perDay <= UTIL_HEALTHY_MAX_PER_DAY) return BANDS.healthy;
   return BANDS.overused;
 }
 
@@ -38,15 +50,17 @@ export function dialerHealth(input: DialerHealthInput): DialerHealth {
   const hoursSince = lastSuccessMs
     ? (now - lastSuccessMs) / (60 * 60 * 1000)
     : Number.POSITIVE_INFINITY;
-  if (hoursSince > 24) return "error";
-  const businessHours = input.nyHour >= 8 && input.nyHour < 20;
+  if (hoursSince > HEALTH_STALE_SYNC_HOURS) return "error";
+  const businessHours =
+    input.nyHour >= HEALTH_BUSINESS_HOUR_START &&
+    input.nyHour < HEALTH_BUSINESS_HOUR_END;
   if (businessHours && input.lastHourDials === 0) return "error";
 
-  if (input.overCapCount > 5) return "warning";
+  if (input.overCapCount > HEALTH_OVER_CAP_WARN_COUNT) return "warning";
   if (input.contactRatePrior7d > 0) {
     const delta = input.contactRatePrior7d - input.contactRate30d;
     const relative = delta / input.contactRatePrior7d;
-    if (relative > 0.3) return "warning";
+    if (relative > HEALTH_CONTACT_RATE_DROP_WARN) return "warning";
   }
   return "healthy";
 }
