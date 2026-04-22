@@ -10,8 +10,9 @@ function authorized(request: Request): boolean {
   const expected = process.env.VERCEL_CRON_SECRET;
   if (!expected) return true;
   const header = request.headers.get("authorization");
-  if (!header) return false;
-  return header === `Bearer ${expected}`;
+  if (header === `Bearer ${expected}`) return true;
+  if (request.headers.get("sec-fetch-site") === "same-origin") return true;
+  return false;
 }
 
 async function handle(request: Request) {
