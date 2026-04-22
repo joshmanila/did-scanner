@@ -3,8 +3,12 @@ import TopNav from "@/components/nav/top-nav";
 import AggregateStrip from "@/components/dashboard/aggregate-strip";
 import DialerCard from "@/components/dashboard/dialer-card";
 import AutoRefresh from "@/components/dashboard/auto-refresh";
+import SyncFailureBanner from "@/components/dashboard/sync-failure-banner";
 import { getDashboardAggregates } from "@/lib/aggregates";
-import { getAllDialers } from "@/lib/queries";
+import {
+  getAllDialers,
+  getDialersWithRecentSyncFailure,
+} from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +18,10 @@ export default async function DashboardPage() {
     redirect("/settings");
   }
 
-  const { cards, totals } = await getDashboardAggregates();
+  const [{ cards, totals }, syncFailures] = await Promise.all([
+    getDashboardAggregates(),
+    getDialersWithRecentSyncFailure(),
+  ]);
 
   return (
     <>
@@ -31,6 +38,8 @@ export default async function DashboardPage() {
             </p>
           </div>
         </header>
+
+        <SyncFailureBanner failures={syncFailures} />
 
         <AggregateStrip
           dialsToday={totals.dialsToday}

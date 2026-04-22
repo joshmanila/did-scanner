@@ -122,6 +122,37 @@ export async function getLastSuccessfulSyncRun(dialerId: string) {
   return rows[0] ?? null;
 }
 
+export interface RecentSyncFailure {
+  dialerId: string;
+  dialerName: string;
+  errorMessage: string | null;
+  failedAt: Date;
+}
+
+export async function getDialersWithRecentSyncFailure(): Promise<
+  RecentSyncFailure[]
+> {
+  const active = await getActiveDialers();
+  const latestPerDialer = await Promise.all(
+    active.map(async (d) => {
+      const last = await getLastSyncRun(d.id);
+      return { dialer: d, last };
+    })
+  );
+  const failures: RecentSyncFailure[] = [];
+  for (const { dialer, last } of latestPerDialer) {
+    if (last && last.status === "failed") {
+      failures.push({
+        dialerId: dialer.id,
+        dialerName: dialer.name,
+        errorMessage: last.errorMessage,
+        failedAt: last.completedAt ?? last.startedAt,
+      });
+    }
+  }
+  return failures;
+}
+
 export async function getRecentSyncRuns(limit = 20) {
   const db = getDb();
   return db
