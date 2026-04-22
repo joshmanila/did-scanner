@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import type { Dialer } from "@/db/schema";
 
@@ -22,6 +23,9 @@ export default function EditDialerModal({
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -53,8 +57,10 @@ export default function EditDialerModal({
     }
   }
 
-  return (
-    <div className="fixed inset-0 z-50 bg-black/80 overflow-y-auto">
+  if (!mounted) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 z-[100] bg-black/80 overflow-y-auto">
       <div className="min-h-full flex items-center justify-center p-4">
         <form
           onSubmit={handleSubmit}
@@ -137,6 +143,7 @@ export default function EditDialerModal({
         </div>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

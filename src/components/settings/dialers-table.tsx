@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import type { Dialer } from "@/db/schema";
 import AddDialerModal from "./add-dialer-modal";
@@ -41,6 +42,9 @@ export default function DialersTable({
   const [isSyncing, setIsSyncing] = useState<string | null>(null);
   const [syncResult, setSyncResult] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const latestByDialer = new Map<string, (typeof recentSyncs)[number]>();
   for (const r of recentSyncs) {
@@ -211,44 +215,48 @@ export default function DialersTable({
           onClose={() => setEditing(null)}
         />
       )}
-      {deleteConfirm && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-          <div className="rounded-lg border border-[#ff003c]/40 bg-black p-6 max-w-md w-full space-y-4">
-            <h2 className="font-mono text-sm font-bold uppercase tracking-wider text-[#ff003c]">
-              Delete Dialer
-            </h2>
-            <p className="font-mono text-xs text-white/70">
-              This will destroy {deleteConfirm.name} and cascade all DIDs, stats,
-              and ACID lists. Type the dialer name to confirm.
-            </p>
-            <input
-              type="text"
-              value={typedName}
-              onChange={(e) => setTypedName(e.target.value)}
-              placeholder={deleteConfirm.name}
-              className="w-full bg-black/60 border border-[#ff003c]/40 rounded px-3 py-2 text-sm font-mono text-white focus:outline-none focus:border-[#ff003c]"
-            />
-            <div className="flex justify-end gap-2">
-              <button
-                onClick={() => {
-                  setDeleteConfirm(null);
-                  setTypedName("");
-                }}
-                className="font-mono text-xs uppercase tracking-wider px-3 py-2 border border-white/20 text-white/70 hover:bg-white/10 rounded"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleDelete}
-                disabled={typedName !== deleteConfirm.name}
-                className="font-mono text-xs uppercase tracking-wider px-3 py-2 border border-[#ff003c] text-[#ff003c] hover:bg-[#ff003c]/10 rounded disabled:opacity-40"
-              >
-                Delete
-              </button>
+      {mounted && deleteConfirm &&
+        createPortal(
+          <div className="fixed inset-0 z-[100] bg-black/80 overflow-y-auto">
+            <div className="min-h-full flex items-center justify-center p-4">
+              <div className="rounded-lg border border-[#ff003c]/40 bg-black p-8 max-w-xl w-full space-y-5 my-8 shadow-[0_0_40px_rgba(255,0,60,0.15)]">
+                <h2 className="font-mono text-lg font-bold uppercase tracking-wider text-[#ff003c]">
+                  Delete Dialer
+                </h2>
+                <p className="font-mono text-xs text-white/70 leading-relaxed">
+                  This will destroy {deleteConfirm.name} and cascade all DIDs, stats,
+                  and ACID lists. Type the dialer name to confirm.
+                </p>
+                <input
+                  type="text"
+                  value={typedName}
+                  onChange={(e) => setTypedName(e.target.value)}
+                  placeholder={deleteConfirm.name}
+                  className="w-full bg-black/60 border border-[#ff003c]/40 rounded px-3 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-[#ff003c]"
+                />
+                <div className="flex justify-end gap-2 pt-2">
+                  <button
+                    onClick={() => {
+                      setDeleteConfirm(null);
+                      setTypedName("");
+                    }}
+                    className="font-mono text-xs uppercase tracking-wider px-4 py-2.5 border border-white/20 text-white/70 hover:bg-white/10 rounded"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleDelete}
+                    disabled={typedName !== deleteConfirm.name}
+                    className="font-mono text-xs uppercase tracking-wider px-4 py-2.5 border border-[#ff003c] text-[#ff003c] hover:bg-[#ff003c]/10 rounded disabled:opacity-40"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
