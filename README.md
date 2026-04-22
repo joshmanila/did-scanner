@@ -54,6 +54,13 @@ Copy `.env.example` to `.env.local` and fill in:
 - `VERCEL_CRON_SECRET` - bearer token required by `/api/sync/full` and
   `/api/sync/pulse`. Cron routes return 401 without it.
 
+Optional - email alerts when a sync run fails (requires both):
+
+- `RESEND_API_KEY` - Resend API key.
+- `ALERT_EMAIL_TO` - recipient address. Alerts are deduped to once per
+  30 minutes per dialer + kind via the `alert_events` table. If either
+  var is unset, alerts are silently skipped.
+
 Optional legacy fallback (only used by `npm run db:seed` to insert a single
 `Default` dialer when the table is empty):
 

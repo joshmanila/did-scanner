@@ -12,6 +12,7 @@ import {
   nyDateString,
   parseConvosoDateAsUtcMs,
 } from "@/lib/ny-time";
+import { sendSyncFailureAlert } from "@/lib/alerts";
 
 const PULSE_WINDOW_MS = 90 * 60 * 1000;
 const LAST_HOUR_MS = 60 * 60 * 1000;
@@ -171,6 +172,12 @@ export async function runLivePulse(dialerId: string): Promise<PulseResult> {
         errorMessage: message,
       })
       .where(eq(syncRuns.id, syncRunId));
+    void sendSyncFailureAlert({
+      dialerId,
+      dialerName: dialer.name,
+      kind: "sync_failure_pulse",
+      errorMessage: message,
+    }).catch((e) => console.error("[sync/pulse] alert failed", e));
     return {
       dialerId,
       syncRunId,

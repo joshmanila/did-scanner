@@ -15,6 +15,7 @@ import {
   nyDateString,
   parseConvosoDateAsUtcMs,
 } from "@/lib/ny-time";
+import { sendSyncFailureAlert } from "@/lib/alerts";
 
 interface DidDailyBucket {
   did: string;
@@ -155,6 +156,12 @@ export async function runFullSync(
         errorMessage: message,
       })
       .where(eq(syncRuns.id, syncRunId));
+    void sendSyncFailureAlert({
+      dialerId,
+      dialerName: dialer.name,
+      kind: "sync_failure_full",
+      errorMessage: message,
+    }).catch((e) => console.error("[sync/full] alert failed", e));
     return {
       dialerId,
       syncRunId,

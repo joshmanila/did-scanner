@@ -173,6 +173,23 @@ export const syncRuns = pgTable("sync_runs", {
   errorMessage: text("error_message"),
 });
 
+export const alertEvents = pgTable(
+  "alert_events",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    dialerId: uuid("dialer_id")
+      .notNull()
+      .references(() => dialers.id, { onDelete: "cascade" }),
+    kind: text("kind").notNull(),
+    lastSentAt: timestamp("last_sent_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => ({
+    unq: uniqueIndex("alert_events_dialer_kind_idx").on(t.dialerId, t.kind),
+  })
+);
+
 export type Dialer = typeof dialers.$inferSelect;
 export type NewDialer = typeof dialers.$inferInsert;
 export type Did = typeof dids.$inferSelect;
@@ -183,3 +200,4 @@ export type DialerLivePulse = typeof dialerLivePulse.$inferSelect;
 export type Campaign = typeof campaigns.$inferSelect;
 export type SyncRun = typeof syncRuns.$inferSelect;
 export type AcidList = typeof acidLists.$inferSelect;
+export type AlertEvent = typeof alertEvents.$inferSelect;
