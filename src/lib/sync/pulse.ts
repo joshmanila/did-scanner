@@ -77,7 +77,7 @@ export async function runLivePulse(dialerId: string): Promise<PulseResult> {
     for await (const page of iterator) {
       for (const row of page.results) {
         rowsProcessed += 1;
-        const did = cleanDid(row.caller_id) ?? cleanDid(row.number_dialed);
+        const did = cleanDid(row.caller_id_displayed) ?? cleanDid(row.number_dialed);
         if (!did) continue;
         const callMs = parseConvosoDateAsUtcMs(row.call_date);
         const lengthSec = parseInt(row.call_length ?? "0", 10) || 0;

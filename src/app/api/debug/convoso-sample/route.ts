@@ -72,7 +72,7 @@ export async function GET(request: Request) {
       call_type: rec["call_type"],
       didLikeFields: sampleObj,
       cleanedFromCallerId: cleanDid(
-        (rec["caller_id"] as string | null | undefined) ?? null
+        (rec["caller_id_displayed"] as string | null | undefined) ?? null
       ),
       cleanedFromNumberDialed: cleanDid(
         (rec["number_dialed"] as string | null | undefined) ?? null

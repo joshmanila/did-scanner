@@ -126,7 +126,7 @@ function buildLogs(): ConvosoCallLog[] {
       user_id: "fx-user-1",
       phone_number,
       number_dialed,
-      caller_id: null,
+      caller_id_displayed: null,
       first_name: null,
       last_name: null,
       status,

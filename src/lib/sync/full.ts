@@ -188,7 +188,7 @@ function processRow(
   campaignMap: Map<string, CampaignSeen>,
   diag: { callerIdHits: number; fellBackToNumberDialed: number; noDid: number }
 ) {
-  const fromCaller = cleanDid(row.caller_id);
+  const fromCaller = cleanDid(row.caller_id_displayed);
   const fromDialed = fromCaller ? null : cleanDid(row.number_dialed);
   const did = fromCaller ?? fromDialed;
   if (!did) {

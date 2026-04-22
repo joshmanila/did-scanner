@@ -13,7 +13,7 @@ export interface ConvosoCallLog {
   user_id: string;
   phone_number: string;
   number_dialed: string;
-  caller_id: string | null;
+  caller_id_displayed: string | null;
   first_name: string | null;
   last_name: string | null;
   status: string;
