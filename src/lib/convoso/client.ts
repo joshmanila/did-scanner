@@ -16,8 +16,21 @@ function logFirstRowFieldsOnce(row: unknown): void {
   if (loggedFirstRowKeys) return;
   loggedFirstRowKeys = true;
   try {
-    const keys = Object.keys(row as Record<string, unknown>).sort();
+    const r = row as Record<string, unknown>;
+    const keys = Object.keys(r).sort();
     console.log("[convoso] call log response keys:", keys.join(","));
+    const interestingKeys = keys.filter(
+      (k) =>
+        k.toLowerCase().includes("caller") ||
+        k.toLowerCase().includes("did") ||
+        k.toLowerCase().includes("from") ||
+        k.toLowerCase().includes("origin") ||
+        k.toLowerCase().includes("source") ||
+        k.toLowerCase().includes("number")
+    );
+    const samples: Record<string, unknown> = {};
+    for (const k of interestingKeys) samples[k] = r[k];
+    console.log("[convoso] DID-like field samples:", JSON.stringify(samples));
   } catch {
     // swallow — diagnostic only
   }

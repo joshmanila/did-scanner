@@ -100,6 +100,7 @@ export async function runFullSync(
     const campaignMap = new Map<string, CampaignSeen>();
     let pagesFetched = 0;
     let rowsProcessed = 0;
+    const diag = { callerIdHits: 0, fellBackToNumberDialed: 0, noDid: 0 };
 
     const iterator = client.streamCallLogs({
       start_date: formatConvosoDate(windowFrom),
@@ -111,9 +112,12 @@ export async function runFullSync(
       pagesFetched += 1;
       for (const row of page.results) {
         rowsProcessed += 1;
-        processRow(row, didBuckets, dialerBuckets, campaignMap);
+        processRow(row, didBuckets, dialerBuckets, campaignMap, diag);
       }
     }
+    console.log(
+      `[sync/full] diag dialer=${dialer.name} rows=${rowsProcessed} callerIdHits=${diag.callerIdHits} fellBackToNumberDialed=${diag.fellBackToNumberDialed} noDid=${diag.noDid}`
+    );
 
     const uniqueDids = new Set<string>();
     for (const bucket of didBuckets.values()) {
@@ -181,10 +185,18 @@ function processRow(
   row: ConvosoCallLog,
   didBuckets: Map<string, DidDailyBucket>,
   dialerBuckets: Map<string, DialerDailyBucket>,
-  campaignMap: Map<string, CampaignSeen>
+  campaignMap: Map<string, CampaignSeen>,
+  diag: { callerIdHits: number; fellBackToNumberDialed: number; noDid: number }
 ) {
-  const did = cleanDid(row.caller_id) ?? cleanDid(row.number_dialed);
-  if (!did) return;
+  const fromCaller = cleanDid(row.caller_id);
+  const fromDialed = fromCaller ? null : cleanDid(row.number_dialed);
+  const did = fromCaller ?? fromDialed;
+  if (!did) {
+    diag.noDid += 1;
+    return;
+  }
+  if (fromCaller) diag.callerIdHits += 1;
+  else diag.fellBackToNumberDialed += 1;
   const areaCode = did.slice(0, 3);
   const callDateMs = parseConvosoDateAsUtcMs(row.call_date);
   const statDate = nyDateString(new Date(callDateMs));
