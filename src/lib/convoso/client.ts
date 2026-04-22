@@ -83,19 +83,22 @@ export class ConvosoClient {
     end_date: string;
     limit: string;
     offset: string;
-  }): Promise<ConvosoLogResponse> {
+  }): Promise<ConvosoLogResponse & { rawEntries: number }> {
     if (shouldUseFixtures()) {
-      return getFixturePage(params);
+      const page = getFixturePage(params);
+      return { ...page, rawEntries: page.results.length };
     }
     const raw = await this.request<ConvosoLogResponse>(
       "/log/retrieve",
       params as Record<string, string>
     );
+    const rawEntries = raw.results?.length ?? 0;
     const results = filterOutboundOnly(raw.results ?? []);
     assertNoInbound(results);
     return {
       ...raw,
       entries: results.length,
+      rawEntries,
       results,
     };
   }
@@ -104,7 +107,7 @@ export class ConvosoClient {
     start_date: string;
     end_date: string;
     pageSize?: number;
-  }): AsyncGenerator<ConvosoLogResponse, void, void> {
+  }): AsyncGenerator<ConvosoLogResponse & { rawEntries: number }, void, void> {
     const limit = params.pageSize ?? 1000;
     let offset = 0;
     while (true) {
@@ -115,8 +118,8 @@ export class ConvosoClient {
         offset: String(offset),
       });
       yield page;
-      if (!page.results || page.results.length === 0) return;
-      if (page.results.length < limit) return;
+      if (page.rawEntries === 0) return;
+      if (page.rawEntries < limit) return;
       offset += limit;
     }
   }
