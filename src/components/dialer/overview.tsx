@@ -10,8 +10,25 @@ function fmtDid(raw: string): string {
   return raw;
 }
 
+interface HeadlineCard {
+  label: string;
+  value: string;
+  color: string;
+  subtext?: { text: string; color: string };
+}
+
 export default function DialerOverview({ overview }: { overview: Overview }) {
-  const headline = [
+  const totalDidsSubtext =
+    overview.hasActiveList && overview.driftCount > 0
+      ? {
+          text: `+${overview.driftCount.toLocaleString()} drift`,
+          color: "#ffa500",
+        }
+      : overview.hasActiveList
+        ? { text: "active list", color: "rgba(255,255,255,0.4)" }
+        : { text: "no active list set", color: "rgba(255,255,255,0.4)" };
+
+  const headline: HeadlineCard[] = [
     {
       label: "30-DAY DIALS",
       value: overview.totalDials30d.toLocaleString(),
@@ -31,6 +48,7 @@ export default function DialerOverview({ overview }: { overview: Overview }) {
       label: "TOTAL DIDS",
       value: overview.totalDids.toLocaleString(),
       color: "#39ff14",
+      subtext: totalDidsSubtext,
     },
     {
       label: "DORMANT (30D)",
@@ -74,6 +92,14 @@ export default function DialerOverview({ overview }: { overview: Overview }) {
             >
               {card.value}
             </div>
+            {card.subtext && (
+              <div
+                className="font-mono text-[0.6rem] mt-1 uppercase tracking-wider"
+                style={{ color: card.subtext.color }}
+              >
+                {card.subtext.text}
+              </div>
+            )}
           </div>
         ))}
       </div>

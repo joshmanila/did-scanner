@@ -8,6 +8,7 @@ import {
   syncRuns,
 } from "@/db/schema";
 import {
+  getActiveAcidListDids,
   getActiveDialers,
   getLivePulse,
   getLastSuccessfulSyncRun,
@@ -273,6 +274,8 @@ export interface DialerOverviewData {
   contactRate30d: number;
   activeDays: number;
   totalDids: number;
+  driftCount: number;
+  hasActiveList: boolean;
   dormantCount: number;
   overCapCount: number;
   topByDials: Array<{
@@ -306,7 +309,7 @@ export async function getDialerOverview(
   const today = nyTodayString();
   const from = nyDateStringDaysAgo(30);
 
-  const [totals, activeDays, didRollups, totalDidsRow] = await Promise.all([
+  const [totals, activeDays, didRollups, activeListDids] = await Promise.all([
     db
       .select({
         totalDials: sql<number>`COALESCE(SUM(${dialerDailyStats.totalDials}), 0)::int`,
@@ -342,16 +345,13 @@ export async function getDialerOverview(
       )
       .where(eq(dids.dialerId, dialerId))
       .groupBy(dids.id, dids.did, dids.areaCode, dids.firstSeenAt),
-    db
-      .select({ count: sql<number>`count(*)::int` })
-      .from(dids)
-      .where(eq(dids.dialerId, dialerId)),
+    getActiveAcidListDids(dialerId),
   ]);
 
   const totalDials = Number(totals[0]?.totalDials ?? 0);
   const totalAnswered = Number(totals[0]?.totalAnswered ?? 0);
   const contactRate = totalDials > 0 ? totalAnswered / totalDials : 0;
-  const totalDids = Number(totalDidsRow[0]?.count ?? 0);
+  const hasActiveList = activeListDids.size > 0;
 
   const augmented = didRollups.map((r) => {
     const td = Number(r.totalDials);
@@ -369,11 +369,27 @@ export async function getDialerOverview(
     };
   });
 
-  const dormantCount = augmented.filter((r) => r.totalDials === 0).length;
-  const overCapCount = augmented.filter((r) => r.maxDaily > OVER_CAP_THRESHOLD)
-    .length;
+  const inList = hasActiveList
+    ? augmented.filter((r) => activeListDids.has(r.did))
+    : augmented;
+  const driftCount = hasActiveList
+    ? augmented.filter((r) => !activeListDids.has(r.did)).length
+    : 0;
 
-  const topByDials = augmented
+  const totalDids = hasActiveList ? activeListDids.size : augmented.length;
+
+  const observedDidSet = new Set(augmented.map((r) => r.did));
+  const neverObservedInListCount = hasActiveList
+    ? Array.from(activeListDids).filter((d) => !observedDidSet.has(d)).length
+    : 0;
+
+  const dormantCount =
+    inList.filter((r) => r.totalDials === 0).length + neverObservedInListCount;
+  const overCapCount = inList.filter(
+    (r) => r.maxDaily > OVER_CAP_THRESHOLD
+  ).length;
+
+  const topByDials = inList
     .filter((r) => r.totalDials > 0)
     .sort((a, b) => b.totalDials - a.totalDials)
     .slice(0, 10)
@@ -387,7 +403,7 @@ export async function getDialerOverview(
       color: r.band.color,
     }));
 
-  const topDormant = augmented
+  const topDormant = inList
     .filter((r) => r.totalDials === 0)
     .slice(0, 10)
     .map((r) => ({
@@ -397,7 +413,7 @@ export async function getDialerOverview(
       firstSeenAt: r.firstSeenAt,
     }));
 
-  const topOverCap = augmented
+  const topOverCap = inList
     .filter((r) => r.maxDaily > OVER_CAP_THRESHOLD)
     .sort((a, b) => b.totalDials - a.totalDials)
     .slice(0, 10)
@@ -416,6 +432,8 @@ export async function getDialerOverview(
     contactRate30d: contactRate,
     activeDays,
     totalDids,
+    driftCount,
+    hasActiveList,
     dormantCount,
     overCapCount,
     topByDials,
