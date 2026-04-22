@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { DialerCardData } from "@/lib/aggregates";
 import { HEALTH_COLORS } from "@/lib/status";
+import Sparkline from "./sparkline";
 
 interface DialerCardProps {
   data: DialerCardData;
@@ -81,6 +82,15 @@ export default function DialerCard({ data }: DialerCardProps) {
           value={data.activeCampaigns.toLocaleString()}
           color="#ffdd57"
         />
+      </div>
+
+      <div className="mt-3 pt-3 border-t border-white/10">
+        <div className="flex items-center justify-between mb-1">
+          <span className="font-mono text-[0.55rem] uppercase tracking-wider text-white/40">
+            14-day dials
+          </span>
+        </div>
+        <Sparkline values={data.dialsLast14d} color="#39ff14" height={28} />
       </div>
 
       <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between">

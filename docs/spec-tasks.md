@@ -141,10 +141,56 @@ Before the final push:
 
 - Convoso write-back (disable / replace / rotate / cancel).
 - Per-campaign deep-dive analytics.
-- Trend charts / sparklines.
-- Per-ACID-list filtering on the DIDs sub-tab.
 - "Lead-area-code" version of gap analysis (the pre-DB semantic).
 - Multi-tenant auth.
-- Alerting / notifications when status flips to error.
 - Data retention / cleanup crons.
-- Color + threshold tuning for dashboard status dots (current defaults are placeholders).
+
+---
+
+# Pass 2 — Dashboard polish + reliability
+
+Pairs with Pass 1 above. Same ground rules: small commits, acceptance signal per task, no `any`, no `@ts-ignore`. Build in order — each task is self-contained and shippable on its own.
+
+## P2-1. Dashboard sparklines (dials/day, last 14 days)
+
+- Extend `DialerCardData` in `src/lib/aggregates.ts` with `dialsLast14d: number[]` (length 14, oldest → newest, zero-filled for days with no stats row).
+- Populate it in `computeDialerCard` with a single `dialer_daily_stats` query over `[today-13, today]`, then map into the zero-filled array using NY-time day strings (`nyDateStringDaysAgo`).
+- New component `src/components/dashboard/sparkline.tsx` — pure SVG, no deps. Takes `{ values: number[]; color: string; width?: number; height?: number }`, renders a polyline + a faint area fill. Handles the `max === 0` case (flat line at the bottom).
+- `src/components/dashboard/dialer-card.tsx` — render the sparkline between the headline grid and the "Last sync" footer. Color: `#39ff14`.
+- **Signal:** dashboard with fixture data shows a 14-day line on each card; `npm run build` + `npm run lint` clean.
+
+## P2-2. Status-dot threshold tuning (spec §Deferred placeholder-removal)
+
+- Read `src/lib/status.ts` — document the current thresholds inline as constants at the top of the file (they're currently inlined in functions).
+- Add a small table to `docs/spec.md` §5 listing each band (green / yellow / red) and the thresholds behind it, so product decisions are visible.
+- No behavior change yet — this is a refactor-for-visibility step; the actual tuning PR comes after you've seen real production data.
+- **Signal:** `grep THRESHOLD src/lib/status.ts` shows all bands as named exports; spec renders the table.
+
+## P2-3. Sync-failure banner on dashboard
+
+- New component `src/components/dashboard/sync-failure-banner.tsx` — dismissible banner that lists dialers whose **most recent** `sync_runs` row has `status === 'failed'` (not just last-successful-was-a-while-ago — specifically a fresh failure).
+- Add `getDialersWithRecentSyncFailure()` to `src/lib/queries.ts`.
+- Render at the top of `src/app/page.tsx` above `AggregateStrip`. Red HUD styling (`#ff003c`).
+- Clicking a dialer name in the banner goes to `/dialer/<id>`.
+- **Signal:** with a seeded `sync_runs` row having `status='failed'` for a dialer, dashboard shows the banner; with only successes, banner is absent.
+
+## P2-4. Per-ACID-list filter on DIDs sub-tab
+
+- Extend `DidRollup` query in `src/lib/queries.ts` to accept an optional `acidListId` and inner-join to `acid_list_dids` when provided.
+- `src/components/dialer/per-did-table.tsx` — add a dropdown filter above the existing filter bar, populated from `getAcidListsForDialer(dialerId)`. Default: "All lists".
+- URL-syncs as `?acidList=<id>` like the other filters.
+- **Signal:** selecting a list narrows the table rows and CSV export to that list's DIDs only.
+
+## P2-5. Alerting via email when sync fails
+
+- Add `RESEND_API_KEY` + `ALERT_EMAIL_TO` env vars; wire a tiny `src/lib/alerts.ts` that sends via Resend's REST API (no SDK — one `fetch`).
+- In `runFullSync` and `runLivePulse` (`src/lib/sync/*.ts`): on catch, after marking `sync_runs` failed, fire-and-forget an alert email. Dedupe by keeping state in a new `alert_events` table (dialer_id, kind, last_sent_at) — don't resend within 30 min.
+- Silent no-op if env vars missing (local/dev).
+- **Signal:** with env vars set and fixture client throwing, a run hits Resend once per 30-min window.
+
+## Pass 2 acceptance gate
+
+- [ ] `npm run build` passes.
+- [ ] `npm run lint` passes with zero new warnings.
+- [ ] Every new TypeScript file has no `any`, no `@ts-ignore`.
+- [ ] All P2 commits pushed to `claude/did-scanner-export-bh9Kz`.

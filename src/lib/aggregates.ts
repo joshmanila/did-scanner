@@ -37,7 +37,10 @@ export interface DialerCardData {
   lastSyncStatus: "success" | "failed" | "running" | null;
   health: DialerHealth;
   mostRecentCallAt: Date | null;
+  dialsLast14d: number[];
 }
+
+const SPARKLINE_DAYS = 14;
 
 export async function getDashboardAggregates() {
   const activeDialers = await getActiveDialers();
@@ -75,8 +78,9 @@ async function computeDialerCard(d: Dialer): Promise<DialerCardData> {
   const sevenDaysAgo = nyDateStringDaysAgo(7);
   const priorStart = nyDateStringDaysAgo(14);
   const priorEnd = nyDateStringDaysAgo(7);
+  const sparklineStart = nyDateStringDaysAgo(SPARKLINE_DAYS - 1);
 
-  const [todayRows, pulse, lastSync, last30, prior7] = await Promise.all([
+  const [todayRows, pulse, lastSync, last30, prior7, sparkRows] = await Promise.all([
     db
       .select()
       .from(dialerDailyStats)
@@ -112,6 +116,19 @@ async function computeDialerCard(d: Dialer): Promise<DialerCardData> {
           eq(dialerDailyStats.dialerId, d.id),
           gte(dialerDailyStats.statDate, priorStart),
           lte(dialerDailyStats.statDate, priorEnd)
+        )
+      ),
+    db
+      .select({
+        statDate: dialerDailyStats.statDate,
+        totalDials: dialerDailyStats.totalDials,
+      })
+      .from(dialerDailyStats)
+      .where(
+        and(
+          eq(dialerDailyStats.dialerId, d.id),
+          gte(dialerDailyStats.statDate, sparklineStart),
+          lte(dialerDailyStats.statDate, today)
         )
       ),
   ]);
@@ -157,6 +174,16 @@ async function computeDialerCard(d: Dialer): Promise<DialerCardData> {
     .limit(1);
   const lastRun = recentSync[0];
 
+  const dialsByDate = new Map<string, number>();
+  for (const r of sparkRows) {
+    dialsByDate.set(r.statDate, r.totalDials);
+  }
+  const dialsLast14d: number[] = [];
+  for (let i = SPARKLINE_DAYS - 1; i >= 0; i--) {
+    const dateStr = nyDateStringDaysAgo(i);
+    dialsLast14d.push(dialsByDate.get(dateStr) ?? 0);
+  }
+
   return {
     id: d.id,
     name: d.name,
@@ -171,6 +198,7 @@ async function computeDialerCard(d: Dialer): Promise<DialerCardData> {
     lastSyncStatus: lastRun?.status ?? null,
     health,
     mostRecentCallAt: pulse?.mostRecentCallAt ?? null,
+    dialsLast14d,
   };
 }
 
