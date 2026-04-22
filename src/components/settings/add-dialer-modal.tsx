@@ -43,12 +43,13 @@ export default function AddDialerModal({ onClose }: AddDialerModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-      <form
-        onSubmit={handleSubmit}
-        className="rounded-lg border border-[#39ff14]/40 bg-black p-6 max-w-md w-full space-y-4"
-      >
-        <h2 className="font-mono text-sm font-bold uppercase tracking-wider text-[#39ff14]">
+    <div className="fixed inset-0 z-50 bg-black/80 overflow-y-auto">
+      <div className="min-h-full flex items-center justify-center p-4">
+        <form
+          onSubmit={handleSubmit}
+          className="rounded-lg border border-[#39ff14]/40 bg-black p-8 max-w-xl w-full space-y-5 my-8 shadow-[0_0_40px_rgba(57,255,20,0.15)]"
+        >
+        <h2 className="font-mono text-lg font-bold uppercase tracking-wider text-[#39ff14]">
           Add Dialer
         </h2>
         <Field
@@ -76,23 +77,24 @@ export default function AddDialerModal({ onClose }: AddDialerModalProps) {
         {error && (
           <div className="font-mono text-xs text-[#ff003c]">{error}</div>
         )}
-        <div className="flex justify-end gap-2">
+        <div className="flex justify-end gap-2 pt-2">
           <button
             type="button"
             onClick={onClose}
-            className="font-mono text-xs uppercase tracking-wider px-3 py-2 border border-white/20 text-white/70 hover:bg-white/10 rounded"
+            className="font-mono text-xs uppercase tracking-wider px-4 py-2.5 border border-white/20 text-white/70 hover:bg-white/10 rounded"
           >
             Cancel
           </button>
           <button
             type="submit"
             disabled={isSubmitting || isPending}
-            className="font-mono text-xs uppercase tracking-wider px-3 py-2 border border-[#39ff14]/60 text-[#39ff14] hover:bg-[#39ff14]/10 rounded disabled:opacity-40"
+            className="font-mono text-xs uppercase tracking-wider px-4 py-2.5 border border-[#39ff14]/60 text-[#39ff14] hover:bg-[#39ff14]/10 rounded disabled:opacity-40"
           >
             {isSubmitting ? "Saving..." : "Save"}
           </button>
         </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
@@ -113,8 +115,8 @@ function Field({
   type?: string;
 }) {
   return (
-    <label className="block space-y-1">
-      <span className="font-mono text-[0.6rem] uppercase tracking-wider text-white/50">
+    <label className="block space-y-1.5">
+      <span className="font-mono text-xs uppercase tracking-wider text-white/60">
         {label}
       </span>
       <input
@@ -123,7 +125,7 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
-        className="w-full bg-black/60 border border-white/20 rounded px-3 py-2 text-sm font-mono text-white placeholder:text-white/30 focus:outline-none focus:border-[#39ff14]/60"
+        className="w-full bg-black/60 border border-white/20 rounded px-3 py-2.5 text-sm font-mono text-white placeholder:text-white/30 focus:outline-none focus:border-[#39ff14]/60"
       />
     </label>
   );
