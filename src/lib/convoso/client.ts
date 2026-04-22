@@ -11,6 +11,18 @@ function shouldUseFixtures(): boolean {
   return process.env.CONVOSO_USE_FIXTURES === "true";
 }
 
+let loggedFirstRowKeys = false;
+function logFirstRowFieldsOnce(row: unknown): void {
+  if (loggedFirstRowKeys) return;
+  loggedFirstRowKeys = true;
+  try {
+    const keys = Object.keys(row as Record<string, unknown>).sort();
+    console.log("[convoso] call log response keys:", keys.join(","));
+  } catch {
+    // swallow — diagnostic only
+  }
+}
+
 function isInboundCallType(callType: string | null | undefined): boolean {
   if (!callType) return false;
   return callType.trim().toUpperCase() === "INBOUND";
@@ -93,6 +105,9 @@ export class ConvosoClient {
       params as Record<string, string>
     );
     const rawEntries = raw.results?.length ?? 0;
+    if (rawEntries > 0) {
+      logFirstRowFieldsOnce(raw.results![0]);
+    }
     const results = filterOutboundOnly(raw.results ?? []);
     assertNoInbound(results);
     return {
