@@ -17,6 +17,25 @@ interface HeadlineCard {
   subtext?: { text: string; color: string };
 }
 
+function reportAgeText(uploadedAt: Date | null): string {
+  if (!uploadedAt) return "no report";
+  const ms = Date.now() - new Date(uploadedAt).getTime();
+  const days = Math.floor(ms / (24 * 60 * 60 * 1000));
+  if (days < 1) return "uploaded today";
+  if (days === 1) return "uploaded yesterday";
+  if (days < 7) return `uploaded ${days}d ago`;
+  return `uploaded ${days}d ago — refresh?`;
+}
+
+function staleColor(uploadedAt: Date | null): string {
+  if (!uploadedAt) return "rgba(255,255,255,0.4)";
+  const ms = Date.now() - new Date(uploadedAt).getTime();
+  const days = ms / (24 * 60 * 60 * 1000);
+  if (days < 7) return "rgba(255,255,255,0.4)";
+  if (days < 14) return "#ffdd57";
+  return "#ff9500";
+}
+
 export default function DialerOverview({ overview }: { overview: Overview }) {
   const totalDidsSubtext =
     overview.hasActiveList && overview.driftCount > 0
@@ -28,6 +47,21 @@ export default function DialerOverview({ overview }: { overview: Overview }) {
         ? { text: "active list", color: "rgba(255,255,255,0.4)" }
         : { text: "no active list set", color: "rgba(255,255,255,0.4)" };
 
+  const hasReport = overview.contactRateFromReport !== null;
+  const contactRateLabel = hasReport ? "CONTACT RATE (REPORT)" : "CONTACT RATE (ESTIMATED)";
+  const contactRateValue = hasReport
+    ? `${((overview.contactRateFromReport ?? 0) * 100).toFixed(2)}%`
+    : `${(overview.contactRate30d * 100).toFixed(1)}%`;
+  const contactRateSubtext = hasReport
+    ? {
+        text: `${overview.reportContacts.toLocaleString()}/${overview.reportCalls.toLocaleString()} · ${reportAgeText(overview.reportUploadedAt)}`,
+        color: staleColor(overview.reportUploadedAt),
+      }
+    : {
+        text: "upload Convoso report for accuracy",
+        color: "rgba(255,255,255,0.4)",
+      };
+
   const headline: HeadlineCard[] = [
     {
       label: "30-DAY DIALS",
@@ -35,9 +69,10 @@ export default function DialerOverview({ overview }: { overview: Overview }) {
       color: "#39ff14",
     },
     {
-      label: "30-DAY CONTACT RATE",
-      value: `${(overview.contactRate30d * 100).toFixed(1)}%`,
+      label: contactRateLabel,
+      value: contactRateValue,
       color: "#00bfff",
+      subtext: contactRateSubtext,
     },
     {
       label: "ACTIVE DIALING",

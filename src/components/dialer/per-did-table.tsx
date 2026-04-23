@@ -57,7 +57,9 @@ type SortKey =
   | "totalAnswered"
   | "answeredPct"
   | "avgLengthSec"
-  | "lastUsedDate";
+  | "lastUsedDate"
+  | "reportContactRate"
+  | "reportCalls";
 
 export default function PerDidTable({
   rows,
@@ -111,8 +113,20 @@ export default function PerDidTable({
       const aVal = a[sortKey];
       const bVal = b[sortKey];
       let cmp = 0;
-      if (typeof aVal === "number" && typeof bVal === "number") {
-        cmp = aVal - bVal;
+      const aNum =
+        aVal === null || aVal === undefined
+          ? Number.NEGATIVE_INFINITY
+          : typeof aVal === "number"
+            ? aVal
+            : null;
+      const bNum =
+        bVal === null || bVal === undefined
+          ? Number.NEGATIVE_INFINITY
+          : typeof bVal === "number"
+            ? bVal
+            : null;
+      if (aNum !== null && bNum !== null) {
+        cmp = aNum - bNum;
       } else {
         const as = String(aVal ?? "");
         const bs = String(bVal ?? "");
@@ -151,6 +165,12 @@ export default function PerDidTable({
         dials_per_day: r.dialsPerDay.toFixed(2),
         answered: r.totalAnswered,
         answered_pct: (r.answeredPct * 100).toFixed(2),
+        report_contact_rate:
+          r.reportContactRate !== null
+            ? (r.reportContactRate * 100).toFixed(2)
+            : "",
+        report_calls: r.reportCalls ?? "",
+        report_contacts: r.reportContacts ?? "",
         avg_length_mmss: fmtLength(r.avgLengthSec),
         last_used: r.lastUsedDate ?? "",
         status: r.bandLabel,
@@ -250,6 +270,16 @@ export default function PerDidTable({
                 alignRight
               />
               <SortHeader
+                onClick={() => handleSort("reportContactRate")}
+                label={`Contact %${sortArrow("reportContactRate")}`}
+                alignRight
+              />
+              <SortHeader
+                onClick={() => handleSort("reportCalls")}
+                label={`Report Calls${sortArrow("reportCalls")}`}
+                alignRight
+              />
+              <SortHeader
                 onClick={() => handleSort("avgLengthSec")}
                 label={`Avg Len${sortArrow("avgLengthSec")}`}
                 alignRight
@@ -288,6 +318,33 @@ export default function PerDidTable({
                   <td className="px-4 py-2.5 font-mono text-xs text-white/70 text-right">
                     {r.totalAnswered.toLocaleString()} (
                     {(r.answeredPct * 100).toFixed(1)}%)
+                  </td>
+                  <td className="px-4 py-2.5 font-mono text-xs text-right">
+                    {r.reportContactRate !== null ? (
+                      <span style={{ color: "#00bfff" }}>
+                        {(r.reportContactRate * 100).toFixed(2)}%
+                      </span>
+                    ) : (
+                      <span className="text-white/30">—</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-2.5 font-mono text-xs text-right">
+                    {r.reportCalls !== null ? (
+                      <span
+                        style={{
+                          color:
+                            r.reportCalls >= 50
+                              ? "rgba(255,255,255,0.8)"
+                              : r.reportCalls >= 10
+                                ? "rgba(255,255,255,0.55)"
+                                : "rgba(255,255,255,0.3)",
+                        }}
+                      >
+                        {r.reportCalls.toLocaleString()}
+                      </span>
+                    ) : (
+                      <span className="text-white/30">—</span>
+                    )}
                   </td>
                   <td className="px-4 py-2.5 font-mono text-xs text-white/60 text-right">
                     {r.avgLengthSec > 0 ? fmtLength(r.avgLengthSec) : "—"}

@@ -8,12 +8,20 @@ import type { Dialer } from "@/db/schema";
 interface EditDialerModalProps {
   dialer: Dialer;
   acidLists: Array<{ id: string; name: string; didCount: number }>;
+  contactRateReports: Array<{
+    id: string;
+    name: string;
+    didCount: number;
+    totalCalls: number;
+    totalContacts: number;
+  }>;
   onClose: () => void;
 }
 
 export default function EditDialerModal({
   dialer,
   acidLists,
+  contactRateReports,
   onClose,
 }: EditDialerModalProps) {
   const router = useRouter();
@@ -23,6 +31,8 @@ export default function EditDialerModal({
   const [activeAcidListId, setActiveAcidListId] = useState<string>(
     dialer.activeAcidListId ?? ""
   );
+  const [activeContactRateReportId, setActiveContactRateReportId] =
+    useState<string>(dialer.activeContactRateReportId ?? "");
   const [authToken, setAuthToken] = useState("");
   const [replaceToken, setReplaceToken] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -42,6 +52,10 @@ export default function EditDialerModal({
         apiUrl,
         isActive,
         activeAcidListId: activeAcidListId === "" ? null : activeAcidListId,
+        activeContactRateReportId:
+          activeContactRateReportId === ""
+            ? null
+            : activeContactRateReportId,
       };
       if (replaceToken && authToken) {
         body.authToken = authToken;
@@ -131,6 +145,35 @@ export default function EditDialerModal({
             <span className="block font-mono text-[0.6rem] text-white/40">
               No ACID lists uploaded for this dialer yet. Upload one from the
               dialer&rsquo;s ACID Lists tab.
+            </span>
+          )}
+        </label>
+        <label className="block space-y-1.5">
+          <span className="font-mono text-xs uppercase tracking-wider text-white/60">
+            Active Contact Rate Report
+          </span>
+          <select
+            value={activeContactRateReportId}
+            onChange={(e) => setActiveContactRateReportId(e.target.value)}
+            className="w-full bg-black/60 border border-white/20 rounded px-3 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-[#00bfff]/60"
+          >
+            <option value="">— none (use estimated rate from call logs) —</option>
+            {contactRateReports.map((r) => {
+              const rate =
+                r.totalCalls > 0
+                  ? `${((r.totalContacts / r.totalCalls) * 100).toFixed(2)}%`
+                  : "—";
+              return (
+                <option key={r.id} value={r.id}>
+                  {r.name} ({r.didCount.toLocaleString()} DIDs · {rate})
+                </option>
+              );
+            })}
+          </select>
+          {contactRateReports.length === 0 && (
+            <span className="block font-mono text-[0.6rem] text-white/40">
+              No contact rate reports uploaded yet. Upload one from the
+              dialer&rsquo;s Contact Rate tab.
             </span>
           )}
         </label>

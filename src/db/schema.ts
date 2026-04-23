@@ -26,6 +26,10 @@ export const dialers = pgTable(
       (): AnyPgColumn => acidLists.id,
       { onDelete: "set null" }
     ),
+    activeContactRateReportId: uuid("active_contact_rate_report_id").references(
+      (): AnyPgColumn => contactRateReports.id,
+      { onDelete: "set null" }
+    ),
     createdAt: timestamp("created_at", { withTimezone: true })
       .notNull()
       .defaultNow(),
@@ -74,6 +78,34 @@ export const acidListDids = pgTable(
     did: text("did").notNull(),
   },
   (t) => ({ pk: primaryKey({ columns: [t.acidListId, t.did] }) })
+);
+
+export const contactRateReports = pgTable("contact_rate_reports", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  dialerId: uuid("dialer_id")
+    .notNull()
+    .references(() => dialers.id, { onDelete: "cascade" }),
+  name: text("name").notNull(),
+  periodFrom: date("period_from"),
+  periodTo: date("period_to"),
+  totalCalls: integer("total_calls").notNull().default(0),
+  totalContacts: integer("total_contacts").notNull().default(0),
+  uploadedAt: timestamp("uploaded_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+export const contactRateEntries = pgTable(
+  "contact_rate_entries",
+  {
+    reportId: uuid("report_id")
+      .notNull()
+      .references(() => contactRateReports.id, { onDelete: "cascade" }),
+    did: text("did").notNull(),
+    calls: integer("calls").notNull().default(0),
+    contacts: integer("contacts").notNull().default(0),
+  },
+  (t) => ({ pk: primaryKey({ columns: [t.reportId, t.did] }) })
 );
 
 export const didDailyStats = pgTable(
@@ -206,3 +238,5 @@ export type Campaign = typeof campaigns.$inferSelect;
 export type SyncRun = typeof syncRuns.$inferSelect;
 export type AcidList = typeof acidLists.$inferSelect;
 export type AlertEvent = typeof alertEvents.$inferSelect;
+export type ContactRateReport = typeof contactRateReports.$inferSelect;
+export type ContactRateEntry = typeof contactRateEntries.$inferSelect;

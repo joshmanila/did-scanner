@@ -4,6 +4,8 @@ import {
   acidListDids,
   acidLists,
   campaigns,
+  contactRateEntries,
+  contactRateReports,
   dialerDailyStats,
   dialerLivePulse,
   dialers,
@@ -269,6 +271,114 @@ export async function getDriftDidsForDialer(
       lastUsedDate: r.lastUsedDate,
     }))
     .sort((a, b) => b.totalDials - a.totalDials);
+}
+
+export interface ContactRateReportSummary {
+  id: string;
+  dialerId: string;
+  name: string;
+  periodFrom: string | null;
+  periodTo: string | null;
+  totalCalls: number;
+  totalContacts: number;
+  uploadedAt: Date;
+  didCount: number;
+}
+
+export async function getContactRateReportsForDialer(
+  dialerId: string
+): Promise<ContactRateReportSummary[]> {
+  const db = getDb();
+  const reports = await db
+    .select()
+    .from(contactRateReports)
+    .where(eq(contactRateReports.dialerId, dialerId))
+    .orderBy(desc(contactRateReports.uploadedAt));
+  if (reports.length === 0) return [];
+  const counts = await db
+    .select({
+      reportId: contactRateEntries.reportId,
+      count: sql<number>`count(*)::int`,
+    })
+    .from(contactRateEntries)
+    .where(
+      inArray(
+        contactRateEntries.reportId,
+        reports.map((r) => r.id)
+      )
+    )
+    .groupBy(contactRateEntries.reportId);
+  const countMap = new Map(counts.map((c) => [c.reportId, Number(c.count)]));
+  return reports.map((r) => ({
+    id: r.id,
+    dialerId: r.dialerId,
+    name: r.name,
+    periodFrom: r.periodFrom,
+    periodTo: r.periodTo,
+    totalCalls: r.totalCalls,
+    totalContacts: r.totalContacts,
+    uploadedAt: r.uploadedAt,
+    didCount: countMap.get(r.id) ?? 0,
+  }));
+}
+
+export async function getActiveContactRateReport(dialerId: string) {
+  const db = getDb();
+  const rows = await db
+    .select({
+      id: contactRateReports.id,
+      dialerId: contactRateReports.dialerId,
+      name: contactRateReports.name,
+      periodFrom: contactRateReports.periodFrom,
+      periodTo: contactRateReports.periodTo,
+      totalCalls: contactRateReports.totalCalls,
+      totalContacts: contactRateReports.totalContacts,
+      uploadedAt: contactRateReports.uploadedAt,
+    })
+    .from(dialers)
+    .innerJoin(
+      contactRateReports,
+      eq(dialers.activeContactRateReportId, contactRateReports.id)
+    )
+    .where(eq(dialers.id, dialerId));
+  return rows[0] ?? null;
+}
+
+export interface ContactRateByDid {
+  did: string;
+  calls: number;
+  contacts: number;
+  contactRate: number;
+}
+
+export async function getActiveContactRateByDid(
+  dialerId: string
+): Promise<Map<string, ContactRateByDid>> {
+  const db = getDb();
+  const rows = await db
+    .select({
+      did: contactRateEntries.did,
+      calls: contactRateEntries.calls,
+      contacts: contactRateEntries.contacts,
+    })
+    .from(dialers)
+    .innerJoin(
+      contactRateEntries,
+      eq(dialers.activeContactRateReportId, contactRateEntries.reportId)
+    )
+    .where(eq(dialers.id, dialerId));
+  const map = new Map<string, ContactRateByDid>();
+  for (const r of rows) {
+    const calls = Number(r.calls);
+    const contacts = Number(r.contacts);
+    map.set(r.did, {
+      did: r.did,
+      calls,
+      contacts,
+      contactRate: calls > 0 ? contacts / calls : 0,
+    });
+  }
+  return map;
 }
 
 export interface DialerDriftSummary {

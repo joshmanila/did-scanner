@@ -9,6 +9,7 @@ const TABS: Array<{ key: string; label: string; suffix: string }> = [
   { key: "area-codes", label: "Area Codes", suffix: "/area-codes" },
   { key: "gap-analysis", label: "Gap Analysis", suffix: "/gap-analysis" },
   { key: "acid-lists", label: "ACID Lists", suffix: "/acid-lists" },
+  { key: "contact-rate", label: "Contact Rate", suffix: "/contact-rate" },
 ];
 
 export default function SubTabRow({ dialerId }: { dialerId: string }) {

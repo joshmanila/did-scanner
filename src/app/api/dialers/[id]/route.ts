@@ -10,6 +10,7 @@ interface UpdateDialerBody {
   authToken?: string;
   isActive?: boolean;
   activeAcidListId?: string | null;
+  activeContactRateReportId?: string | null;
 }
 
 export async function PATCH(
@@ -32,6 +33,13 @@ export async function PATCH(
       body.activeAcidListId === null || body.activeAcidListId === ""
         ? null
         : body.activeAcidListId;
+  }
+  if (body.activeContactRateReportId !== undefined) {
+    update.activeContactRateReportId =
+      body.activeContactRateReportId === null ||
+      body.activeContactRateReportId === ""
+        ? null
+        : body.activeContactRateReportId;
   }
   if (body.authToken !== undefined && body.authToken.trim() !== "") {
     try {

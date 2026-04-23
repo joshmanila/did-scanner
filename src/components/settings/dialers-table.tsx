@@ -13,6 +13,16 @@ interface DialersTableProps {
     string,
     Array<{ id: string; name: string; didCount: number }>
   >;
+  contactRateReportsByDialer: Record<
+    string,
+    Array<{
+      id: string;
+      name: string;
+      didCount: number;
+      totalCalls: number;
+      totalContacts: number;
+    }>
+  >;
   recentSyncs: Array<{
     dialerId: string;
     status: "running" | "success" | "failed";
@@ -37,6 +47,7 @@ function timeAgo(date: Date | null): string {
 export default function DialersTable({
   dialers,
   acidListsByDialer,
+  contactRateReportsByDialer,
   recentSyncs,
 }: DialersTableProps) {
   const router = useRouter();
@@ -218,6 +229,7 @@ export default function DialersTable({
         <EditDialerModal
           dialer={editing}
           acidLists={acidListsByDialer[editing.id] ?? []}
+          contactRateReports={contactRateReportsByDialer[editing.id] ?? []}
           onClose={() => setEditing(null)}
         />
       )}

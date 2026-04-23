@@ -3,6 +3,7 @@ import DialersTable from "@/components/settings/dialers-table";
 import {
   getAcidListsForDialer,
   getAllDialers,
+  getContactRateReportsForDialer,
   getRecentSyncRuns,
 } from "@/lib/queries";
 
@@ -17,13 +18,33 @@ export default async function SettingsPage() {
     string,
     Array<{ id: string; name: string; didCount: number }>
   > = {};
+  const contactRateReportsByDialer: Record<
+    string,
+    Array<{
+      id: string;
+      name: string;
+      didCount: number;
+      totalCalls: number;
+      totalContacts: number;
+    }>
+  > = {};
   await Promise.all(
     dialers.map(async (d) => {
-      const lists = await getAcidListsForDialer(d.id);
+      const [lists, reports] = await Promise.all([
+        getAcidListsForDialer(d.id),
+        getContactRateReportsForDialer(d.id),
+      ]);
       acidListsByDialer[d.id] = lists.map((l) => ({
         id: l.id,
         name: l.name,
         didCount: l.didCount,
+      }));
+      contactRateReportsByDialer[d.id] = reports.map((r) => ({
+        id: r.id,
+        name: r.name,
+        didCount: r.didCount,
+        totalCalls: r.totalCalls,
+        totalContacts: r.totalContacts,
       }));
     })
   );
@@ -44,6 +65,7 @@ export default async function SettingsPage() {
         <DialersTable
           dialers={dialers}
           acidListsByDialer={acidListsByDialer}
+          contactRateReportsByDialer={contactRateReportsByDialer}
           recentSyncs={recentSyncs.map((r) => ({
             dialerId: r.dialerId,
             status: r.status,

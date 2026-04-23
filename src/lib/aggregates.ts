@@ -9,6 +9,8 @@ import {
 } from "@/db/schema";
 import {
   getActiveAcidListDids,
+  getActiveContactRateByDid,
+  getActiveContactRateReport,
   getActiveDialers,
   getLivePulse,
   getLastSuccessfulSyncRun,
@@ -276,6 +278,13 @@ export interface DialerOverviewData {
   totalDids: number;
   driftCount: number;
   hasActiveList: boolean;
+  contactRateFromReport: number | null;
+  reportCalls: number;
+  reportContacts: number;
+  reportName: string | null;
+  reportUploadedAt: Date | null;
+  reportPeriodFrom: string | null;
+  reportPeriodTo: string | null;
   dormantCount: number;
   overCapCount: number;
   topByDials: Array<{
@@ -309,7 +318,7 @@ export async function getDialerOverview(
   const today = nyTodayString();
   const from = nyDateStringDaysAgo(30);
 
-  const [totals, activeDays, didRollups, activeListDids] = await Promise.all([
+  const [totals, activeDays, didRollups, activeListDids, contactRateReport] = await Promise.all([
     db
       .select({
         totalDials: sql<number>`COALESCE(SUM(${dialerDailyStats.totalDials}), 0)::int`,
@@ -346,6 +355,7 @@ export async function getDialerOverview(
       .where(eq(dids.dialerId, dialerId))
       .groupBy(dids.id, dids.did, dids.areaCode, dids.firstSeenAt),
     getActiveAcidListDids(dialerId),
+    getActiveContactRateReport(dialerId),
   ]);
 
   const totalDials = Number(totals[0]?.totalDials ?? 0);
@@ -425,6 +435,15 @@ export async function getDialerOverview(
       dialsPerDay: r.dialsPerDay,
     }));
 
+  const reportCalls = Number(contactRateReport?.totalCalls ?? 0);
+  const reportContacts = Number(contactRateReport?.totalContacts ?? 0);
+  const contactRateFromReport =
+    contactRateReport && reportCalls > 0
+      ? reportContacts / reportCalls
+      : contactRateReport
+        ? 0
+        : null;
+
   return {
     dialerId,
     totalDials30d: totalDials,
@@ -434,6 +453,13 @@ export async function getDialerOverview(
     totalDids,
     driftCount,
     hasActiveList,
+    contactRateFromReport,
+    reportCalls,
+    reportContacts,
+    reportName: contactRateReport?.name ?? null,
+    reportUploadedAt: contactRateReport?.uploadedAt ?? null,
+    reportPeriodFrom: contactRateReport?.periodFrom ?? null,
+    reportPeriodTo: contactRateReport?.periodTo ?? null,
     dormantCount,
     overCapCount,
     topByDials,
@@ -456,6 +482,9 @@ export interface DidRowForTable {
   bandColor: string;
   bandLabel: string;
   inAcidList: boolean;
+  reportCalls: number | null;
+  reportContacts: number | null;
+  reportContactRate: number | null;
 }
 
 export async function getDidRowsForDialer(
@@ -465,7 +494,10 @@ export async function getDidRowsForDialer(
   acidDidSet: Set<string>
 ): Promise<DidRowForTable[]> {
   const db = getDb();
-  const activeDays = await getActiveDialingDays(dialerId, from, to);
+  const [activeDays, reportByDid] = await Promise.all([
+    getActiveDialingDays(dialerId, from, to),
+    getActiveContactRateByDid(dialerId),
+  ]);
   const rows = await db
     .select({
       didId: dids.id,
@@ -493,6 +525,7 @@ export async function getDidRowsForDialer(
     const totalAnswered = Number(r.totalAnswered);
     const totalSec = Number(r.totalCallLengthSec);
     const band = utilBand(totalDials, activeDays);
+    const report = reportByDid.get(r.did);
     return {
       didId: r.didId,
       did: r.did,
@@ -507,6 +540,9 @@ export async function getDidRowsForDialer(
       bandColor: band.color,
       bandLabel: band.label,
       inAcidList: acidDidSet.has(r.did),
+      reportCalls: report?.calls ?? null,
+      reportContacts: report?.contacts ?? null,
+      reportContactRate: report?.contactRate ?? null,
     };
   });
 }
