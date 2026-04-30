@@ -209,6 +209,20 @@
     "lng": -77.07303,
     "state": "Maryland"
   },
+  "242": {
+    "city": "Nassau",
+    "country": "BS",
+    "lat": 25.0443,
+    "lng": -77.3504,
+    "state": "Bahamas"
+  },
+  "246": {
+    "city": "Bridgetown",
+    "country": "BB",
+    "lat": 13.1132,
+    "lng": -59.5988,
+    "state": "Barbados"
+  },
   "248": {
     "city": "West Bloomfield Township",
     "country": "US",
@@ -279,12 +293,26 @@
     "lng": -88.10648,
     "state": "Wisconsin"
   },
+  "264": {
+    "city": "The Valley",
+    "country": "AI",
+    "lat": 18.2206,
+    "lng": -63.0686,
+    "state": "Anguilla"
+  },
   "267": {
     "city": "Levittown",
     "country": "US",
     "lat": 40.15511,
     "lng": -74.82877,
     "state": "Pennsylvania"
+  },
+  "268": {
+    "city": "St. John's",
+    "country": "AG",
+    "lat": 17.1175,
+    "lng": -61.8456,
+    "state": "Antigua and Barbuda"
   },
   "269": {
     "city": "Battle Creek",
@@ -327,6 +355,20 @@
     "lat": 29.42385,
     "lng": -95.2441,
     "state": "Texas"
+  },
+  "283": {
+    "city": "Cincinnati",
+    "country": "US",
+    "lat": 39.162,
+    "lng": -84.45689,
+    "state": "Ohio"
+  },
+  "284": {
+    "city": "Road Town",
+    "country": "VG",
+    "lat": 18.4207,
+    "lng": -64.64,
+    "state": "British Virgin Islands"
   },
   "289": {
     "city": "Ajax",
@@ -545,12 +587,26 @@
     "lng": -71.15644,
     "state": "Massachusetts"
   },
+  "340": {
+    "city": "Charlotte Amalie",
+    "country": "VI",
+    "lat": 18.3358,
+    "lng": -64.8963,
+    "state": "US Virgin Islands"
+  },
   "343": {
     "city": "Clarence-Rockland",
     "country": "CA",
     "lat": 45.5501,
     "lng": -75.29101,
     "state": "Ontario"
+  },
+  "345": {
+    "city": "George Town",
+    "country": "KY",
+    "lat": 19.2866,
+    "lng": -81.3674,
+    "state": "Cayman Islands"
   },
   "346": {
     "city": "Alvin",
@@ -607,6 +663,20 @@
     "lat": 43.25011,
     "lng": -79.84963,
     "state": "Ontario"
+  },
+  "367": {
+    "city": "Sherbrooke",
+    "country": "CA",
+    "lat": 45.40008,
+    "lng": -71.89908,
+    "state": "Qu\u00e9bec"
+  },
+  "380": {
+    "city": "Columbus",
+    "country": "US",
+    "lat": 39.96118,
+    "lng": -82.99879,
+    "state": "Ohio"
   },
   "382": {
     "city": "London",
@@ -832,6 +902,13 @@
     "lng": -80.78981,
     "state": "Ohio"
   },
+  "441": {
+    "city": "Hamilton",
+    "country": "BM",
+    "lat": 32.2949,
+    "lng": -64.7834,
+    "state": "Bermuda"
+  },
   "442": {
     "city": "La Quinta",
     "country": "US",
@@ -845,6 +922,27 @@
     "lat": 38.97845,
     "lng": -76.49218,
     "state": "Maryland"
+  },
+  "445": {
+    "city": "Levittown",
+    "country": "US",
+    "lat": 40.15511,
+    "lng": -74.82877,
+    "state": "Pennsylvania"
+  },
+  "447": {
+    "city": "Champaign",
+    "country": "US",
+    "lat": 40.11642,
+    "lng": -88.24338,
+    "state": "Illinois"
+  },
+  "448": {
+    "city": "Bellview",
+    "country": "US",
+    "lat": 30.46159,
+    "lng": -87.31497,
+    "state": "Florida"
   },
   "450": {
     "city": "Ch\u00e2teauguay",
@@ -867,6 +965,13 @@
     "lng": -86.11804,
     "state": "Indiana"
   },
+  "464": {
+    "city": "Bellwood",
+    "country": "US",
+    "lat": 41.88142,
+    "lng": -87.88312,
+    "state": "Illinois"
+  },
   "469": {
     "city": "Allen",
     "country": "US",
@@ -874,12 +979,26 @@
     "lng": -96.67055,
     "state": "Texas"
   },
+  "470": {
+    "city": "Atlanta",
+    "country": "US",
+    "lat": 33.749,
+    "lng": -84.38798,
+    "state": "Georgia"
+  },
   "472": {
     "city": "Apex",
     "country": "US",
     "lat": 35.73265,
     "lng": -78.85029,
     "state": "North Carolina"
+  },
+  "473": {
+    "city": "St. George's",
+    "country": "GD",
+    "lat": 12.0561,
+    "lng": -61.7488,
+    "state": "Grenada"
   },
   "475": {
     "city": "Bridgeport",
@@ -1063,6 +1182,13 @@
     "lng": -95.89084,
     "state": "Nebraska"
   },
+  "534": {
+    "city": "Eau Claire",
+    "country": "US",
+    "lat": 44.81135,
+    "lng": -91.49849,
+    "state": "Wisconsin"
+  },
   "539": {
     "city": "Bartlesville",
     "country": "US",
@@ -1083,6 +1209,13 @@
     "lat": 44.63651,
     "lng": -123.10593,
     "state": "Oregon"
+  },
+  "548": {
+    "city": "London",
+    "country": "CA",
+    "lat": 42.98339,
+    "lng": -81.23304,
+    "state": "Ontario"
   },
   "551": {
     "city": "Bayonne",
@@ -1195,6 +1328,13 @@
     "lat": 48.55009,
     "lng": -71.6491,
     "state": "Qu\u00e9bec"
+  },
+  "584": {
+    "city": "Winnipeg",
+    "country": "CA",
+    "lat": 49.8844,
+    "lng": -97.14704,
+    "state": "Manitoba"
   },
   "585": {
     "city": "Brighton",
@@ -1427,6 +1567,13 @@
     "lng": -79.4163,
     "state": "Ontario"
   },
+  "649": {
+    "city": "Cockburn Town",
+    "country": "TC",
+    "lat": 21.4675,
+    "lng": -71.139,
+    "state": "Turks and Caicos"
+  },
   "650": {
     "city": "Belmont",
     "country": "US",
@@ -1447,6 +1594,13 @@
     "lat": 33.83529,
     "lng": -117.9145,
     "state": "California"
+  },
+  "658": {
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 17.9714,
+    "lng": -76.7929,
+    "state": "Jamaica"
   },
   "660": {
     "city": "Sedalia",
@@ -1469,6 +1623,13 @@
     "lng": -90.57093,
     "state": "Mississippi"
   },
+  "664": {
+    "city": "Brades",
+    "country": "MS",
+    "lat": 16.7937,
+    "lng": -62.2104,
+    "state": "Montserrat"
+  },
   "667": {
     "city": "Annapolis",
     "country": "US",
@@ -1483,12 +1644,40 @@
     "lng": -121.94996,
     "state": "California"
   },
+  "670": {
+    "city": "Saipan",
+    "country": "MP",
+    "lat": 15.2123,
+    "lng": 145.7546,
+    "state": "Northern Mariana Islands"
+  },
+  "671": {
+    "city": "Hag\u00e5t\u00f1a",
+    "country": "GU",
+    "lat": 13.4443,
+    "lng": 144.7937,
+    "state": "Guam"
+  },
+  "672": {
+    "city": "Revelstoke",
+    "country": "CA",
+    "lat": 50.98317,
+    "lng": -118.2023,
+    "state": "British Columbia"
+  },
   "678": {
     "city": "Alpharetta",
     "country": "US",
     "lat": 34.07538,
     "lng": -84.29409,
     "state": "Georgia"
+  },
+  "679": {
+    "city": "Allen Park",
+    "country": "US",
+    "lat": 42.25754,
+    "lng": -83.21104,
+    "state": "Michigan"
   },
   "680": {
     "city": "Auburn",
@@ -1510,6 +1699,20 @@
     "lat": 32.73569,
     "lng": -97.10807,
     "state": "Texas"
+  },
+  "684": {
+    "city": "Pago Pago",
+    "country": "AS",
+    "lat": -14.2756,
+    "lng": -170.702,
+    "state": "American Samoa"
+  },
+  "689": {
+    "city": "Altamonte Springs",
+    "country": "US",
+    "lat": 28.66111,
+    "lng": -81.36562,
+    "state": "Florida"
   },
   "701": {
     "city": "Bismarck",
@@ -1637,6 +1840,13 @@
     "lng": -105.08748,
     "state": "Colorado"
   },
+  "721": {
+    "city": "Philipsburg",
+    "country": "SX",
+    "lat": 18.0237,
+    "lng": -63.0458,
+    "state": "Sint Maarten"
+  },
   "724": {
     "city": "Monroeville",
     "country": "US",
@@ -1664,6 +1874,13 @@
     "lat": 28.32667,
     "lng": -82.68343,
     "state": "Florida"
+  },
+  "730": {
+    "city": "East Alton",
+    "country": "US",
+    "lat": 38.88033,
+    "lng": -90.11122,
+    "state": "Illinois"
   },
   "731": {
     "city": "Jackson",
@@ -1700,6 +1917,13 @@
     "lng": -82.10126,
     "state": "Ohio"
   },
+  "742": {
+    "city": "Markham",
+    "country": "CA",
+    "lat": 43.86682,
+    "lng": -79.2663,
+    "state": "Ontario"
+  },
   "743": {
     "city": "Asheboro",
     "country": "US",
@@ -1728,6 +1952,13 @@
     "lng": -76.27494,
     "state": "Virginia"
   },
+  "758": {
+    "city": "Castries",
+    "country": "LC",
+    "lat": 14.0101,
+    "lng": -60.9875,
+    "state": "Saint Lucia"
+  },
   "760": {
     "city": "Apple Valley",
     "country": "US",
@@ -1755,6 +1986,13 @@
     "lat": 40.10532,
     "lng": -85.68025,
     "state": "Indiana"
+  },
+  "767": {
+    "city": "Roseau",
+    "country": "DM",
+    "lat": 15.3092,
+    "lng": -61.3794,
+    "state": "Dominica"
   },
   "769": {
     "city": "Clinton",
@@ -1840,6 +2078,13 @@
     "lng": -63.57239,
     "state": "Nova Scotia"
   },
+  "784": {
+    "city": "Kingstown",
+    "country": "VC",
+    "lat": 13.1587,
+    "lng": -61.2248,
+    "state": "Saint Vincent and the Grenadines"
+  },
   "785": {
     "city": "Hays",
     "country": "US",
@@ -1853,6 +2098,13 @@
     "lat": 25.95648,
     "lng": -80.13921,
     "state": "Florida"
+  },
+  "787": {
+    "city": "San Juan",
+    "country": "PR",
+    "lat": 18.4655,
+    "lng": -66.1057,
+    "state": "Puerto Rico"
   },
   "800": {
     "city": "Toll-Free",
@@ -1916,6 +2168,13 @@
     "lat": 19.72991,
     "lng": -155.09073,
     "state": "Hawaii"
+  },
+  "809": {
+    "city": "Santo Domingo",
+    "country": "DO",
+    "lat": 18.4861,
+    "lng": -69.9312,
+    "state": "Dominican Republic"
   },
   "810": {
     "city": "Burton",
@@ -1987,6 +2246,13 @@
     "lng": -120.67073,
     "state": "California"
   },
+  "822": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
   "825": {
     "city": "Calgary",
     "country": "CA",
@@ -2007,6 +2273,13 @@
     "lat": 35.60095,
     "lng": -82.55402,
     "state": "North Carolina"
+  },
+  "829": {
+    "city": "Santo Domingo",
+    "country": "DO",
+    "lat": 18.4861,
+    "lng": -69.9312,
+    "state": "Dominican Republic"
   },
   "830": {
     "city": "Del Rio",
@@ -2042,6 +2315,13 @@
     "lat": 42.68313,
     "lng": -73.77845,
     "state": "New York"
+  },
+  "839": {
+    "city": "Aiken",
+    "country": "US",
+    "lat": 33.56042,
+    "lng": -81.71955,
+    "state": "South Carolina"
   },
   "840": {
     "city": "Chino",
@@ -2084,6 +2364,13 @@
     "lat": 40.57733,
     "lng": -74.2282,
     "state": "New Jersey"
+  },
+  "849": {
+    "city": "Santo Domingo",
+    "country": "DO",
+    "lat": 18.4861,
+    "lng": -69.9312,
+    "state": "Dominican Republic"
   },
   "850": {
     "city": "Bellview",
@@ -2183,6 +2470,20 @@
     "lng": -114.35255,
     "state": "Northwest Territories"
   },
+  "868": {
+    "city": "Port of Spain",
+    "country": "TT",
+    "lat": 10.6549,
+    "lng": -61.5019,
+    "state": "Trinidad and Tobago"
+  },
+  "869": {
+    "city": "Basseterre",
+    "country": "KN",
+    "lat": 17.2955,
+    "lng": -62.7227,
+    "state": "Saint Kitts and Nevis"
+  },
   "870": {
     "city": "El Dorado",
     "country": "US",
@@ -2204,6 +2505,13 @@
     "lng": -71.89908,
     "state": "Qu\u00e9bec"
   },
+  "876": {
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 17.9714,
+    "lng": -76.7929,
+    "state": "Jamaica"
+  },
   "877": {
     "city": "Toll-Free",
     "country": "US",
@@ -2217,6 +2525,69 @@
     "lat": 40.32757,
     "lng": -80.0395,
     "state": "Pennsylvania"
+  },
+  "879": {
+    "city": "Stephenville",
+    "country": "CA",
+    "lat": 48.55001,
+    "lng": -58.5818,
+    "state": "Newfoundland and Labrador"
+  },
+  "880": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "881": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "882": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "883": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "884": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "885": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "886": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "887": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
   },
   "888": {
     "city": "Toll-Free",
@@ -2259,6 +2630,13 @@
     "lat": 43.86682,
     "lng": -79.2663,
     "state": "Ontario"
+  },
+  "906": {
+    "city": "Marquette",
+    "country": "US",
+    "lat": 46.54354,
+    "lng": -87.39542,
+    "state": "Michigan"
   },
   "907": {
     "city": "Anchorage",
@@ -2420,6 +2798,13 @@
     "lat": 33.65983,
     "lng": -85.83163,
     "state": "Alabama"
+  },
+  "939": {
+    "city": "San Juan",
+    "country": "PR",
+    "lat": 18.4655,
+    "lng": -66.1057,
+    "state": "Puerto Rico"
   },
   "940": {
     "city": "Denton",

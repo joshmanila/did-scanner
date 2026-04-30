@@ -54,8 +54,10 @@ export default function DialersTable({
   const [showAdd, setShowAdd] = useState(false);
   const [editing, setEditing] = useState<Dialer | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<Dialer | null>(null);
+  const [resetConfirm, setResetConfirm] = useState<Dialer | null>(null);
   const [typedName, setTypedName] = useState("");
   const [isSyncing, setIsSyncing] = useState<string | null>(null);
+  const [isResetting, setIsResetting] = useState<string | null>(null);
   const [syncResult, setSyncResult] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const [mounted, setMounted] = useState(false);
@@ -79,6 +81,33 @@ export default function DialersTable({
       setDeleteConfirm(null);
       setTypedName("");
       startTransition(() => router.refresh());
+    }
+  }
+
+  async function handleReset() {
+    if (!resetConfirm) return;
+    if (typedName !== resetConfirm.name) return;
+    const id = resetConfirm.id;
+    setIsResetting(id);
+    setSyncResult(null);
+    try {
+      const res = await fetch(`/api/dialers/${id}/reset`, { method: "POST" });
+      if (res.ok) {
+        const body = await res.json();
+        setSyncResult(
+          `Reset complete: deleted ${body.didsDeleted ?? 0} DIDs + stats. Click "Run Full Sync" next to rebuild.`
+        );
+        setResetConfirm(null);
+        setTypedName("");
+        startTransition(() => router.refresh());
+      } else {
+        const body = await res.json().catch(() => ({ error: "Reset failed" }));
+        setSyncResult(`Reset failed: ${body.error ?? res.status}`);
+      }
+    } catch (err) {
+      setSyncResult(`Reset error: ${err instanceof Error ? err.message : err}`);
+    } finally {
+      setIsResetting(null);
     }
   }
 
@@ -201,6 +230,16 @@ export default function DialersTable({
                         {isSyncing === d.id ? "Running..." : "Run Full Sync"}
                       </button>
                       <button
+                        onClick={() => {
+                          setResetConfirm(d);
+                          setTypedName("");
+                        }}
+                        disabled={isResetting === d.id}
+                        className="font-mono text-[0.6rem] uppercase tracking-wider px-2 py-1 border border-[#ffa500]/40 text-[#ffa500] hover:bg-[#ffa500]/10 rounded disabled:opacity-50"
+                      >
+                        {isResetting === d.id ? "Resetting..." : "Reset Stats"}
+                      </button>
+                      <button
                         onClick={() => setEditing(d)}
                         className="font-mono text-[0.6rem] uppercase tracking-wider px-2 py-1 border border-white/20 text-white/70 hover:bg-white/10 rounded"
                       >
@@ -233,6 +272,50 @@ export default function DialersTable({
           onClose={() => setEditing(null)}
         />
       )}
+      {mounted && resetConfirm &&
+        createPortal(
+          <div className="fixed inset-0 z-[100] bg-black/80 overflow-y-auto">
+            <div className="min-h-full flex items-center justify-center p-4">
+              <div className="rounded-lg border border-[#ffa500]/40 bg-black p-8 max-w-xl w-full space-y-5 my-8 shadow-[0_0_40px_rgba(255,165,0,0.15)]">
+                <h2 className="font-mono text-lg font-bold uppercase tracking-wider text-[#ffa500]">
+                  Reset Stats
+                </h2>
+                <p className="font-mono text-xs text-white/70 leading-relaxed">
+                  Wipes all DIDs, daily stats, and live pulse for {resetConfirm.name}.
+                  ACID lists, contact-rate reports, and sync history are preserved.
+                  After reset, click &quot;Run Full Sync&quot; to rebuild from Convoso call logs.
+                  Type the dialer name to confirm.
+                </p>
+                <input
+                  type="text"
+                  value={typedName}
+                  onChange={(e) => setTypedName(e.target.value)}
+                  placeholder={resetConfirm.name}
+                  className="w-full bg-black/60 border border-[#ffa500]/40 rounded px-3 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-[#ffa500]"
+                />
+                <div className="flex justify-end gap-2 pt-2">
+                  <button
+                    onClick={() => {
+                      setResetConfirm(null);
+                      setTypedName("");
+                    }}
+                    className="font-mono text-xs uppercase tracking-wider px-4 py-2.5 border border-white/20 text-white/70 hover:bg-white/10 rounded"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleReset}
+                    disabled={typedName !== resetConfirm.name}
+                    className="font-mono text-xs uppercase tracking-wider px-4 py-2.5 border border-[#ffa500] text-[#ffa500] hover:bg-[#ffa500]/10 rounded disabled:opacity-40"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
       {mounted && deleteConfirm &&
         createPortal(
           <div className="fixed inset-0 z-[100] bg-black/80 overflow-y-auto">
