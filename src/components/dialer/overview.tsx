@@ -1,4 +1,5 @@
 import TopNList from "@/components/dialer/top-n-list";
+import StalenessBanner from "@/components/dialer/staleness-banner";
 import type { getDialerOverview } from "@/lib/aggregates";
 
 type Overview = Awaited<ReturnType<typeof getDialerOverview>>;
@@ -99,6 +100,13 @@ export default function DialerOverview({ overview }: { overview: Overview }) {
 
   return (
     <div className="space-y-5">
+      <StalenessBanner
+        dialerId={overview.dialerId}
+        hasActiveList={overview.hasActiveList}
+        activeListName={overview.activeListName}
+        activeListUploadedAt={overview.activeListUploadedAt}
+        driftCount={overview.driftCount}
+      />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
         {headline.map((card) => (
           <div

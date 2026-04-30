@@ -8,6 +8,7 @@ import {
   syncRuns,
 } from "@/db/schema";
 import {
+  getActiveAcidList,
   getActiveAcidListDids,
   getActiveContactRateByDid,
   getActiveContactRateReport,
@@ -278,6 +279,8 @@ export interface DialerOverviewData {
   totalDids: number;
   driftCount: number;
   hasActiveList: boolean;
+  activeListName: string | null;
+  activeListUploadedAt: Date | null;
   contactRateFromReport: number | null;
   reportCalls: number;
   reportContacts: number;
@@ -318,7 +321,7 @@ export async function getDialerOverview(
   const today = nyTodayString();
   const from = nyDateStringDaysAgo(30);
 
-  const [totals, activeDays, didRollups, activeListDids, contactRateReport] = await Promise.all([
+  const [totals, activeDays, didRollups, activeListDids, contactRateReport, activeList] = await Promise.all([
     db
       .select({
         totalDials: sql<number>`COALESCE(SUM(${dialerDailyStats.totalDials}), 0)::int`,
@@ -356,6 +359,7 @@ export async function getDialerOverview(
       .groupBy(dids.id, dids.did, dids.areaCode, dids.firstSeenAt),
     getActiveAcidListDids(dialerId),
     getActiveContactRateReport(dialerId),
+    getActiveAcidList(dialerId),
   ]);
 
   const totalDials = Number(totals[0]?.totalDials ?? 0);
@@ -453,6 +457,8 @@ export async function getDialerOverview(
     totalDids,
     driftCount,
     hasActiveList,
+    activeListName: activeList?.name ?? null,
+    activeListUploadedAt: activeList?.uploadedAt ?? null,
     contactRateFromReport,
     reportCalls,
     reportContacts,
