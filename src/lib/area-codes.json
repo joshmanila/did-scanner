@@ -335,6 +335,13 @@
     "lng": -75.99631,
     "state": "Pennsylvania"
   },
+  "274": {
+    "city": "Franklin",
+    "country": "US",
+    "lat": 42.88863,
+    "lng": -88.03842,
+    "state": "Wisconsin"
+  },
   "276": {
     "city": "Richmond",
     "country": "US",
@@ -537,6 +544,13 @@
     "lat": 39.70923,
     "lng": -84.06327,
     "state": "Ohio"
+  },
+  "327": {
+    "city": "El Dorado",
+    "country": "US",
+    "lat": 33.20763,
+    "lng": -92.66627,
+    "state": "Arkansas"
   },
   "330": {
     "city": "Akron",
@@ -1224,6 +1238,13 @@
     "lng": -74.11431,
     "state": "New Jersey"
   },
+  "557": {
+    "city": "Kirkwood",
+    "country": "US",
+    "lat": 38.58339,
+    "lng": -90.40678,
+    "state": "Missouri"
+  },
   "559": {
     "city": "Clovis",
     "country": "US",
@@ -1546,6 +1567,13 @@
     "lng": -105.76772,
     "state": "Saskatchewan"
   },
+  "640": {
+    "city": "Atlantic City",
+    "country": "US",
+    "lat": 39.36428,
+    "lng": -74.42293,
+    "state": "New Jersey"
+  },
   "641": {
     "city": "Marshalltown",
     "country": "US",
@@ -1588,6 +1616,13 @@
     "lng": -93.21772,
     "state": "Minnesota"
   },
+  "656": {
+    "city": "Bayonet Point",
+    "country": "US",
+    "lat": 28.32667,
+    "lng": -82.68343,
+    "state": "Florida"
+  },
   "657": {
     "city": "Anaheim",
     "country": "US",
@@ -1601,6 +1636,13 @@
     "lat": 17.9714,
     "lng": -76.7929,
     "state": "Jamaica"
+  },
+  "659": {
+    "city": "Alabaster",
+    "country": "US",
+    "lat": 33.24428,
+    "lng": -86.81638,
+    "state": "Alabama"
   },
   "660": {
     "city": "Sedalia",
@@ -1874,6 +1916,13 @@
     "lat": 28.32667,
     "lng": -82.68343,
     "state": "Florida"
+  },
+  "728": {
+    "city": "San Juan",
+    "country": "PR",
+    "lat": 18.4655,
+    "lng": -66.1057,
+    "state": "Puerto Rico"
   },
   "730": {
     "city": "East Alton",
@@ -2820,12 +2869,26 @@
     "lng": -82.58176,
     "state": "Florida"
   },
+  "943": {
+    "city": "Atlanta",
+    "country": "US",
+    "lat": 33.749,
+    "lng": -84.38798,
+    "state": "Georgia"
+  },
   "947": {
     "city": "West Bloomfield Township",
     "country": "US",
     "lat": 42.56891,
     "lng": -83.38356,
     "state": "Michigan"
+  },
+  "948": {
+    "city": "Apex",
+    "country": "US",
+    "lat": 35.73265,
+    "lng": -78.85029,
+    "state": "North Carolina"
   },
   "949": {
     "city": "Aliso Viejo",
