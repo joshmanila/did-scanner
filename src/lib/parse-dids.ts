@@ -76,6 +76,16 @@ export function parseCSV(
             });
           } else {
             unmapped.push(raw);
+            dids.push({
+              raw,
+              cleaned,
+              areaCode,
+              city: "Unknown",
+              state: "Unknown",
+              country: "Unknown",
+              lat: 0,
+              lng: 0,
+            });
           }
         }
 

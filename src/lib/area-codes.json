@@ -1,2354 +1,2571 @@
 {
   "201": {
+    "city": "Bayonne",
+    "country": "US",
     "lat": 40.66871,
     "lng": -74.11431,
-    "city": "Bayonne",
-    "state": "New Jersey",
-    "country": "US"
+    "state": "New Jersey"
   },
   "202": {
+    "city": "Washington",
+    "country": "US",
     "lat": 38.89511,
     "lng": -77.03637,
-    "city": "Washington",
-    "state": "District of Columbia",
-    "country": "US"
+    "state": "District of Columbia"
   },
   "203": {
+    "city": "Bridgeport",
+    "country": "US",
     "lat": 41.16704,
     "lng": -73.20483,
-    "city": "Bridgeport",
-    "state": "Connecticut",
-    "country": "US"
+    "state": "Connecticut"
   },
   "204": {
+    "city": "Winnipeg",
+    "country": "CA",
     "lat": 49.8844,
     "lng": -97.14704,
-    "city": "Winnipeg",
-    "state": "Manitoba",
-    "country": "CA"
+    "state": "Manitoba"
   },
   "205": {
+    "city": "Alabaster",
+    "country": "US",
     "lat": 33.24428,
     "lng": -86.81638,
-    "city": "Alabaster",
-    "state": "Alabama",
-    "country": "US"
+    "state": "Alabama"
   },
   "206": {
+    "city": "Bainbridge Island",
+    "country": "US",
     "lat": 47.62621,
     "lng": -122.52124,
-    "city": "Bainbridge Island",
-    "state": "Washington",
-    "country": "US"
+    "state": "Washington"
   },
   "207": {
+    "city": "Auburn",
+    "country": "US",
     "lat": 44.09785,
     "lng": -70.23117,
-    "city": "Auburn",
-    "state": "Maine",
-    "country": "US"
+    "state": "Maine"
   },
   "208": {
+    "city": "Boise",
+    "country": "US",
     "lat": 43.6135,
     "lng": -116.20345,
-    "city": "Boise",
-    "state": "Idaho",
-    "country": "US"
+    "state": "Idaho"
   },
   "209": {
+    "city": "Atwater",
+    "country": "US",
     "lat": 37.34772,
     "lng": -120.60908,
-    "city": "Atwater",
-    "state": "California",
-    "country": "US"
+    "state": "California"
   },
   "210": {
+    "city": "San Antonio",
+    "country": "US",
     "lat": 29.42412,
     "lng": -98.49363,
-    "city": "San Antonio",
-    "state": "Texas",
-    "country": "US"
+    "state": "Texas"
   },
   "212": {
+    "city": "New York City",
+    "country": "US",
     "lat": 40.71427,
     "lng": -74.00597,
-    "city": "New York City",
-    "state": "New York",
-    "country": "US"
+    "state": "New York"
   },
   "213": {
+    "city": "Los Angeles",
+    "country": "US",
     "lat": 34.05223,
     "lng": -118.24368,
-    "city": "Los Angeles",
-    "state": "California",
-    "country": "US"
+    "state": "California"
   },
   "214": {
+    "city": "Allen",
+    "country": "US",
     "lat": 33.10317,
     "lng": -96.67055,
-    "city": "Allen",
-    "state": "Texas",
-    "country": "US"
+    "state": "Texas"
   },
   "215": {
+    "city": "Levittown",
+    "country": "US",
     "lat": 40.15511,
     "lng": -74.82877,
-    "city": "Levittown",
-    "state": "Pennsylvania",
-    "country": "US"
+    "state": "Pennsylvania"
   },
   "216": {
+    "city": "Brook Park",
+    "country": "US",
     "lat": 41.39838,
     "lng": -81.80458,
-    "city": "Brook Park",
-    "state": "Ohio",
-    "country": "US"
+    "state": "Ohio"
   },
   "217": {
+    "city": "Champaign",
+    "country": "US",
     "lat": 40.11642,
     "lng": -88.24338,
-    "city": "Champaign",
-    "state": "Illinois",
-    "country": "US"
+    "state": "Illinois"
   },
   "218": {
+    "city": "Andover",
+    "country": "US",
     "lat": 45.2333,
     "lng": -93.29134,
-    "city": "Andover",
-    "state": "Minnesota",
-    "country": "US"
+    "state": "Minnesota"
   },
   "219": {
+    "city": "East Chicago",
+    "country": "US",
     "lat": 41.6392,
     "lng": -87.45476,
-    "city": "East Chicago",
-    "state": "Indiana",
-    "country": "US"
+    "state": "Indiana"
   },
   "220": {
+    "city": "Athens",
+    "country": "US",
     "lat": 39.32924,
     "lng": -82.10126,
-    "city": "Athens",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "224": {
-    "lat": 42.16558,
-    "lng": -88.29425,
-    "city": "Algonquin",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "225": {
-    "lat": 30.45075,
-    "lng": -91.15455,
-    "city": "Baton Rouge",
-    "state": "Louisiana",
-    "country": "US"
-  },
-  "226": {
-    "lat": 43.9168,
-    "lng": -80.09967,
-    "city": "Orangeville",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "228": {
-    "lat": 30.39603,
-    "lng": -88.88531,
-    "city": "Biloxi",
-    "state": "Mississippi",
-    "country": "US"
-  },
-  "229": {
-    "lat": 31.57851,
-    "lng": -84.15574,
-    "city": "Albany",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "231": {
-    "lat": 43.23418,
-    "lng": -86.24839,
-    "city": "Muskegon",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "234": {
-    "lat": 41.08144,
-    "lng": -81.51901,
-    "city": "Akron",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "236": {
-    "lat": 48.43294,
-    "lng": -123.3693,
-    "city": "Victoria",
-    "state": "British Columbia",
-    "country": "CA"
-  },
-  "239": {
-    "lat": 26.33981,
-    "lng": -81.7787,
-    "city": "Bonita Springs",
-    "state": "Florida",
-    "country": "US"
-  },
-  "240": {
-    "lat": 39.07955,
-    "lng": -77.07303,
-    "city": "Aspen Hill",
-    "state": "Maryland",
-    "country": "US"
-  },
-  "248": {
-    "lat": 42.56891,
-    "lng": -83.38356,
-    "city": "West Bloomfield Township",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "249": {
-    "lat": 45.03341,
-    "lng": -79.31633,
-    "city": "Bracebridge",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "250": {
-    "lat": 50.98317,
-    "lng": -118.2023,
-    "city": "Revelstoke",
-    "state": "British Columbia",
-    "country": "CA"
-  },
-  "251": {
-    "lat": 30.69436,
-    "lng": -88.04305,
-    "city": "Mobile",
-    "state": "Alabama",
-    "country": "US"
-  },
-  "252": {
-    "lat": 35.61266,
-    "lng": -77.36635,
-    "city": "Greenville",
-    "state": "North Carolina",
-    "country": "US"
-  },
-  "253": {
-    "lat": 47.30732,
-    "lng": -122.22845,
-    "city": "Auburn",
-    "state": "Washington",
-    "country": "US"
-  },
-  "254": {
-    "lat": 31.12406,
-    "lng": -97.90308,
-    "city": "Copperas Cove",
-    "state": "Texas",
-    "country": "US"
-  },
-  "256": {
-    "lat": 33.65983,
-    "lng": -85.83163,
-    "city": "Anniston",
-    "state": "Alabama",
-    "country": "US"
-  },
-  "260": {
-    "lat": 41.1306,
-    "lng": -85.12886,
-    "city": "Fort Wayne",
-    "state": "Indiana",
-    "country": "US"
-  },
-  "262": {
-    "lat": 43.06057,
-    "lng": -88.10648,
-    "city": "Brookfield",
-    "state": "Wisconsin",
-    "country": "US"
-  },
-  "267": {
-    "lat": 40.15511,
-    "lng": -74.82877,
-    "city": "Levittown",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "269": {
-    "lat": 42.3173,
-    "lng": -85.17816,
-    "city": "Battle Creek",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "270": {
-    "lat": 36.99032,
-    "lng": -86.4436,
-    "city": "Bowling Green",
-    "state": "Kentucky",
-    "country": "US"
-  },
-  "272": {
-    "lat": 41.33591,
-    "lng": -75.99631,
-    "city": "Back Mountain",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "276": {
-    "lat": 37.55376,
-    "lng": -77.46026,
-    "city": "Richmond",
-    "state": "Virginia",
-    "country": "US"
-  },
-  "281": {
-    "lat": 29.42385,
-    "lng": -95.2441,
-    "city": "Alvin",
-    "state": "Texas",
-    "country": "US"
-  },
-  "289": {
-    "lat": 43.85012,
-    "lng": -79.03288,
-    "city": "Ajax",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "301": {
-    "lat": 39.07955,
-    "lng": -77.07303,
-    "city": "Aspen Hill",
-    "state": "Maryland",
-    "country": "US"
-  },
-  "302": {
-    "lat": 39.15817,
-    "lng": -75.52437,
-    "city": "Dover",
-    "state": "Delaware",
-    "country": "US"
-  },
-  "303": {
-    "lat": 39.80276,
-    "lng": -105.08748,
-    "city": "Arvada",
-    "state": "Colorado",
-    "country": "US"
-  },
-  "304": {
-    "lat": 38.36843,
-    "lng": -81.69957,
-    "city": "South Charleston",
-    "state": "West Virginia",
-    "country": "US"
-  },
-  "305": {
-    "lat": 25.95648,
-    "lng": -80.13921,
-    "city": "Aventura",
-    "state": "Florida",
-    "country": "US"
-  },
-  "306": {
-    "lat": 50.45008,
-    "lng": -104.6178,
-    "city": "Regina",
-    "state": "Saskatchewan",
-    "country": "CA"
-  },
-  "307": {
-    "lat": 42.86663,
-    "lng": -106.31308,
-    "city": "Casper",
-    "state": "Wyoming",
-    "country": "US"
-  },
-  "308": {
-    "lat": 40.92501,
-    "lng": -98.34201,
-    "city": "Grand Island",
-    "state": "Nebraska",
-    "country": "US"
-  },
-  "309": {
-    "lat": 40.4842,
-    "lng": -88.99369,
-    "city": "Bloomington",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "310": {
-    "lat": 34.07362,
-    "lng": -118.40036,
-    "city": "Beverly Hills",
-    "state": "California",
-    "country": "US"
-  },
-  "312": {
-    "lat": 41.88475,
-    "lng": -88.20396,
-    "city": "West Chicago",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "313": {
-    "lat": 42.25754,
-    "lng": -83.21104,
-    "city": "Allen Park",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "314": {
-    "lat": 38.58339,
-    "lng": -90.40678,
-    "city": "Kirkwood",
-    "state": "Missouri",
-    "country": "US"
-  },
-  "315": {
-    "lat": 42.93173,
-    "lng": -76.56605,
-    "city": "Auburn",
-    "state": "New York",
-    "country": "US"
-  },
-  "316": {
-    "lat": 37.69224,
-    "lng": -97.33754,
-    "city": "Wichita",
-    "state": "Kansas",
-    "country": "US"
-  },
-  "317": {
-    "lat": 39.97837,
-    "lng": -86.11804,
-    "city": "Carmel",
-    "state": "Indiana",
-    "country": "US"
-  },
-  "318": {
-    "lat": 31.31129,
-    "lng": -92.44514,
-    "city": "Alexandria",
-    "state": "Louisiana",
-    "country": "US"
-  },
-  "319": {
-    "lat": 40.80754,
-    "lng": -91.11292,
-    "city": "Burlington",
-    "state": "Iowa",
-    "country": "US"
-  },
-  "320": {
-    "lat": 45.5608,
-    "lng": -94.16249,
-    "city": "Saint Cloud",
-    "state": "Minnesota",
-    "country": "US"
-  },
-  "321": {
-    "lat": 28.66111,
-    "lng": -81.36562,
-    "city": "Altamonte Springs",
-    "state": "Florida",
-    "country": "US"
-  },
-  "323": {
-    "lat": 33.97751,
-    "lng": -118.18702,
-    "city": "Bell",
-    "state": "California",
-    "country": "US"
-  },
-  "325": {
-    "lat": 32.44874,
-    "lng": -99.73314,
-    "city": "Abilene",
-    "state": "Texas",
-    "country": "US"
-  },
-  "330": {
-    "lat": 41.08144,
-    "lng": -81.51901,
-    "city": "Akron",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "331": {
-    "lat": 41.9317,
-    "lng": -87.98896,
-    "city": "Addison",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "334": {
-    "lat": 32.60986,
-    "lng": -85.48078,
-    "city": "Auburn",
-    "state": "Alabama",
-    "country": "US"
-  },
-  "336": {
-    "lat": 35.70791,
-    "lng": -79.81364,
-    "city": "Asheboro",
-    "state": "North Carolina",
-    "country": "US"
-  },
-  "337": {
-    "lat": 30.22409,
-    "lng": -92.01984,
-    "city": "Lafayette",
-    "state": "Louisiana",
-    "country": "US"
-  },
-  "339": {
-    "lat": 42.41537,
-    "lng": -71.15644,
-    "city": "Arlington",
-    "state": "Massachusetts",
-    "country": "US"
-  },
-  "343": {
-    "lat": 45.5501,
-    "lng": -75.29101,
-    "city": "Clarence-Rockland",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "346": {
-    "lat": 29.42385,
-    "lng": -95.2441,
-    "city": "Alvin",
-    "state": "Texas",
-    "country": "US"
-  },
-  "347": {
-    "lat": 40.84985,
-    "lng": -73.86641,
-    "city": "The Bronx",
-    "state": "New York",
-    "country": "US"
-  },
-  "351": {
-    "lat": 42.55843,
-    "lng": -70.88005,
-    "city": "Beverly",
-    "state": "Massachusetts",
-    "country": "US"
-  },
-  "352": {
-    "lat": 29.65163,
-    "lng": -82.32483,
-    "city": "Gainesville",
-    "state": "Florida",
-    "country": "US"
-  },
-  "360": {
-    "lat": 48.75955,
-    "lng": -122.48822,
-    "city": "Bellingham",
-    "state": "Washington",
-    "country": "US"
-  },
-  "361": {
-    "lat": 27.80058,
-    "lng": -97.39638,
-    "city": "Corpus Christi",
-    "state": "Texas",
-    "country": "US"
-  },
-  "364": {
-    "lat": 36.99032,
-    "lng": -86.4436,
-    "city": "Bowling Green",
-    "state": "Kentucky",
-    "country": "US"
-  },
-  "365": {
-    "lat": 43.25011,
-    "lng": -79.84963,
-    "city": "Hamilton",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "385": {
-    "lat": 40.3769,
-    "lng": -111.79576,
-    "city": "American Fork",
-    "state": "Utah",
-    "country": "US"
-  },
-  "386": {
-    "lat": 29.21081,
-    "lng": -81.02283,
-    "city": "Daytona Beach",
-    "state": "Florida",
-    "country": "US"
-  },
-  "401": {
-    "lat": 41.67705,
-    "lng": -71.26616,
-    "city": "Bristol",
-    "state": "Rhode Island",
-    "country": "US"
-  },
-  "402": {
-    "lat": 41.13667,
-    "lng": -95.89084,
-    "city": "Bellevue",
-    "state": "Nebraska",
-    "country": "US"
-  },
-  "403": {
-    "lat": 51.05011,
-    "lng": -114.08529,
-    "city": "Calgary",
-    "state": "Alberta",
-    "country": "CA"
-  },
-  "404": {
-    "lat": 33.749,
-    "lng": -84.38798,
-    "city": "Atlanta",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "405": {
-    "lat": 35.51867,
-    "lng": -97.63226,
-    "city": "Bethany",
-    "state": "Oklahoma",
-    "country": "US"
-  },
-  "406": {
-    "lat": 45.78329,
-    "lng": -108.50069,
-    "city": "Billings",
-    "state": "Montana",
-    "country": "US"
-  },
-  "407": {
-    "lat": 28.66111,
-    "lng": -81.36562,
-    "city": "Altamonte Springs",
-    "state": "Florida",
-    "country": "US"
-  },
-  "408": {
-    "lat": 37.28717,
-    "lng": -121.94996,
-    "city": "Campbell",
-    "state": "California",
-    "country": "US"
-  },
-  "409": {
-    "lat": 30.08605,
-    "lng": -94.10185,
-    "city": "Beaumont",
-    "state": "Texas",
-    "country": "US"
-  },
-  "410": {
-    "lat": 38.97845,
-    "lng": -76.49218,
-    "city": "Annapolis",
-    "state": "Maryland",
-    "country": "US"
-  },
-  "412": {
-    "lat": 40.32757,
-    "lng": -80.0395,
-    "city": "Bethel Park",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "413": {
-    "lat": 42.06954,
-    "lng": -72.61481,
-    "city": "Agawam",
-    "state": "Massachusetts",
-    "country": "US"
-  },
-  "414": {
-    "lat": 42.88863,
-    "lng": -88.03842,
-    "city": "Franklin",
-    "state": "Wisconsin",
-    "country": "US"
-  },
-  "415": {
-    "lat": 38.10742,
-    "lng": -122.5697,
-    "city": "Novato",
-    "state": "California",
-    "country": "US"
-  },
-  "416": {
-    "lat": 43.70011,
-    "lng": -79.4163,
-    "city": "Toronto",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "417": {
-    "lat": 37.08423,
-    "lng": -94.51328,
-    "city": "Joplin",
-    "state": "Missouri",
-    "country": "US"
-  },
-  "418": {
-    "lat": 47.44109,
-    "lng": -70.49858,
-    "city": "Baie-Saint-Paul",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "419": {
-    "lat": 40.86867,
-    "lng": -82.31822,
-    "city": "Ashland",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "423": {
-    "lat": 36.59511,
-    "lng": -82.18874,
-    "city": "Bristol",
-    "state": "Tennessee",
-    "country": "US"
-  },
-  "424": {
-    "lat": 34.07362,
-    "lng": -118.40036,
-    "city": "Beverly Hills",
-    "state": "California",
-    "country": "US"
-  },
-  "425": {
-    "lat": 47.61038,
-    "lng": -122.20068,
-    "city": "Bellevue",
-    "state": "Washington",
-    "country": "US"
-  },
-  "431": {
-    "lat": 49.8844,
-    "lng": -97.14704,
-    "city": "Winnipeg",
-    "state": "Manitoba",
-    "country": "CA"
-  },
-  "432": {
-    "lat": 32.2504,
-    "lng": -101.47874,
-    "city": "Big Spring",
-    "state": "Texas",
-    "country": "US"
-  },
-  "434": {
-    "lat": 38.02931,
-    "lng": -78.47668,
-    "city": "Charlottesville",
-    "state": "Virginia",
-    "country": "US"
-  },
-  "435": {
-    "lat": 37.67748,
-    "lng": -113.06189,
-    "city": "Cedar City",
-    "state": "Utah",
-    "country": "US"
-  },
-  "437": {
-    "lat": 43.70011,
-    "lng": -79.4163,
-    "city": "Toronto",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "438": {
-    "lat": 45.45286,
-    "lng": -73.64918,
-    "city": "Montréal-Ouest",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "440": {
-    "lat": 41.86505,
-    "lng": -80.78981,
-    "city": "Ashtabula",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "442": {
-    "lat": 33.66336,
-    "lng": -116.31001,
-    "city": "La Quinta",
-    "state": "California",
-    "country": "US"
-  },
-  "443": {
-    "lat": 38.97845,
-    "lng": -76.49218,
-    "city": "Annapolis",
-    "state": "Maryland",
-    "country": "US"
-  },
-  "450": {
-    "lat": 45.38338,
-    "lng": -73.74919,
-    "city": "Châteauguay",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "458": {
-    "lat": 44.63651,
-    "lng": -123.10593,
-    "city": "Albany",
-    "state": "Oregon",
-    "country": "US"
-  },
-  "469": {
-    "lat": 33.10317,
-    "lng": -96.67055,
-    "city": "Allen",
-    "state": "Texas",
-    "country": "US"
-  },
-  "478": {
-    "lat": 32.84069,
-    "lng": -83.6324,
-    "city": "Macon",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "479": {
-    "lat": 36.06258,
-    "lng": -94.15743,
-    "city": "Fayetteville",
-    "state": "Arkansas",
-    "country": "US"
-  },
-  "480": {
-    "lat": 33.41505,
-    "lng": -111.54958,
-    "city": "Apache Junction",
-    "state": "Arizona",
-    "country": "US"
-  },
-  "484": {
-    "lat": 40.60843,
-    "lng": -75.49018,
-    "city": "Allentown",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "501": {
-    "lat": 34.56454,
-    "lng": -92.58683,
-    "city": "Benton",
-    "state": "Arkansas",
-    "country": "US"
-  },
-  "502": {
-    "lat": 38.20091,
-    "lng": -84.87328,
-    "city": "Frankfort",
-    "state": "Kentucky",
-    "country": "US"
-  },
-  "503": {
-    "lat": 45.49428,
-    "lng": -122.86705,
-    "city": "Aloha",
-    "state": "Oregon",
-    "country": "US"
-  },
-  "504": {
-    "lat": 29.94296,
-    "lng": -89.96537,
-    "city": "Chalmette",
-    "state": "Louisiana",
-    "country": "US"
-  },
-  "505": {
-    "lat": 35.08449,
-    "lng": -106.65114,
-    "city": "Albuquerque",
-    "state": "New Mexico",
-    "country": "US"
-  },
-  "506": {
-    "lat": 47.3737,
-    "lng": -68.32512,
-    "city": "Edmundston",
-    "state": "New Brunswick",
-    "country": "CA"
-  },
-  "507": {
-    "lat": 43.66663,
-    "lng": -92.97464,
-    "city": "Austin",
-    "state": "Minnesota",
-    "country": "US"
-  },
-  "508": {
-    "lat": 41.94454,
-    "lng": -71.28561,
-    "city": "Attleboro",
-    "state": "Massachusetts",
-    "country": "US"
-  },
-  "509": {
-    "lat": 46.21125,
-    "lng": -119.13723,
-    "city": "Kennewick",
-    "state": "Washington",
-    "country": "US"
-  },
-  "510": {
-    "lat": 37.76521,
-    "lng": -122.24164,
-    "city": "Alameda",
-    "state": "California",
-    "country": "US"
-  },
-  "512": {
-    "lat": 30.26715,
-    "lng": -97.74306,
-    "city": "Austin",
-    "state": "Texas",
-    "country": "US"
-  },
-  "513": {
-    "lat": 39.162,
-    "lng": -84.45689,
-    "city": "Cincinnati",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "514": {
-    "lat": 48.41648,
-    "lng": -71.24884,
-    "city": "Jonquière",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "515": {
-    "lat": 42.03471,
-    "lng": -93.61994,
-    "city": "Ames",
-    "state": "Iowa",
-    "country": "US"
-  },
-  "516": {
-    "lat": 40.65649,
-    "lng": -73.6093,
-    "city": "Baldwin",
-    "state": "New York",
-    "country": "US"
-  },
-  "517": {
-    "lat": 41.89755,
-    "lng": -84.03717,
-    "city": "Adrian",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "518": {
-    "lat": 42.68313,
-    "lng": -73.77845,
-    "city": "West Albany",
-    "state": "New York",
-    "country": "US"
-  },
-  "519": {
-    "lat": 42.98339,
-    "lng": -81.23304,
-    "city": "London",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "520": {
-    "lat": 32.8795,
-    "lng": -111.75735,
-    "city": "Casa Grande",
-    "state": "Arizona",
-    "country": "US"
-  },
-  "530": {
-    "lat": 39.72849,
-    "lng": -121.83748,
-    "city": "Chico",
-    "state": "California",
-    "country": "US"
-  },
-  "531": {
-    "lat": 41.13667,
-    "lng": -95.89084,
-    "city": "Bellevue",
-    "state": "Nebraska",
-    "country": "US"
-  },
-  "539": {
-    "lat": 36.74731,
-    "lng": -95.98082,
-    "city": "Bartlesville",
-    "state": "Oklahoma",
-    "country": "US"
-  },
-  "540": {
-    "lat": 37.22957,
-    "lng": -80.41394,
-    "city": "Blacksburg",
-    "state": "Virginia",
-    "country": "US"
-  },
-  "541": {
-    "lat": 44.63651,
-    "lng": -123.10593,
-    "city": "Albany",
-    "state": "Oregon",
-    "country": "US"
-  },
-  "551": {
-    "lat": 40.66871,
-    "lng": -74.11431,
-    "city": "Bayonne",
-    "state": "New Jersey",
-    "country": "US"
-  },
-  "559": {
-    "lat": 36.82523,
-    "lng": -119.70292,
-    "city": "Clovis",
-    "state": "California",
-    "country": "US"
-  },
-  "561": {
-    "lat": 26.34508,
-    "lng": -80.14671,
-    "city": "Boca Del Mar",
-    "state": "Florida",
-    "country": "US"
-  },
-  "562": {
-    "lat": 33.88168,
-    "lng": -118.11701,
-    "city": "Bellflower",
-    "state": "California",
-    "country": "US"
-  },
-  "563": {
-    "lat": 41.52448,
-    "lng": -90.51569,
-    "city": "Bettendorf",
-    "state": "Iowa",
-    "country": "US"
-  },
-  "567": {
-    "lat": 40.86867,
-    "lng": -82.31822,
-    "city": "Ashland",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "570": {
-    "lat": 41.33591,
-    "lng": -75.99631,
-    "city": "Back Mountain",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "571": {
-    "lat": 38.80484,
-    "lng": -77.04692,
-    "city": "Alexandria",
-    "state": "Virginia",
-    "country": "US"
-  },
-  "573": {
-    "lat": 37.30588,
-    "lng": -89.51815,
-    "city": "Cape Girardeau",
-    "state": "Missouri",
-    "country": "US"
-  },
-  "574": {
-    "lat": 41.68199,
-    "lng": -85.97667,
-    "city": "Elkhart",
-    "state": "Indiana",
-    "country": "US"
-  },
-  "575": {
-    "lat": 32.89953,
-    "lng": -105.96027,
-    "city": "Alamogordo",
-    "state": "New Mexico",
-    "country": "US"
-  },
-  "579": {
-    "lat": 45.20008,
-    "lng": -72.74913,
-    "city": "Cowansville",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "580": {
-    "lat": 34.63813,
-    "lng": -99.33398,
-    "city": "Altus",
-    "state": "Oklahoma",
-    "country": "US"
-  },
-  "581": {
-    "lat": 48.55009,
-    "lng": -71.6491,
-    "city": "Alma",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "585": {
-    "lat": 43.14756,
-    "lng": -77.55055,
-    "city": "Brighton",
-    "state": "New York",
-    "country": "US"
-  },
-  "586": {
-    "lat": 42.58698,
-    "lng": -82.91992,
-    "city": "Clinton",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "587": {
-    "lat": 54.26684,
-    "lng": -110.73505,
-    "city": "Bonnyville",
-    "state": "Alberta",
-    "country": "CA"
-  },
-  "601": {
-    "lat": 32.34153,
-    "lng": -90.32176,
-    "city": "Clinton",
-    "state": "Mississippi",
-    "country": "US"
-  },
-  "602": {
-    "lat": 33.44838,
-    "lng": -112.07404,
-    "city": "Phoenix",
-    "state": "Arizona",
-    "country": "US"
-  },
-  "603": {
-    "lat": 43.24202,
-    "lng": -71.53813,
-    "city": "East Concord",
-    "state": "New Hampshire",
-    "country": "US"
-  },
-  "604": {
-    "lat": 49.20678,
-    "lng": -122.91092,
-    "city": "New Westminster",
-    "state": "British Columbia",
-    "country": "CA"
-  },
-  "605": {
-    "lat": 45.4647,
-    "lng": -98.48648,
-    "city": "Aberdeen",
-    "state": "South Dakota",
-    "country": "US"
-  },
-  "606": {
-    "lat": 38.47841,
-    "lng": -82.63794,
-    "city": "Ashland",
-    "state": "Kentucky",
-    "country": "US"
-  },
-  "607": {
-    "lat": 42.09869,
-    "lng": -75.91797,
-    "city": "Binghamton",
-    "state": "New York",
-    "country": "US"
-  },
-  "608": {
-    "lat": 42.50835,
-    "lng": -89.03178,
-    "city": "Beloit",
-    "state": "Wisconsin",
-    "country": "US"
-  },
-  "609": {
-    "lat": 39.36428,
-    "lng": -74.42293,
-    "city": "Atlantic City",
-    "state": "New Jersey",
-    "country": "US"
-  },
-  "610": {
-    "lat": 40.60843,
-    "lng": -75.49018,
-    "city": "Allentown",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "612": {
-    "lat": 45.03274,
-    "lng": -93.36023,
-    "city": "Crystal",
-    "state": "Minnesota",
-    "country": "US"
-  },
-  "613": {
-    "lat": 44.90011,
-    "lng": -76.24939,
-    "city": "Perth",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "614": {
-    "lat": 39.96118,
-    "lng": -82.99879,
-    "city": "Columbus",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "615": {
-    "lat": 36.03312,
-    "lng": -86.78278,
-    "city": "Brentwood",
-    "state": "Tennessee",
-    "country": "US"
-  },
-  "616": {
-    "lat": 42.95947,
-    "lng": -85.48975,
-    "city": "Forest Hills",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "617": {
-    "lat": 42.39593,
-    "lng": -71.17867,
-    "city": "Belmont",
-    "state": "Massachusetts",
-    "country": "US"
-  },
-  "618": {
-    "lat": 38.88033,
-    "lng": -90.11122,
-    "city": "East Alton",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "619": {
-    "lat": 32.64005,
-    "lng": -117.0842,
-    "city": "Chula Vista",
-    "state": "California",
-    "country": "US"
-  },
-  "620": {
-    "lat": 37.7528,
-    "lng": -100.01708,
-    "city": "Dodge City",
-    "state": "Kansas",
-    "country": "US"
-  },
-  "623": {
-    "lat": 33.4356,
-    "lng": -112.3496,
-    "city": "Avondale",
-    "state": "Arizona",
-    "country": "US"
-  },
-  "626": {
-    "lat": 34.09529,
-    "lng": -118.12701,
-    "city": "Alhambra",
-    "state": "California",
-    "country": "US"
-  },
-  "628": {
-    "lat": 38.10742,
-    "lng": -122.5697,
-    "city": "Novato",
-    "state": "California",
-    "country": "US"
-  },
-  "629": {
-    "lat": 36.03312,
-    "lng": -86.78278,
-    "city": "Brentwood",
-    "state": "Tennessee",
-    "country": "US"
-  },
-  "630": {
-    "lat": 41.9317,
-    "lng": -87.98896,
-    "city": "Addison",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "631": {
-    "lat": 40.73621,
-    "lng": -73.26262,
-    "city": "North Bay Shore",
-    "state": "New York",
-    "country": "US"
-  },
-  "636": {
-    "lat": 38.59505,
-    "lng": -90.54623,
-    "city": "Ballwin",
-    "state": "Missouri",
-    "country": "US"
-  },
-  "639": {
-    "lat": 53.20008,
-    "lng": -105.76772,
-    "city": "Prince Albert",
-    "state": "Saskatchewan",
-    "country": "CA"
-  },
-  "641": {
-    "lat": 42.04943,
-    "lng": -92.90798,
-    "city": "Marshalltown",
-    "state": "Iowa",
-    "country": "US"
-  },
-  "646": {
-    "lat": 40.71427,
-    "lng": -74.00597,
-    "city": "New York City",
-    "state": "New York",
-    "country": "US"
-  },
-  "647": {
-    "lat": 43.70011,
-    "lng": -79.4163,
-    "city": "Toronto",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "650": {
-    "lat": 37.52021,
-    "lng": -122.2758,
-    "city": "Belmont",
-    "state": "California",
-    "country": "US"
-  },
-  "651": {
-    "lat": 44.73191,
-    "lng": -93.21772,
-    "city": "Apple Valley",
-    "state": "Minnesota",
-    "country": "US"
-  },
-  "657": {
-    "lat": 33.83529,
-    "lng": -117.9145,
-    "city": "Anaheim",
-    "state": "California",
-    "country": "US"
-  },
-  "660": {
-    "lat": 38.70446,
-    "lng": -93.22826,
-    "city": "Sedalia",
-    "state": "Missouri",
-    "country": "US"
-  },
-  "661": {
-    "lat": 35.37329,
-    "lng": -119.01871,
-    "city": "Bakersfield",
-    "state": "California",
-    "country": "US"
-  },
-  "662": {
-    "lat": 34.20011,
-    "lng": -90.57093,
-    "city": "Clarksdale",
-    "state": "Mississippi",
-    "country": "US"
-  },
-  "667": {
-    "lat": 38.97845,
-    "lng": -76.49218,
-    "city": "Annapolis",
-    "state": "Maryland",
-    "country": "US"
-  },
-  "669": {
-    "lat": 37.28717,
-    "lng": -121.94996,
-    "city": "Campbell",
-    "state": "California",
-    "country": "US"
-  },
-  "678": {
-    "lat": 34.07538,
-    "lng": -84.29409,
-    "city": "Alpharetta",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "681": {
-    "lat": 38.36843,
-    "lng": -81.69957,
-    "city": "South Charleston",
-    "state": "West Virginia",
-    "country": "US"
-  },
-  "682": {
-    "lat": 32.73569,
-    "lng": -97.10807,
-    "city": "Arlington",
-    "state": "Texas",
-    "country": "US"
-  },
-  "701": {
-    "lat": 46.80833,
-    "lng": -100.78374,
-    "city": "Bismarck",
-    "state": "North Dakota",
-    "country": "US"
-  },
-  "702": {
-    "lat": 36.0397,
-    "lng": -114.98194,
-    "city": "Henderson",
-    "state": "Nevada",
-    "country": "US"
-  },
-  "703": {
-    "lat": 38.80484,
-    "lng": -77.04692,
-    "city": "Alexandria",
-    "state": "Virginia",
-    "country": "US"
-  },
-  "704": {
-    "lat": 35.22709,
-    "lng": -80.84313,
-    "city": "Charlotte",
-    "state": "North Carolina",
-    "country": "US"
-  },
-  "705": {
-    "lat": 44.30012,
-    "lng": -78.31623,
-    "city": "Peterborough",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "706": {
-    "lat": 33.96095,
-    "lng": -83.37794,
-    "city": "Athens",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "707": {
-    "lat": 38.04937,
-    "lng": -122.15858,
-    "city": "Benicia",
-    "state": "California",
-    "country": "US"
-  },
-  "708": {
-    "lat": 41.88142,
-    "lng": -87.88312,
-    "city": "Bellwood",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "709": {
-    "lat": 48.55001,
-    "lng": -58.5818,
-    "city": "Stephenville",
-    "state": "Newfoundland and Labrador",
-    "country": "CA"
-  },
-  "712": {
-    "lat": 41.26194,
-    "lng": -95.86083,
-    "city": "Council Bluffs",
-    "state": "Iowa",
-    "country": "US"
-  },
-  "713": {
-    "lat": 29.42385,
-    "lng": -95.2441,
-    "city": "Alvin",
-    "state": "Texas",
-    "country": "US"
-  },
-  "714": {
-    "lat": 33.83529,
-    "lng": -117.9145,
-    "city": "Anaheim",
-    "state": "California",
-    "country": "US"
-  },
-  "715": {
-    "lat": 44.81135,
-    "lng": -91.49849,
-    "city": "Eau Claire",
-    "state": "Wisconsin",
-    "country": "US"
-  },
-  "716": {
-    "lat": 42.88645,
-    "lng": -78.87837,
-    "city": "Buffalo",
-    "state": "New York",
-    "country": "US"
-  },
-  "717": {
+    "state": "Ohio"
+  },
+  "223": {
+    "city": "Harrisburg",
+    "country": "US",
     "lat": 40.2737,
     "lng": -76.88442,
-    "city": "Harrisburg",
-    "state": "Pennsylvania",
-    "country": "US"
+    "state": "Pennsylvania"
   },
-  "718": {
-    "lat": 40.84985,
-    "lng": -73.86641,
-    "city": "The Bronx",
-    "state": "New York",
-    "country": "US"
-  },
-  "719": {
-    "lat": 38.83388,
-    "lng": -104.82136,
-    "city": "Colorado Springs",
-    "state": "Colorado",
-    "country": "US"
-  },
-  "720": {
-    "lat": 39.80276,
-    "lng": -105.08748,
-    "city": "Arvada",
-    "state": "Colorado",
-    "country": "US"
-  },
-  "724": {
-    "lat": 40.42118,
-    "lng": -79.7881,
-    "city": "Monroeville",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "725": {
-    "lat": 36.0397,
-    "lng": -114.98194,
-    "city": "Henderson",
-    "state": "Nevada",
-    "country": "US"
-  },
-  "727": {
-    "lat": 28.32667,
-    "lng": -82.68343,
-    "city": "Bayonet Point",
-    "state": "Florida",
-    "country": "US"
-  },
-  "731": {
-    "lat": 35.61452,
-    "lng": -88.81395,
-    "city": "Jackson",
-    "state": "Tennessee",
-    "country": "US"
-  },
-  "732": {
-    "lat": 40.57733,
-    "lng": -74.2282,
-    "city": "Carteret",
-    "state": "New Jersey",
-    "country": "US"
-  },
-  "734": {
-    "lat": 42.27756,
-    "lng": -83.74088,
-    "city": "Ann Arbor",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "737": {
-    "lat": 30.26715,
-    "lng": -97.74306,
-    "city": "Austin",
-    "state": "Texas",
-    "country": "US"
-  },
-  "740": {
-    "lat": 39.32924,
-    "lng": -82.10126,
-    "city": "Athens",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "743": {
-    "lat": 35.70791,
-    "lng": -79.81364,
-    "city": "Asheboro",
-    "state": "North Carolina",
-    "country": "US"
-  },
-  "747": {
-    "lat": 34.13639,
-    "lng": -118.77453,
-    "city": "Agoura Hills",
-    "state": "California",
-    "country": "US"
-  },
-  "754": {
-    "lat": 26.25175,
-    "lng": -80.17894,
-    "city": "Coconut Creek",
-    "state": "Florida",
-    "country": "US"
-  },
-  "757": {
-    "lat": 36.81904,
-    "lng": -76.27494,
-    "city": "Chesapeake",
-    "state": "Virginia",
-    "country": "US"
-  },
-  "760": {
-    "lat": 34.50083,
-    "lng": -117.18588,
-    "city": "Apple Valley",
-    "state": "California",
-    "country": "US"
-  },
-  "762": {
-    "lat": 33.96095,
-    "lng": -83.37794,
-    "city": "Athens",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "763": {
-    "lat": 45.1608,
-    "lng": -93.23495,
-    "city": "Blaine",
-    "state": "Minnesota",
-    "country": "US"
-  },
-  "765": {
-    "lat": 40.10532,
-    "lng": -85.68025,
-    "city": "Anderson",
-    "state": "Indiana",
-    "country": "US"
-  },
-  "769": {
-    "lat": 32.34153,
-    "lng": -90.32176,
-    "city": "Clinton",
-    "state": "Mississippi",
-    "country": "US"
-  },
-  "770": {
-    "lat": 34.07538,
-    "lng": -84.29409,
-    "city": "Alpharetta",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "772": {
-    "lat": 27.40962,
-    "lng": -80.35483,
-    "city": "Fort Pierce South",
-    "state": "Florida",
-    "country": "US"
-  },
-  "773": {
-    "lat": 41.88475,
-    "lng": -88.20396,
-    "city": "West Chicago",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "774": {
-    "lat": 41.94454,
-    "lng": -71.28561,
-    "city": "Attleboro",
-    "state": "Massachusetts",
-    "country": "US"
-  },
-  "775": {
-    "lat": 39.1638,
-    "lng": -119.7674,
-    "city": "Carson City",
-    "state": "Nevada",
-    "country": "US"
-  },
-  "778": {
-    "lat": 49.36672,
-    "lng": -123.16652,
-    "city": "West Vancouver",
-    "state": "British Columbia",
-    "country": "CA"
-  },
-  "779": {
-    "lat": 42.26391,
-    "lng": -88.84427,
-    "city": "Belvidere",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "780": {
-    "lat": 53.55014,
-    "lng": -113.46871,
-    "city": "Edmonton",
-    "state": "Alberta",
-    "country": "CA"
-  },
-  "781": {
-    "lat": 42.41537,
-    "lng": -71.15644,
-    "city": "Arlington",
-    "state": "Massachusetts",
-    "country": "US"
-  },
-  "782": {
-    "lat": 44.64533,
-    "lng": -63.57239,
-    "city": "Halifax",
-    "state": "Nova Scotia",
-    "country": "CA"
-  },
-  "785": {
-    "lat": 38.87918,
-    "lng": -99.32677,
-    "city": "Hays",
-    "state": "Kansas",
-    "country": "US"
-  },
-  "786": {
-    "lat": 25.95648,
-    "lng": -80.13921,
-    "city": "Aventura",
-    "state": "Florida",
-    "country": "US"
-  },
-  "801": {
-    "lat": 40.3769,
-    "lng": -111.79576,
-    "city": "American Fork",
-    "state": "Utah",
-    "country": "US"
-  },
-  "802": {
-    "lat": 44.46699,
-    "lng": -73.17096,
-    "city": "South Burlington",
-    "state": "Vermont",
-    "country": "US"
-  },
-  "803": {
-    "lat": 33.56042,
-    "lng": -81.71955,
-    "city": "Aiken",
-    "state": "South Carolina",
-    "country": "US"
-  },
-  "804": {
-    "lat": 37.30432,
-    "lng": -77.2872,
-    "city": "Hopewell",
-    "state": "Virginia",
-    "country": "US"
-  },
-  "805": {
-    "lat": 35.48942,
-    "lng": -120.67073,
-    "city": "Atascadero",
-    "state": "California",
-    "country": "US"
-  },
-  "806": {
-    "lat": 35.222,
-    "lng": -101.8313,
-    "city": "Amarillo",
-    "state": "Texas",
-    "country": "US"
-  },
-  "807": {
-    "lat": 49.78334,
-    "lng": -92.75032,
-    "city": "Dryden",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "808": {
-    "lat": 19.72991,
-    "lng": -155.09073,
-    "city": "Hilo",
-    "state": "Hawaii",
-    "country": "US"
-  },
-  "810": {
-    "lat": 42.99947,
-    "lng": -83.61634,
-    "city": "Burton",
-    "state": "Michigan",
-    "country": "US"
-  },
-  "812": {
-    "lat": 39.16533,
-    "lng": -86.52639,
-    "city": "Bloomington",
-    "state": "Indiana",
-    "country": "US"
-  },
-  "813": {
-    "lat": 27.9378,
-    "lng": -82.28592,
-    "city": "Brandon",
-    "state": "Florida",
-    "country": "US"
-  },
-  "814": {
-    "lat": 40.51868,
-    "lng": -78.39474,
-    "city": "Altoona",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "815": {
-    "lat": 42.26391,
-    "lng": -88.84427,
-    "city": "Belvidere",
-    "state": "Illinois",
-    "country": "US"
-  },
-  "816": {
-    "lat": 38.81195,
-    "lng": -94.5319,
-    "city": "Belton",
-    "state": "Missouri",
-    "country": "US"
-  },
-  "817": {
-    "lat": 32.73569,
-    "lng": -97.10807,
-    "city": "Arlington",
-    "state": "Texas",
-    "country": "US"
-  },
-  "818": {
-    "lat": 34.13639,
-    "lng": -118.77453,
-    "city": "Agoura Hills",
-    "state": "California",
-    "country": "US"
-  },
-  "819": {
-    "lat": 45.40008,
-    "lng": -71.89908,
-    "city": "Sherbrooke",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "825": {
-    "lat": 51.05011,
-    "lng": -114.08529,
-    "city": "Calgary",
-    "state": "Alberta",
-    "country": "CA"
-  },
-  "828": {
-    "lat": 35.60095,
-    "lng": -82.55402,
-    "city": "Asheville",
-    "state": "North Carolina",
-    "country": "US"
-  },
-  "830": {
-    "lat": 29.36273,
-    "lng": -100.89676,
-    "city": "Del Rio",
-    "state": "Texas",
-    "country": "US"
-  },
-  "831": {
-    "lat": 36.85245,
-    "lng": -121.4016,
-    "city": "Hollister",
-    "state": "California",
-    "country": "US"
-  },
-  "832": {
-    "lat": 29.42385,
-    "lng": -95.2441,
-    "city": "Alvin",
-    "state": "Texas",
-    "country": "US"
-  },
-  "843": {
-    "lat": 32.85462,
-    "lng": -79.97481,
-    "city": "North Charleston",
-    "state": "South Carolina",
-    "country": "US"
-  },
-  "845": {
-    "lat": 41.92704,
-    "lng": -73.99736,
-    "city": "Kingston",
-    "state": "New York",
-    "country": "US"
-  },
-  "847": {
+  "224": {
+    "city": "Algonquin",
+    "country": "US",
     "lat": 42.16558,
     "lng": -88.29425,
-    "city": "Algonquin",
-    "state": "Illinois",
-    "country": "US"
+    "state": "Illinois"
   },
-  "848": {
-    "lat": 40.57733,
-    "lng": -74.2282,
-    "city": "Carteret",
-    "state": "New Jersey",
-    "country": "US"
+  "225": {
+    "city": "Baton Rouge",
+    "country": "US",
+    "lat": 30.45075,
+    "lng": -91.15455,
+    "state": "Louisiana"
   },
-  "850": {
-    "lat": 30.46159,
-    "lng": -87.31497,
-    "city": "Bellview",
-    "state": "Florida",
-    "country": "US"
+  "226": {
+    "city": "Orangeville",
+    "country": "CA",
+    "lat": 43.9168,
+    "lng": -80.09967,
+    "state": "Ontario"
   },
-  "854": {
-    "lat": 32.85462,
-    "lng": -79.97481,
-    "city": "North Charleston",
-    "state": "South Carolina",
-    "country": "US"
+  "228": {
+    "city": "Biloxi",
+    "country": "US",
+    "lat": 30.39603,
+    "lng": -88.88531,
+    "state": "Mississippi"
   },
-  "856": {
-    "lat": 39.42734,
-    "lng": -75.23408,
-    "city": "Bridgeton",
-    "state": "New Jersey",
-    "country": "US"
+  "229": {
+    "city": "Albany",
+    "country": "US",
+    "lat": 31.57851,
+    "lng": -84.15574,
+    "state": "Georgia"
   },
-  "857": {
-    "lat": 42.39593,
-    "lng": -71.17867,
-    "city": "Belmont",
-    "state": "Massachusetts",
-    "country": "US"
+  "231": {
+    "city": "Muskegon",
+    "country": "US",
+    "lat": 43.23418,
+    "lng": -86.24839,
+    "state": "Michigan"
   },
-  "858": {
-    "lat": 32.96282,
-    "lng": -117.03586,
-    "city": "Poway",
-    "state": "California",
-    "country": "US"
+  "234": {
+    "city": "Akron",
+    "country": "US",
+    "lat": 41.08144,
+    "lng": -81.51901,
+    "state": "Ohio"
   },
-  "859": {
-    "lat": 39.08367,
-    "lng": -84.50855,
-    "city": "Covington",
-    "state": "Kentucky",
-    "country": "US"
+  "236": {
+    "city": "Victoria",
+    "country": "CA",
+    "lat": 48.43294,
+    "lng": -123.3693,
+    "state": "British Columbia"
   },
-  "860": {
-    "lat": 41.67176,
-    "lng": -72.94927,
-    "city": "Bristol",
-    "state": "Connecticut",
-    "country": "US"
+  "239": {
+    "city": "Bonita Springs",
+    "country": "US",
+    "lat": 26.33981,
+    "lng": -81.7787,
+    "state": "Florida"
   },
-  "862": {
-    "lat": 40.79371,
-    "lng": -74.15014,
-    "city": "Belleville",
-    "state": "New Jersey",
-    "country": "US"
+  "240": {
+    "city": "Aspen Hill",
+    "country": "US",
+    "lat": 39.07955,
+    "lng": -77.07303,
+    "state": "Maryland"
   },
-  "863": {
-    "lat": 28.03947,
-    "lng": -81.9498,
-    "city": "Lakeland",
-    "state": "Florida",
-    "country": "US"
-  },
-  "864": {
-    "lat": 34.50344,
-    "lng": -82.65013,
-    "city": "Anderson",
-    "state": "South Carolina",
-    "country": "US"
-  },
-  "865": {
-    "lat": 35.96064,
-    "lng": -83.92074,
-    "city": "Knoxville",
-    "state": "Tennessee",
-    "country": "US"
-  },
-  "867": {
-    "lat": 62.456,
-    "lng": -114.35255,
-    "city": "Yellowknife",
-    "state": "Northwest Territories",
-    "country": "CA"
-  },
-  "870": {
-    "lat": 33.20763,
-    "lng": -92.66627,
-    "city": "El Dorado",
-    "state": "Arkansas",
-    "country": "US"
-  },
-  "873": {
-    "lat": 45.40008,
-    "lng": -71.89908,
-    "city": "Sherbrooke",
-    "state": "Québec",
-    "country": "CA"
-  },
-  "878": {
-    "lat": 40.32757,
-    "lng": -80.0395,
-    "city": "Bethel Park",
-    "state": "Pennsylvania",
-    "country": "US"
-  },
-  "901": {
-    "lat": 35.20453,
-    "lng": -89.87398,
-    "city": "Bartlett",
-    "state": "Tennessee",
-    "country": "US"
-  },
-  "902": {
-    "lat": 46.23525,
-    "lng": -63.12671,
-    "city": "Charlottetown",
-    "state": "Prince Edward Island",
-    "country": "CA"
-  },
-  "903": {
-    "lat": 32.09543,
-    "lng": -96.46887,
-    "city": "Corsicana",
-    "state": "Texas",
-    "country": "US"
-  },
-  "904": {
-    "lat": 30.33218,
-    "lng": -81.65565,
-    "city": "Jacksonville",
-    "state": "Florida",
-    "country": "US"
-  },
-  "905": {
-    "lat": 43.86682,
-    "lng": -79.2663,
-    "city": "Markham",
-    "state": "Ontario",
-    "country": "CA"
-  },
-  "907": {
-    "lat": 61.21806,
-    "lng": -149.90028,
-    "city": "Anchorage",
-    "state": "Alaska",
-    "country": "US"
-  },
-  "908": {
-    "lat": 40.65844,
-    "lng": -74.29959,
-    "city": "Cranford",
-    "state": "New Jersey",
-    "country": "US"
-  },
-  "909": {
-    "lat": 34.01223,
-    "lng": -117.68894,
-    "city": "Chino",
-    "state": "California",
-    "country": "US"
-  },
-  "910": {
-    "lat": 35.05266,
-    "lng": -78.87836,
-    "city": "Fayetteville",
-    "state": "North Carolina",
-    "country": "US"
-  },
-  "912": {
-    "lat": 31.84688,
-    "lng": -81.59595,
-    "city": "Hinesville",
-    "state": "Georgia",
-    "country": "US"
-  },
-  "913": {
-    "lat": 39.11417,
-    "lng": -94.62746,
-    "city": "Kansas City",
-    "state": "Kansas",
-    "country": "US"
-  },
-  "914": {
-    "lat": 40.96899,
-    "lng": -73.71263,
-    "city": "Harrison",
-    "state": "New York",
-    "country": "US"
-  },
-  "915": {
-    "lat": 31.75872,
-    "lng": -106.48693,
-    "city": "El Paso",
-    "state": "Texas",
-    "country": "US"
-  },
-  "916": {
-    "lat": 38.6025,
-    "lng": -121.37854,
-    "city": "Arden-Arcade",
-    "state": "California",
-    "country": "US"
-  },
-  "917": {
-    "lat": 40.84985,
-    "lng": -73.86641,
-    "city": "The Bronx",
-    "state": "New York",
-    "country": "US"
-  },
-  "918": {
-    "lat": 36.74731,
-    "lng": -95.98082,
-    "city": "Bartlesville",
-    "state": "Oklahoma",
-    "country": "US"
-  },
-  "919": {
-    "lat": 35.73265,
-    "lng": -78.85029,
-    "city": "Apex",
-    "state": "North Carolina",
-    "country": "US"
-  },
-  "920": {
-    "lat": 44.26193,
-    "lng": -88.41538,
-    "city": "Appleton",
-    "state": "Wisconsin",
-    "country": "US"
-  },
-  "925": {
-    "lat": 38.00492,
-    "lng": -121.80579,
-    "city": "Antioch",
-    "state": "California",
-    "country": "US"
-  },
-  "928": {
-    "lat": 35.14778,
-    "lng": -114.5683,
-    "city": "Bullhead City",
-    "state": "Arizona",
-    "country": "US"
-  },
-  "929": {
-    "lat": 40.84985,
-    "lng": -73.86641,
-    "city": "The Bronx",
-    "state": "New York",
-    "country": "US"
-  },
-  "930": {
-    "lat": 39.16533,
-    "lng": -86.52639,
-    "city": "Bloomington",
-    "state": "Indiana",
-    "country": "US"
-  },
-  "931": {
-    "lat": 36.52977,
-    "lng": -87.35945,
-    "city": "Clarksville",
-    "state": "Tennessee",
-    "country": "US"
-  },
-  "936": {
-    "lat": 30.31188,
-    "lng": -95.45605,
-    "city": "Conroe",
-    "state": "Texas",
-    "country": "US"
-  },
-  "937": {
-    "lat": 39.70923,
-    "lng": -84.06327,
-    "city": "Beavercreek",
-    "state": "Ohio",
-    "country": "US"
-  },
-  "940": {
-    "lat": 33.21484,
-    "lng": -97.13307,
-    "city": "Denton",
-    "state": "Texas",
-    "country": "US"
-  },
-  "941": {
-    "lat": 27.4631,
-    "lng": -82.58176,
-    "city": "South Bradenton",
-    "state": "Florida",
-    "country": "US"
-  },
-  "947": {
+  "248": {
+    "city": "West Bloomfield Township",
+    "country": "US",
     "lat": 42.56891,
     "lng": -83.38356,
-    "city": "West Bloomfield Township",
-    "state": "Michigan",
-    "country": "US"
+    "state": "Michigan"
   },
-  "949": {
-    "lat": 33.56504,
-    "lng": -117.72712,
-    "city": "Aliso Viejo",
-    "state": "California",
-    "country": "US"
+  "249": {
+    "city": "Bracebridge",
+    "country": "CA",
+    "lat": 45.03341,
+    "lng": -79.31633,
+    "state": "Ontario"
   },
-  "951": {
-    "lat": 33.92557,
-    "lng": -116.87641,
-    "city": "Banning",
-    "state": "California",
-    "country": "US"
+  "250": {
+    "city": "Revelstoke",
+    "country": "CA",
+    "lat": 50.98317,
+    "lng": -118.2023,
+    "state": "British Columbia"
   },
-  "952": {
-    "lat": 44.8408,
-    "lng": -93.29828,
+  "251": {
+    "city": "Mobile",
+    "country": "US",
+    "lat": 30.69436,
+    "lng": -88.04305,
+    "state": "Alabama"
+  },
+  "252": {
+    "city": "Greenville",
+    "country": "US",
+    "lat": 35.61266,
+    "lng": -77.36635,
+    "state": "North Carolina"
+  },
+  "253": {
+    "city": "Auburn",
+    "country": "US",
+    "lat": 47.30732,
+    "lng": -122.22845,
+    "state": "Washington"
+  },
+  "254": {
+    "city": "Copperas Cove",
+    "country": "US",
+    "lat": 31.12406,
+    "lng": -97.90308,
+    "state": "Texas"
+  },
+  "256": {
+    "city": "Anniston",
+    "country": "US",
+    "lat": 33.65983,
+    "lng": -85.83163,
+    "state": "Alabama"
+  },
+  "260": {
+    "city": "Fort Wayne",
+    "country": "US",
+    "lat": 41.1306,
+    "lng": -85.12886,
+    "state": "Indiana"
+  },
+  "262": {
+    "city": "Brookfield",
+    "country": "US",
+    "lat": 43.06057,
+    "lng": -88.10648,
+    "state": "Wisconsin"
+  },
+  "267": {
+    "city": "Levittown",
+    "country": "US",
+    "lat": 40.15511,
+    "lng": -74.82877,
+    "state": "Pennsylvania"
+  },
+  "269": {
+    "city": "Battle Creek",
+    "country": "US",
+    "lat": 42.3173,
+    "lng": -85.17816,
+    "state": "Michigan"
+  },
+  "270": {
+    "city": "Bowling Green",
+    "country": "US",
+    "lat": 36.99032,
+    "lng": -86.4436,
+    "state": "Kentucky"
+  },
+  "272": {
+    "city": "Back Mountain",
+    "country": "US",
+    "lat": 41.33591,
+    "lng": -75.99631,
+    "state": "Pennsylvania"
+  },
+  "276": {
+    "city": "Richmond",
+    "country": "US",
+    "lat": 37.55376,
+    "lng": -77.46026,
+    "state": "Virginia"
+  },
+  "279": {
+    "city": "Arden-Arcade",
+    "country": "US",
+    "lat": 38.6025,
+    "lng": -121.37854,
+    "state": "California"
+  },
+  "281": {
+    "city": "Alvin",
+    "country": "US",
+    "lat": 29.42385,
+    "lng": -95.2441,
+    "state": "Texas"
+  },
+  "289": {
+    "city": "Ajax",
+    "country": "CA",
+    "lat": 43.85012,
+    "lng": -79.03288,
+    "state": "Ontario"
+  },
+  "301": {
+    "city": "Aspen Hill",
+    "country": "US",
+    "lat": 39.07955,
+    "lng": -77.07303,
+    "state": "Maryland"
+  },
+  "302": {
+    "city": "Dover",
+    "country": "US",
+    "lat": 39.15817,
+    "lng": -75.52437,
+    "state": "Delaware"
+  },
+  "303": {
+    "city": "Arvada",
+    "country": "US",
+    "lat": 39.80276,
+    "lng": -105.08748,
+    "state": "Colorado"
+  },
+  "304": {
+    "city": "South Charleston",
+    "country": "US",
+    "lat": 38.36843,
+    "lng": -81.69957,
+    "state": "West Virginia"
+  },
+  "305": {
+    "city": "Aventura",
+    "country": "US",
+    "lat": 25.95648,
+    "lng": -80.13921,
+    "state": "Florida"
+  },
+  "306": {
+    "city": "Regina",
+    "country": "CA",
+    "lat": 50.45008,
+    "lng": -104.6178,
+    "state": "Saskatchewan"
+  },
+  "307": {
+    "city": "Casper",
+    "country": "US",
+    "lat": 42.86663,
+    "lng": -106.31308,
+    "state": "Wyoming"
+  },
+  "308": {
+    "city": "Grand Island",
+    "country": "US",
+    "lat": 40.92501,
+    "lng": -98.34201,
+    "state": "Nebraska"
+  },
+  "309": {
     "city": "Bloomington",
-    "state": "Minnesota",
-    "country": "US"
+    "country": "US",
+    "lat": 40.4842,
+    "lng": -88.99369,
+    "state": "Illinois"
   },
-  "954": {
-    "lat": 26.25175,
-    "lng": -80.17894,
-    "city": "Coconut Creek",
-    "state": "Florida",
-    "country": "US"
+  "310": {
+    "city": "Beverly Hills",
+    "country": "US",
+    "lat": 34.07362,
+    "lng": -118.40036,
+    "state": "California"
   },
-  "956": {
-    "lat": 25.90175,
-    "lng": -97.49748,
-    "city": "Brownsville",
-    "state": "Texas",
-    "country": "US"
+  "312": {
+    "city": "West Chicago",
+    "country": "US",
+    "lat": 41.88475,
+    "lng": -88.20396,
+    "state": "Illinois"
   },
-  "959": {
-    "lat": 41.67176,
-    "lng": -72.94927,
-    "city": "Bristol",
-    "state": "Connecticut",
-    "country": "US"
+  "313": {
+    "city": "Allen Park",
+    "country": "US",
+    "lat": 42.25754,
+    "lng": -83.21104,
+    "state": "Michigan"
   },
-  "970": {
-    "lat": 40.58526,
-    "lng": -105.08442,
-    "city": "Fort Collins",
-    "state": "Colorado",
-    "country": "US"
+  "314": {
+    "city": "Kirkwood",
+    "country": "US",
+    "lat": 38.58339,
+    "lng": -90.40678,
+    "state": "Missouri"
   },
-  "971": {
-    "lat": 45.49428,
-    "lng": -122.86705,
-    "city": "Aloha",
-    "state": "Oregon",
-    "country": "US"
+  "315": {
+    "city": "Auburn",
+    "country": "US",
+    "lat": 42.93173,
+    "lng": -76.56605,
+    "state": "New York"
   },
-  "972": {
-    "lat": 33.10317,
-    "lng": -96.67055,
-    "city": "Allen",
-    "state": "Texas",
-    "country": "US"
+  "316": {
+    "city": "Wichita",
+    "country": "US",
+    "lat": 37.69224,
+    "lng": -97.33754,
+    "state": "Kansas"
   },
-  "973": {
-    "lat": 40.79371,
-    "lng": -74.15014,
-    "city": "Belleville",
-    "state": "New Jersey",
-    "country": "US"
+  "317": {
+    "city": "Carmel",
+    "country": "US",
+    "lat": 39.97837,
+    "lng": -86.11804,
+    "state": "Indiana"
   },
-  "978": {
+  "318": {
+    "city": "Alexandria",
+    "country": "US",
+    "lat": 31.31129,
+    "lng": -92.44514,
+    "state": "Louisiana"
+  },
+  "319": {
+    "city": "Burlington",
+    "country": "US",
+    "lat": 40.80754,
+    "lng": -91.11292,
+    "state": "Iowa"
+  },
+  "320": {
+    "city": "Saint Cloud",
+    "country": "US",
+    "lat": 45.5608,
+    "lng": -94.16249,
+    "state": "Minnesota"
+  },
+  "321": {
+    "city": "Altamonte Springs",
+    "country": "US",
+    "lat": 28.66111,
+    "lng": -81.36562,
+    "state": "Florida"
+  },
+  "323": {
+    "city": "Bell",
+    "country": "US",
+    "lat": 33.97751,
+    "lng": -118.18702,
+    "state": "California"
+  },
+  "325": {
+    "city": "Abilene",
+    "country": "US",
+    "lat": 32.44874,
+    "lng": -99.73314,
+    "state": "Texas"
+  },
+  "326": {
+    "city": "Beavercreek",
+    "country": "US",
+    "lat": 39.70923,
+    "lng": -84.06327,
+    "state": "Ohio"
+  },
+  "330": {
+    "city": "Akron",
+    "country": "US",
+    "lat": 41.08144,
+    "lng": -81.51901,
+    "state": "Ohio"
+  },
+  "331": {
+    "city": "Addison",
+    "country": "US",
+    "lat": 41.9317,
+    "lng": -87.98896,
+    "state": "Illinois"
+  },
+  "332": {
+    "city": "New York City",
+    "country": "US",
+    "lat": 40.71427,
+    "lng": -74.00597,
+    "state": "New York"
+  },
+  "334": {
+    "city": "Auburn",
+    "country": "US",
+    "lat": 32.60986,
+    "lng": -85.48078,
+    "state": "Alabama"
+  },
+  "336": {
+    "city": "Asheboro",
+    "country": "US",
+    "lat": 35.70791,
+    "lng": -79.81364,
+    "state": "North Carolina"
+  },
+  "337": {
+    "city": "Lafayette",
+    "country": "US",
+    "lat": 30.22409,
+    "lng": -92.01984,
+    "state": "Louisiana"
+  },
+  "339": {
+    "city": "Arlington",
+    "country": "US",
+    "lat": 42.41537,
+    "lng": -71.15644,
+    "state": "Massachusetts"
+  },
+  "343": {
+    "city": "Clarence-Rockland",
+    "country": "CA",
+    "lat": 45.5501,
+    "lng": -75.29101,
+    "state": "Ontario"
+  },
+  "346": {
+    "city": "Alvin",
+    "country": "US",
+    "lat": 29.42385,
+    "lng": -95.2441,
+    "state": "Texas"
+  },
+  "347": {
+    "city": "The Bronx",
+    "country": "US",
+    "lat": 40.84985,
+    "lng": -73.86641,
+    "state": "New York"
+  },
+  "351": {
+    "city": "Beverly",
+    "country": "US",
     "lat": 42.55843,
     "lng": -70.88005,
-    "city": "Beverly",
-    "state": "Massachusetts",
-    "country": "US"
+    "state": "Massachusetts"
   },
-  "979": {
-    "lat": 30.67436,
-    "lng": -96.36996,
-    "city": "Bryan",
-    "state": "Texas",
-    "country": "US"
+  "352": {
+    "city": "Gainesville",
+    "country": "US",
+    "lat": 29.65163,
+    "lng": -82.32483,
+    "state": "Florida"
   },
-  "980": {
-    "lat": 35.22709,
-    "lng": -80.84313,
-    "city": "Charlotte",
-    "state": "North Carolina",
-    "country": "US"
+  "360": {
+    "city": "Bellingham",
+    "country": "US",
+    "lat": 48.75955,
+    "lng": -122.48822,
+    "state": "Washington"
   },
-  "984": {
+  "361": {
+    "city": "Corpus Christi",
+    "country": "US",
+    "lat": 27.80058,
+    "lng": -97.39638,
+    "state": "Texas"
+  },
+  "364": {
+    "city": "Bowling Green",
+    "country": "US",
+    "lat": 36.99032,
+    "lng": -86.4436,
+    "state": "Kentucky"
+  },
+  "365": {
+    "city": "Hamilton",
+    "country": "CA",
+    "lat": 43.25011,
+    "lng": -79.84963,
+    "state": "Ontario"
+  },
+  "382": {
+    "city": "London",
+    "country": "CA",
+    "lat": 42.98339,
+    "lng": -81.23304,
+    "state": "Ontario"
+  },
+  "385": {
+    "city": "American Fork",
+    "country": "US",
+    "lat": 40.3769,
+    "lng": -111.79576,
+    "state": "Utah"
+  },
+  "386": {
+    "city": "Daytona Beach",
+    "country": "US",
+    "lat": 29.21081,
+    "lng": -81.02283,
+    "state": "Florida"
+  },
+  "401": {
+    "city": "Bristol",
+    "country": "US",
+    "lat": 41.67705,
+    "lng": -71.26616,
+    "state": "Rhode Island"
+  },
+  "402": {
+    "city": "Bellevue",
+    "country": "US",
+    "lat": 41.13667,
+    "lng": -95.89084,
+    "state": "Nebraska"
+  },
+  "403": {
+    "city": "Calgary",
+    "country": "CA",
+    "lat": 51.05011,
+    "lng": -114.08529,
+    "state": "Alberta"
+  },
+  "404": {
+    "city": "Atlanta",
+    "country": "US",
+    "lat": 33.749,
+    "lng": -84.38798,
+    "state": "Georgia"
+  },
+  "405": {
+    "city": "Bethany",
+    "country": "US",
+    "lat": 35.51867,
+    "lng": -97.63226,
+    "state": "Oklahoma"
+  },
+  "406": {
+    "city": "Billings",
+    "country": "US",
+    "lat": 45.78329,
+    "lng": -108.50069,
+    "state": "Montana"
+  },
+  "407": {
+    "city": "Altamonte Springs",
+    "country": "US",
+    "lat": 28.66111,
+    "lng": -81.36562,
+    "state": "Florida"
+  },
+  "408": {
+    "city": "Campbell",
+    "country": "US",
+    "lat": 37.28717,
+    "lng": -121.94996,
+    "state": "California"
+  },
+  "409": {
+    "city": "Beaumont",
+    "country": "US",
+    "lat": 30.08605,
+    "lng": -94.10185,
+    "state": "Texas"
+  },
+  "410": {
+    "city": "Annapolis",
+    "country": "US",
+    "lat": 38.97845,
+    "lng": -76.49218,
+    "state": "Maryland"
+  },
+  "412": {
+    "city": "Bethel Park",
+    "country": "US",
+    "lat": 40.32757,
+    "lng": -80.0395,
+    "state": "Pennsylvania"
+  },
+  "413": {
+    "city": "Agawam",
+    "country": "US",
+    "lat": 42.06954,
+    "lng": -72.61481,
+    "state": "Massachusetts"
+  },
+  "414": {
+    "city": "Franklin",
+    "country": "US",
+    "lat": 42.88863,
+    "lng": -88.03842,
+    "state": "Wisconsin"
+  },
+  "415": {
+    "city": "Novato",
+    "country": "US",
+    "lat": 38.10742,
+    "lng": -122.5697,
+    "state": "California"
+  },
+  "416": {
+    "city": "Toronto",
+    "country": "CA",
+    "lat": 43.70011,
+    "lng": -79.4163,
+    "state": "Ontario"
+  },
+  "417": {
+    "city": "Joplin",
+    "country": "US",
+    "lat": 37.08423,
+    "lng": -94.51328,
+    "state": "Missouri"
+  },
+  "418": {
+    "city": "Baie-Saint-Paul",
+    "country": "CA",
+    "lat": 47.44109,
+    "lng": -70.49858,
+    "state": "Qu\u00e9bec"
+  },
+  "419": {
+    "city": "Ashland",
+    "country": "US",
+    "lat": 40.86867,
+    "lng": -82.31822,
+    "state": "Ohio"
+  },
+  "423": {
+    "city": "Bristol",
+    "country": "US",
+    "lat": 36.59511,
+    "lng": -82.18874,
+    "state": "Tennessee"
+  },
+  "424": {
+    "city": "Beverly Hills",
+    "country": "US",
+    "lat": 34.07362,
+    "lng": -118.40036,
+    "state": "California"
+  },
+  "425": {
+    "city": "Bellevue",
+    "country": "US",
+    "lat": 47.61038,
+    "lng": -122.20068,
+    "state": "Washington"
+  },
+  "430": {
+    "city": "Corsicana",
+    "country": "US",
+    "lat": 32.09543,
+    "lng": -96.46887,
+    "state": "Texas"
+  },
+  "431": {
+    "city": "Winnipeg",
+    "country": "CA",
+    "lat": 49.8844,
+    "lng": -97.14704,
+    "state": "Manitoba"
+  },
+  "432": {
+    "city": "Big Spring",
+    "country": "US",
+    "lat": 32.2504,
+    "lng": -101.47874,
+    "state": "Texas"
+  },
+  "434": {
+    "city": "Charlottesville",
+    "country": "US",
+    "lat": 38.02931,
+    "lng": -78.47668,
+    "state": "Virginia"
+  },
+  "435": {
+    "city": "Cedar City",
+    "country": "US",
+    "lat": 37.67748,
+    "lng": -113.06189,
+    "state": "Utah"
+  },
+  "437": {
+    "city": "Toronto",
+    "country": "CA",
+    "lat": 43.70011,
+    "lng": -79.4163,
+    "state": "Ontario"
+  },
+  "438": {
+    "city": "Montr\u00e9al-Ouest",
+    "country": "CA",
+    "lat": 45.45286,
+    "lng": -73.64918,
+    "state": "Qu\u00e9bec"
+  },
+  "440": {
+    "city": "Ashtabula",
+    "country": "US",
+    "lat": 41.86505,
+    "lng": -80.78981,
+    "state": "Ohio"
+  },
+  "442": {
+    "city": "La Quinta",
+    "country": "US",
+    "lat": 33.66336,
+    "lng": -116.31001,
+    "state": "California"
+  },
+  "443": {
+    "city": "Annapolis",
+    "country": "US",
+    "lat": 38.97845,
+    "lng": -76.49218,
+    "state": "Maryland"
+  },
+  "450": {
+    "city": "Ch\u00e2teauguay",
+    "country": "CA",
+    "lat": 45.38338,
+    "lng": -73.74919,
+    "state": "Qu\u00e9bec"
+  },
+  "458": {
+    "city": "Albany",
+    "country": "US",
+    "lat": 44.63651,
+    "lng": -123.10593,
+    "state": "Oregon"
+  },
+  "463": {
+    "city": "Carmel",
+    "country": "US",
+    "lat": 39.97837,
+    "lng": -86.11804,
+    "state": "Indiana"
+  },
+  "469": {
+    "city": "Allen",
+    "country": "US",
+    "lat": 33.10317,
+    "lng": -96.67055,
+    "state": "Texas"
+  },
+  "472": {
+    "city": "Apex",
+    "country": "US",
     "lat": 35.73265,
     "lng": -78.85029,
+    "state": "North Carolina"
+  },
+  "475": {
+    "city": "Bridgeport",
+    "country": "US",
+    "lat": 41.16704,
+    "lng": -73.20483,
+    "state": "Connecticut"
+  },
+  "478": {
+    "city": "Macon",
+    "country": "US",
+    "lat": 32.84069,
+    "lng": -83.6324,
+    "state": "Georgia"
+  },
+  "479": {
+    "city": "Fayetteville",
+    "country": "US",
+    "lat": 36.06258,
+    "lng": -94.15743,
+    "state": "Arkansas"
+  },
+  "480": {
+    "city": "Apache Junction",
+    "country": "US",
+    "lat": 33.41505,
+    "lng": -111.54958,
+    "state": "Arizona"
+  },
+  "484": {
+    "city": "Allentown",
+    "country": "US",
+    "lat": 40.60843,
+    "lng": -75.49018,
+    "state": "Pennsylvania"
+  },
+  "501": {
+    "city": "Benton",
+    "country": "US",
+    "lat": 34.56454,
+    "lng": -92.58683,
+    "state": "Arkansas"
+  },
+  "502": {
+    "city": "Frankfort",
+    "country": "US",
+    "lat": 38.20091,
+    "lng": -84.87328,
+    "state": "Kentucky"
+  },
+  "503": {
+    "city": "Aloha",
+    "country": "US",
+    "lat": 45.49428,
+    "lng": -122.86705,
+    "state": "Oregon"
+  },
+  "504": {
+    "city": "Chalmette",
+    "country": "US",
+    "lat": 29.94296,
+    "lng": -89.96537,
+    "state": "Louisiana"
+  },
+  "505": {
+    "city": "Albuquerque",
+    "country": "US",
+    "lat": 35.08449,
+    "lng": -106.65114,
+    "state": "New Mexico"
+  },
+  "506": {
+    "city": "Edmundston",
+    "country": "CA",
+    "lat": 47.3737,
+    "lng": -68.32512,
+    "state": "New Brunswick"
+  },
+  "507": {
+    "city": "Austin",
+    "country": "US",
+    "lat": 43.66663,
+    "lng": -92.97464,
+    "state": "Minnesota"
+  },
+  "508": {
+    "city": "Attleboro",
+    "country": "US",
+    "lat": 41.94454,
+    "lng": -71.28561,
+    "state": "Massachusetts"
+  },
+  "509": {
+    "city": "Kennewick",
+    "country": "US",
+    "lat": 46.21125,
+    "lng": -119.13723,
+    "state": "Washington"
+  },
+  "510": {
+    "city": "Alameda",
+    "country": "US",
+    "lat": 37.76521,
+    "lng": -122.24164,
+    "state": "California"
+  },
+  "512": {
+    "city": "Austin",
+    "country": "US",
+    "lat": 30.26715,
+    "lng": -97.74306,
+    "state": "Texas"
+  },
+  "513": {
+    "city": "Cincinnati",
+    "country": "US",
+    "lat": 39.162,
+    "lng": -84.45689,
+    "state": "Ohio"
+  },
+  "514": {
+    "city": "Jonqui\u00e8re",
+    "country": "CA",
+    "lat": 48.41648,
+    "lng": -71.24884,
+    "state": "Qu\u00e9bec"
+  },
+  "515": {
+    "city": "Ames",
+    "country": "US",
+    "lat": 42.03471,
+    "lng": -93.61994,
+    "state": "Iowa"
+  },
+  "516": {
+    "city": "Baldwin",
+    "country": "US",
+    "lat": 40.65649,
+    "lng": -73.6093,
+    "state": "New York"
+  },
+  "517": {
+    "city": "Adrian",
+    "country": "US",
+    "lat": 41.89755,
+    "lng": -84.03717,
+    "state": "Michigan"
+  },
+  "518": {
+    "city": "West Albany",
+    "country": "US",
+    "lat": 42.68313,
+    "lng": -73.77845,
+    "state": "New York"
+  },
+  "519": {
+    "city": "London",
+    "country": "CA",
+    "lat": 42.98339,
+    "lng": -81.23304,
+    "state": "Ontario"
+  },
+  "520": {
+    "city": "Casa Grande",
+    "country": "US",
+    "lat": 32.8795,
+    "lng": -111.75735,
+    "state": "Arizona"
+  },
+  "530": {
+    "city": "Chico",
+    "country": "US",
+    "lat": 39.72849,
+    "lng": -121.83748,
+    "state": "California"
+  },
+  "531": {
+    "city": "Bellevue",
+    "country": "US",
+    "lat": 41.13667,
+    "lng": -95.89084,
+    "state": "Nebraska"
+  },
+  "539": {
+    "city": "Bartlesville",
+    "country": "US",
+    "lat": 36.74731,
+    "lng": -95.98082,
+    "state": "Oklahoma"
+  },
+  "540": {
+    "city": "Blacksburg",
+    "country": "US",
+    "lat": 37.22957,
+    "lng": -80.41394,
+    "state": "Virginia"
+  },
+  "541": {
+    "city": "Albany",
+    "country": "US",
+    "lat": 44.63651,
+    "lng": -123.10593,
+    "state": "Oregon"
+  },
+  "551": {
+    "city": "Bayonne",
+    "country": "US",
+    "lat": 40.66871,
+    "lng": -74.11431,
+    "state": "New Jersey"
+  },
+  "559": {
+    "city": "Clovis",
+    "country": "US",
+    "lat": 36.82523,
+    "lng": -119.70292,
+    "state": "California"
+  },
+  "561": {
+    "city": "Boca Del Mar",
+    "country": "US",
+    "lat": 26.34508,
+    "lng": -80.14671,
+    "state": "Florida"
+  },
+  "562": {
+    "city": "Bellflower",
+    "country": "US",
+    "lat": 33.88168,
+    "lng": -118.11701,
+    "state": "California"
+  },
+  "563": {
+    "city": "Bettendorf",
+    "country": "US",
+    "lat": 41.52448,
+    "lng": -90.51569,
+    "state": "Iowa"
+  },
+  "564": {
+    "city": "Bellingham",
+    "country": "US",
+    "lat": 48.75955,
+    "lng": -122.48822,
+    "state": "Washington"
+  },
+  "567": {
+    "city": "Ashland",
+    "country": "US",
+    "lat": 40.86867,
+    "lng": -82.31822,
+    "state": "Ohio"
+  },
+  "570": {
+    "city": "Back Mountain",
+    "country": "US",
+    "lat": 41.33591,
+    "lng": -75.99631,
+    "state": "Pennsylvania"
+  },
+  "571": {
+    "city": "Alexandria",
+    "country": "US",
+    "lat": 38.80484,
+    "lng": -77.04692,
+    "state": "Virginia"
+  },
+  "572": {
+    "city": "Bethany",
+    "country": "US",
+    "lat": 35.51867,
+    "lng": -97.63226,
+    "state": "Oklahoma"
+  },
+  "573": {
+    "city": "Cape Girardeau",
+    "country": "US",
+    "lat": 37.30588,
+    "lng": -89.51815,
+    "state": "Missouri"
+  },
+  "574": {
+    "city": "Elkhart",
+    "country": "US",
+    "lat": 41.68199,
+    "lng": -85.97667,
+    "state": "Indiana"
+  },
+  "575": {
+    "city": "Alamogordo",
+    "country": "US",
+    "lat": 32.89953,
+    "lng": -105.96027,
+    "state": "New Mexico"
+  },
+  "579": {
+    "city": "Cowansville",
+    "country": "CA",
+    "lat": 45.20008,
+    "lng": -72.74913,
+    "state": "Qu\u00e9bec"
+  },
+  "580": {
+    "city": "Altus",
+    "country": "US",
+    "lat": 34.63813,
+    "lng": -99.33398,
+    "state": "Oklahoma"
+  },
+  "581": {
+    "city": "Alma",
+    "country": "CA",
+    "lat": 48.55009,
+    "lng": -71.6491,
+    "state": "Qu\u00e9bec"
+  },
+  "585": {
+    "city": "Brighton",
+    "country": "US",
+    "lat": 43.14756,
+    "lng": -77.55055,
+    "state": "New York"
+  },
+  "586": {
+    "city": "Clinton",
+    "country": "US",
+    "lat": 42.58698,
+    "lng": -82.91992,
+    "state": "Michigan"
+  },
+  "587": {
+    "city": "Bonnyville",
+    "country": "CA",
+    "lat": 54.26684,
+    "lng": -110.73505,
+    "state": "Alberta"
+  },
+  "601": {
+    "city": "Clinton",
+    "country": "US",
+    "lat": 32.34153,
+    "lng": -90.32176,
+    "state": "Mississippi"
+  },
+  "602": {
+    "city": "Phoenix",
+    "country": "US",
+    "lat": 33.44838,
+    "lng": -112.07404,
+    "state": "Arizona"
+  },
+  "603": {
+    "city": "East Concord",
+    "country": "US",
+    "lat": 43.24202,
+    "lng": -71.53813,
+    "state": "New Hampshire"
+  },
+  "604": {
+    "city": "New Westminster",
+    "country": "CA",
+    "lat": 49.20678,
+    "lng": -122.91092,
+    "state": "British Columbia"
+  },
+  "605": {
+    "city": "Aberdeen",
+    "country": "US",
+    "lat": 45.4647,
+    "lng": -98.48648,
+    "state": "South Dakota"
+  },
+  "606": {
+    "city": "Ashland",
+    "country": "US",
+    "lat": 38.47841,
+    "lng": -82.63794,
+    "state": "Kentucky"
+  },
+  "607": {
+    "city": "Binghamton",
+    "country": "US",
+    "lat": 42.09869,
+    "lng": -75.91797,
+    "state": "New York"
+  },
+  "608": {
+    "city": "Beloit",
+    "country": "US",
+    "lat": 42.50835,
+    "lng": -89.03178,
+    "state": "Wisconsin"
+  },
+  "609": {
+    "city": "Atlantic City",
+    "country": "US",
+    "lat": 39.36428,
+    "lng": -74.42293,
+    "state": "New Jersey"
+  },
+  "610": {
+    "city": "Allentown",
+    "country": "US",
+    "lat": 40.60843,
+    "lng": -75.49018,
+    "state": "Pennsylvania"
+  },
+  "612": {
+    "city": "Crystal",
+    "country": "US",
+    "lat": 45.03274,
+    "lng": -93.36023,
+    "state": "Minnesota"
+  },
+  "613": {
+    "city": "Perth",
+    "country": "CA",
+    "lat": 44.90011,
+    "lng": -76.24939,
+    "state": "Ontario"
+  },
+  "614": {
+    "city": "Columbus",
+    "country": "US",
+    "lat": 39.96118,
+    "lng": -82.99879,
+    "state": "Ohio"
+  },
+  "615": {
+    "city": "Brentwood",
+    "country": "US",
+    "lat": 36.03312,
+    "lng": -86.78278,
+    "state": "Tennessee"
+  },
+  "616": {
+    "city": "Forest Hills",
+    "country": "US",
+    "lat": 42.95947,
+    "lng": -85.48975,
+    "state": "Michigan"
+  },
+  "617": {
+    "city": "Belmont",
+    "country": "US",
+    "lat": 42.39593,
+    "lng": -71.17867,
+    "state": "Massachusetts"
+  },
+  "618": {
+    "city": "East Alton",
+    "country": "US",
+    "lat": 38.88033,
+    "lng": -90.11122,
+    "state": "Illinois"
+  },
+  "619": {
+    "city": "Chula Vista",
+    "country": "US",
+    "lat": 32.64005,
+    "lng": -117.0842,
+    "state": "California"
+  },
+  "620": {
+    "city": "Dodge City",
+    "country": "US",
+    "lat": 37.7528,
+    "lng": -100.01708,
+    "state": "Kansas"
+  },
+  "623": {
+    "city": "Avondale",
+    "country": "US",
+    "lat": 33.4356,
+    "lng": -112.3496,
+    "state": "Arizona"
+  },
+  "626": {
+    "city": "Alhambra",
+    "country": "US",
+    "lat": 34.09529,
+    "lng": -118.12701,
+    "state": "California"
+  },
+  "628": {
+    "city": "Novato",
+    "country": "US",
+    "lat": 38.10742,
+    "lng": -122.5697,
+    "state": "California"
+  },
+  "629": {
+    "city": "Brentwood",
+    "country": "US",
+    "lat": 36.03312,
+    "lng": -86.78278,
+    "state": "Tennessee"
+  },
+  "630": {
+    "city": "Addison",
+    "country": "US",
+    "lat": 41.9317,
+    "lng": -87.98896,
+    "state": "Illinois"
+  },
+  "631": {
+    "city": "North Bay Shore",
+    "country": "US",
+    "lat": 40.73621,
+    "lng": -73.26262,
+    "state": "New York"
+  },
+  "636": {
+    "city": "Ballwin",
+    "country": "US",
+    "lat": 38.59505,
+    "lng": -90.54623,
+    "state": "Missouri"
+  },
+  "639": {
+    "city": "Prince Albert",
+    "country": "CA",
+    "lat": 53.20008,
+    "lng": -105.76772,
+    "state": "Saskatchewan"
+  },
+  "641": {
+    "city": "Marshalltown",
+    "country": "US",
+    "lat": 42.04943,
+    "lng": -92.90798,
+    "state": "Iowa"
+  },
+  "646": {
+    "city": "New York City",
+    "country": "US",
+    "lat": 40.71427,
+    "lng": -74.00597,
+    "state": "New York"
+  },
+  "647": {
+    "city": "Toronto",
+    "country": "CA",
+    "lat": 43.70011,
+    "lng": -79.4163,
+    "state": "Ontario"
+  },
+  "650": {
+    "city": "Belmont",
+    "country": "US",
+    "lat": 37.52021,
+    "lng": -122.2758,
+    "state": "California"
+  },
+  "651": {
+    "city": "Apple Valley",
+    "country": "US",
+    "lat": 44.73191,
+    "lng": -93.21772,
+    "state": "Minnesota"
+  },
+  "657": {
+    "city": "Anaheim",
+    "country": "US",
+    "lat": 33.83529,
+    "lng": -117.9145,
+    "state": "California"
+  },
+  "660": {
+    "city": "Sedalia",
+    "country": "US",
+    "lat": 38.70446,
+    "lng": -93.22826,
+    "state": "Missouri"
+  },
+  "661": {
+    "city": "Bakersfield",
+    "country": "US",
+    "lat": 35.37329,
+    "lng": -119.01871,
+    "state": "California"
+  },
+  "662": {
+    "city": "Clarksdale",
+    "country": "US",
+    "lat": 34.20011,
+    "lng": -90.57093,
+    "state": "Mississippi"
+  },
+  "667": {
+    "city": "Annapolis",
+    "country": "US",
+    "lat": 38.97845,
+    "lng": -76.49218,
+    "state": "Maryland"
+  },
+  "669": {
+    "city": "Campbell",
+    "country": "US",
+    "lat": 37.28717,
+    "lng": -121.94996,
+    "state": "California"
+  },
+  "678": {
+    "city": "Alpharetta",
+    "country": "US",
+    "lat": 34.07538,
+    "lng": -84.29409,
+    "state": "Georgia"
+  },
+  "680": {
+    "city": "Auburn",
+    "country": "US",
+    "lat": 42.93173,
+    "lng": -76.56605,
+    "state": "New York"
+  },
+  "681": {
+    "city": "South Charleston",
+    "country": "US",
+    "lat": 38.36843,
+    "lng": -81.69957,
+    "state": "West Virginia"
+  },
+  "682": {
+    "city": "Arlington",
+    "country": "US",
+    "lat": 32.73569,
+    "lng": -97.10807,
+    "state": "Texas"
+  },
+  "701": {
+    "city": "Bismarck",
+    "country": "US",
+    "lat": 46.80833,
+    "lng": -100.78374,
+    "state": "North Dakota"
+  },
+  "702": {
+    "city": "Henderson",
+    "country": "US",
+    "lat": 36.0397,
+    "lng": -114.98194,
+    "state": "Nevada"
+  },
+  "703": {
+    "city": "Alexandria",
+    "country": "US",
+    "lat": 38.80484,
+    "lng": -77.04692,
+    "state": "Virginia"
+  },
+  "704": {
+    "city": "Charlotte",
+    "country": "US",
+    "lat": 35.22709,
+    "lng": -80.84313,
+    "state": "North Carolina"
+  },
+  "705": {
+    "city": "Peterborough",
+    "country": "CA",
+    "lat": 44.30012,
+    "lng": -78.31623,
+    "state": "Ontario"
+  },
+  "706": {
+    "city": "Athens",
+    "country": "US",
+    "lat": 33.96095,
+    "lng": -83.37794,
+    "state": "Georgia"
+  },
+  "707": {
+    "city": "Benicia",
+    "country": "US",
+    "lat": 38.04937,
+    "lng": -122.15858,
+    "state": "California"
+  },
+  "708": {
+    "city": "Bellwood",
+    "country": "US",
+    "lat": 41.88142,
+    "lng": -87.88312,
+    "state": "Illinois"
+  },
+  "709": {
+    "city": "Stephenville",
+    "country": "CA",
+    "lat": 48.55001,
+    "lng": -58.5818,
+    "state": "Newfoundland and Labrador"
+  },
+  "712": {
+    "city": "Council Bluffs",
+    "country": "US",
+    "lat": 41.26194,
+    "lng": -95.86083,
+    "state": "Iowa"
+  },
+  "713": {
+    "city": "Alvin",
+    "country": "US",
+    "lat": 29.42385,
+    "lng": -95.2441,
+    "state": "Texas"
+  },
+  "714": {
+    "city": "Anaheim",
+    "country": "US",
+    "lat": 33.83529,
+    "lng": -117.9145,
+    "state": "California"
+  },
+  "715": {
+    "city": "Eau Claire",
+    "country": "US",
+    "lat": 44.81135,
+    "lng": -91.49849,
+    "state": "Wisconsin"
+  },
+  "716": {
+    "city": "Buffalo",
+    "country": "US",
+    "lat": 42.88645,
+    "lng": -78.87837,
+    "state": "New York"
+  },
+  "717": {
+    "city": "Harrisburg",
+    "country": "US",
+    "lat": 40.2737,
+    "lng": -76.88442,
+    "state": "Pennsylvania"
+  },
+  "718": {
+    "city": "The Bronx",
+    "country": "US",
+    "lat": 40.84985,
+    "lng": -73.86641,
+    "state": "New York"
+  },
+  "719": {
+    "city": "Colorado Springs",
+    "country": "US",
+    "lat": 38.83388,
+    "lng": -104.82136,
+    "state": "Colorado"
+  },
+  "720": {
+    "city": "Arvada",
+    "country": "US",
+    "lat": 39.80276,
+    "lng": -105.08748,
+    "state": "Colorado"
+  },
+  "724": {
+    "city": "Monroeville",
+    "country": "US",
+    "lat": 40.42118,
+    "lng": -79.7881,
+    "state": "Pennsylvania"
+  },
+  "725": {
+    "city": "Henderson",
+    "country": "US",
+    "lat": 36.0397,
+    "lng": -114.98194,
+    "state": "Nevada"
+  },
+  "726": {
+    "city": "San Antonio",
+    "country": "US",
+    "lat": 29.42412,
+    "lng": -98.49363,
+    "state": "Texas"
+  },
+  "727": {
+    "city": "Bayonet Point",
+    "country": "US",
+    "lat": 28.32667,
+    "lng": -82.68343,
+    "state": "Florida"
+  },
+  "731": {
+    "city": "Jackson",
+    "country": "US",
+    "lat": 35.61452,
+    "lng": -88.81395,
+    "state": "Tennessee"
+  },
+  "732": {
+    "city": "Carteret",
+    "country": "US",
+    "lat": 40.57733,
+    "lng": -74.2282,
+    "state": "New Jersey"
+  },
+  "734": {
+    "city": "Ann Arbor",
+    "country": "US",
+    "lat": 42.27756,
+    "lng": -83.74088,
+    "state": "Michigan"
+  },
+  "737": {
+    "city": "Austin",
+    "country": "US",
+    "lat": 30.26715,
+    "lng": -97.74306,
+    "state": "Texas"
+  },
+  "740": {
+    "city": "Athens",
+    "country": "US",
+    "lat": 39.32924,
+    "lng": -82.10126,
+    "state": "Ohio"
+  },
+  "743": {
+    "city": "Asheboro",
+    "country": "US",
+    "lat": 35.70791,
+    "lng": -79.81364,
+    "state": "North Carolina"
+  },
+  "747": {
+    "city": "Agoura Hills",
+    "country": "US",
+    "lat": 34.13639,
+    "lng": -118.77453,
+    "state": "California"
+  },
+  "754": {
+    "city": "Coconut Creek",
+    "country": "US",
+    "lat": 26.25175,
+    "lng": -80.17894,
+    "state": "Florida"
+  },
+  "757": {
+    "city": "Chesapeake",
+    "country": "US",
+    "lat": 36.81904,
+    "lng": -76.27494,
+    "state": "Virginia"
+  },
+  "760": {
+    "city": "Apple Valley",
+    "country": "US",
+    "lat": 34.50083,
+    "lng": -117.18588,
+    "state": "California"
+  },
+  "762": {
+    "city": "Athens",
+    "country": "US",
+    "lat": 33.96095,
+    "lng": -83.37794,
+    "state": "Georgia"
+  },
+  "763": {
+    "city": "Blaine",
+    "country": "US",
+    "lat": 45.1608,
+    "lng": -93.23495,
+    "state": "Minnesota"
+  },
+  "765": {
+    "city": "Anderson",
+    "country": "US",
+    "lat": 40.10532,
+    "lng": -85.68025,
+    "state": "Indiana"
+  },
+  "769": {
+    "city": "Clinton",
+    "country": "US",
+    "lat": 32.34153,
+    "lng": -90.32176,
+    "state": "Mississippi"
+  },
+  "770": {
+    "city": "Alpharetta",
+    "country": "US",
+    "lat": 34.07538,
+    "lng": -84.29409,
+    "state": "Georgia"
+  },
+  "771": {
+    "city": "Washington",
+    "country": "US",
+    "lat": 38.89511,
+    "lng": -77.03637,
+    "state": "District of Columbia"
+  },
+  "772": {
+    "city": "Fort Pierce South",
+    "country": "US",
+    "lat": 27.40962,
+    "lng": -80.35483,
+    "state": "Florida"
+  },
+  "773": {
+    "city": "West Chicago",
+    "country": "US",
+    "lat": 41.88475,
+    "lng": -88.20396,
+    "state": "Illinois"
+  },
+  "774": {
+    "city": "Attleboro",
+    "country": "US",
+    "lat": 41.94454,
+    "lng": -71.28561,
+    "state": "Massachusetts"
+  },
+  "775": {
+    "city": "Carson City",
+    "country": "US",
+    "lat": 39.1638,
+    "lng": -119.7674,
+    "state": "Nevada"
+  },
+  "778": {
+    "city": "West Vancouver",
+    "country": "CA",
+    "lat": 49.36672,
+    "lng": -123.16652,
+    "state": "British Columbia"
+  },
+  "779": {
+    "city": "Belvidere",
+    "country": "US",
+    "lat": 42.26391,
+    "lng": -88.84427,
+    "state": "Illinois"
+  },
+  "780": {
+    "city": "Edmonton",
+    "country": "CA",
+    "lat": 53.55014,
+    "lng": -113.46871,
+    "state": "Alberta"
+  },
+  "781": {
+    "city": "Arlington",
+    "country": "US",
+    "lat": 42.41537,
+    "lng": -71.15644,
+    "state": "Massachusetts"
+  },
+  "782": {
+    "city": "Halifax",
+    "country": "CA",
+    "lat": 44.64533,
+    "lng": -63.57239,
+    "state": "Nova Scotia"
+  },
+  "785": {
+    "city": "Hays",
+    "country": "US",
+    "lat": 38.87918,
+    "lng": -99.32677,
+    "state": "Kansas"
+  },
+  "786": {
+    "city": "Aventura",
+    "country": "US",
+    "lat": 25.95648,
+    "lng": -80.13921,
+    "state": "Florida"
+  },
+  "800": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "801": {
+    "city": "American Fork",
+    "country": "US",
+    "lat": 40.3769,
+    "lng": -111.79576,
+    "state": "Utah"
+  },
+  "802": {
+    "city": "South Burlington",
+    "country": "US",
+    "lat": 44.46699,
+    "lng": -73.17096,
+    "state": "Vermont"
+  },
+  "803": {
+    "city": "Aiken",
+    "country": "US",
+    "lat": 33.56042,
+    "lng": -81.71955,
+    "state": "South Carolina"
+  },
+  "804": {
+    "city": "Hopewell",
+    "country": "US",
+    "lat": 37.30432,
+    "lng": -77.2872,
+    "state": "Virginia"
+  },
+  "805": {
+    "city": "Atascadero",
+    "country": "US",
+    "lat": 35.48942,
+    "lng": -120.67073,
+    "state": "California"
+  },
+  "806": {
+    "city": "Amarillo",
+    "country": "US",
+    "lat": 35.222,
+    "lng": -101.8313,
+    "state": "Texas"
+  },
+  "807": {
+    "city": "Dryden",
+    "country": "CA",
+    "lat": 49.78334,
+    "lng": -92.75032,
+    "state": "Ontario"
+  },
+  "808": {
+    "city": "Hilo",
+    "country": "US",
+    "lat": 19.72991,
+    "lng": -155.09073,
+    "state": "Hawaii"
+  },
+  "810": {
+    "city": "Burton",
+    "country": "US",
+    "lat": 42.99947,
+    "lng": -83.61634,
+    "state": "Michigan"
+  },
+  "812": {
+    "city": "Bloomington",
+    "country": "US",
+    "lat": 39.16533,
+    "lng": -86.52639,
+    "state": "Indiana"
+  },
+  "813": {
+    "city": "Brandon",
+    "country": "US",
+    "lat": 27.9378,
+    "lng": -82.28592,
+    "state": "Florida"
+  },
+  "814": {
+    "city": "Altoona",
+    "country": "US",
+    "lat": 40.51868,
+    "lng": -78.39474,
+    "state": "Pennsylvania"
+  },
+  "815": {
+    "city": "Belvidere",
+    "country": "US",
+    "lat": 42.26391,
+    "lng": -88.84427,
+    "state": "Illinois"
+  },
+  "816": {
+    "city": "Belton",
+    "country": "US",
+    "lat": 38.81195,
+    "lng": -94.5319,
+    "state": "Missouri"
+  },
+  "817": {
+    "city": "Arlington",
+    "country": "US",
+    "lat": 32.73569,
+    "lng": -97.10807,
+    "state": "Texas"
+  },
+  "818": {
+    "city": "Agoura Hills",
+    "country": "US",
+    "lat": 34.13639,
+    "lng": -118.77453,
+    "state": "California"
+  },
+  "819": {
+    "city": "Sherbrooke",
+    "country": "CA",
+    "lat": 45.40008,
+    "lng": -71.89908,
+    "state": "Qu\u00e9bec"
+  },
+  "820": {
+    "city": "Atascadero",
+    "country": "US",
+    "lat": 35.48942,
+    "lng": -120.67073,
+    "state": "California"
+  },
+  "825": {
+    "city": "Calgary",
+    "country": "CA",
+    "lat": 51.05011,
+    "lng": -114.08529,
+    "state": "Alberta"
+  },
+  "826": {
+    "city": "Benicia",
+    "country": "US",
+    "lat": 38.04937,
+    "lng": -122.15858,
+    "state": "California"
+  },
+  "828": {
+    "city": "Asheville",
+    "country": "US",
+    "lat": 35.60095,
+    "lng": -82.55402,
+    "state": "North Carolina"
+  },
+  "830": {
+    "city": "Del Rio",
+    "country": "US",
+    "lat": 29.36273,
+    "lng": -100.89676,
+    "state": "Texas"
+  },
+  "831": {
+    "city": "Hollister",
+    "country": "US",
+    "lat": 36.85245,
+    "lng": -121.4016,
+    "state": "California"
+  },
+  "832": {
+    "city": "Alvin",
+    "country": "US",
+    "lat": 29.42385,
+    "lng": -95.2441,
+    "state": "Texas"
+  },
+  "833": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "838": {
+    "city": "West Albany",
+    "country": "US",
+    "lat": 42.68313,
+    "lng": -73.77845,
+    "state": "New York"
+  },
+  "840": {
+    "city": "Chino",
+    "country": "US",
+    "lat": 34.01223,
+    "lng": -117.68894,
+    "state": "California"
+  },
+  "843": {
+    "city": "North Charleston",
+    "country": "US",
+    "lat": 32.85462,
+    "lng": -79.97481,
+    "state": "South Carolina"
+  },
+  "844": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "845": {
+    "city": "Kingston",
+    "country": "US",
+    "lat": 41.92704,
+    "lng": -73.99736,
+    "state": "New York"
+  },
+  "847": {
+    "city": "Algonquin",
+    "country": "US",
+    "lat": 42.16558,
+    "lng": -88.29425,
+    "state": "Illinois"
+  },
+  "848": {
+    "city": "Carteret",
+    "country": "US",
+    "lat": 40.57733,
+    "lng": -74.2282,
+    "state": "New Jersey"
+  },
+  "850": {
+    "city": "Bellview",
+    "country": "US",
+    "lat": 30.46159,
+    "lng": -87.31497,
+    "state": "Florida"
+  },
+  "854": {
+    "city": "North Charleston",
+    "country": "US",
+    "lat": 32.85462,
+    "lng": -79.97481,
+    "state": "South Carolina"
+  },
+  "855": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "856": {
+    "city": "Bridgeton",
+    "country": "US",
+    "lat": 39.42734,
+    "lng": -75.23408,
+    "state": "New Jersey"
+  },
+  "857": {
+    "city": "Belmont",
+    "country": "US",
+    "lat": 42.39593,
+    "lng": -71.17867,
+    "state": "Massachusetts"
+  },
+  "858": {
+    "city": "Poway",
+    "country": "US",
+    "lat": 32.96282,
+    "lng": -117.03586,
+    "state": "California"
+  },
+  "859": {
+    "city": "Covington",
+    "country": "US",
+    "lat": 39.08367,
+    "lng": -84.50855,
+    "state": "Kentucky"
+  },
+  "860": {
+    "city": "Bristol",
+    "country": "US",
+    "lat": 41.67176,
+    "lng": -72.94927,
+    "state": "Connecticut"
+  },
+  "862": {
+    "city": "Belleville",
+    "country": "US",
+    "lat": 40.79371,
+    "lng": -74.15014,
+    "state": "New Jersey"
+  },
+  "863": {
+    "city": "Lakeland",
+    "country": "US",
+    "lat": 28.03947,
+    "lng": -81.9498,
+    "state": "Florida"
+  },
+  "864": {
+    "city": "Anderson",
+    "country": "US",
+    "lat": 34.50344,
+    "lng": -82.65013,
+    "state": "South Carolina"
+  },
+  "865": {
+    "city": "Knoxville",
+    "country": "US",
+    "lat": 35.96064,
+    "lng": -83.92074,
+    "state": "Tennessee"
+  },
+  "866": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "867": {
+    "city": "Yellowknife",
+    "country": "CA",
+    "lat": 62.456,
+    "lng": -114.35255,
+    "state": "Northwest Territories"
+  },
+  "870": {
+    "city": "El Dorado",
+    "country": "US",
+    "lat": 33.20763,
+    "lng": -92.66627,
+    "state": "Arkansas"
+  },
+  "872": {
+    "city": "West Chicago",
+    "country": "US",
+    "lat": 41.88475,
+    "lng": -88.20396,
+    "state": "Illinois"
+  },
+  "873": {
+    "city": "Sherbrooke",
+    "country": "CA",
+    "lat": 45.40008,
+    "lng": -71.89908,
+    "state": "Qu\u00e9bec"
+  },
+  "877": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "878": {
+    "city": "Bethel Park",
+    "country": "US",
+    "lat": 40.32757,
+    "lng": -80.0395,
+    "state": "Pennsylvania"
+  },
+  "888": {
+    "city": "Toll-Free",
+    "country": "US",
+    "lat": 0,
+    "lng": 0,
+    "state": "N/A"
+  },
+  "901": {
+    "city": "Bartlett",
+    "country": "US",
+    "lat": 35.20453,
+    "lng": -89.87398,
+    "state": "Tennessee"
+  },
+  "902": {
+    "city": "Charlottetown",
+    "country": "CA",
+    "lat": 46.23525,
+    "lng": -63.12671,
+    "state": "Prince Edward Island"
+  },
+  "903": {
+    "city": "Corsicana",
+    "country": "US",
+    "lat": 32.09543,
+    "lng": -96.46887,
+    "state": "Texas"
+  },
+  "904": {
+    "city": "Jacksonville",
+    "country": "US",
+    "lat": 30.33218,
+    "lng": -81.65565,
+    "state": "Florida"
+  },
+  "905": {
+    "city": "Markham",
+    "country": "CA",
+    "lat": 43.86682,
+    "lng": -79.2663,
+    "state": "Ontario"
+  },
+  "907": {
+    "city": "Anchorage",
+    "country": "US",
+    "lat": 61.21806,
+    "lng": -149.90028,
+    "state": "Alaska"
+  },
+  "908": {
+    "city": "Cranford",
+    "country": "US",
+    "lat": 40.65844,
+    "lng": -74.29959,
+    "state": "New Jersey"
+  },
+  "909": {
+    "city": "Chino",
+    "country": "US",
+    "lat": 34.01223,
+    "lng": -117.68894,
+    "state": "California"
+  },
+  "910": {
+    "city": "Fayetteville",
+    "country": "US",
+    "lat": 35.05266,
+    "lng": -78.87836,
+    "state": "North Carolina"
+  },
+  "912": {
+    "city": "Hinesville",
+    "country": "US",
+    "lat": 31.84688,
+    "lng": -81.59595,
+    "state": "Georgia"
+  },
+  "913": {
+    "city": "Kansas City",
+    "country": "US",
+    "lat": 39.11417,
+    "lng": -94.62746,
+    "state": "Kansas"
+  },
+  "914": {
+    "city": "Harrison",
+    "country": "US",
+    "lat": 40.96899,
+    "lng": -73.71263,
+    "state": "New York"
+  },
+  "915": {
+    "city": "El Paso",
+    "country": "US",
+    "lat": 31.75872,
+    "lng": -106.48693,
+    "state": "Texas"
+  },
+  "916": {
+    "city": "Arden-Arcade",
+    "country": "US",
+    "lat": 38.6025,
+    "lng": -121.37854,
+    "state": "California"
+  },
+  "917": {
+    "city": "The Bronx",
+    "country": "US",
+    "lat": 40.84985,
+    "lng": -73.86641,
+    "state": "New York"
+  },
+  "918": {
+    "city": "Bartlesville",
+    "country": "US",
+    "lat": 36.74731,
+    "lng": -95.98082,
+    "state": "Oklahoma"
+  },
+  "919": {
     "city": "Apex",
-    "state": "North Carolina",
-    "country": "US"
+    "country": "US",
+    "lat": 35.73265,
+    "lng": -78.85029,
+    "state": "North Carolina"
+  },
+  "920": {
+    "city": "Appleton",
+    "country": "US",
+    "lat": 44.26193,
+    "lng": -88.41538,
+    "state": "Wisconsin"
+  },
+  "925": {
+    "city": "Antioch",
+    "country": "US",
+    "lat": 38.00492,
+    "lng": -121.80579,
+    "state": "California"
+  },
+  "928": {
+    "city": "Bullhead City",
+    "country": "US",
+    "lat": 35.14778,
+    "lng": -114.5683,
+    "state": "Arizona"
+  },
+  "929": {
+    "city": "The Bronx",
+    "country": "US",
+    "lat": 40.84985,
+    "lng": -73.86641,
+    "state": "New York"
+  },
+  "930": {
+    "city": "Bloomington",
+    "country": "US",
+    "lat": 39.16533,
+    "lng": -86.52639,
+    "state": "Indiana"
+  },
+  "931": {
+    "city": "Clarksville",
+    "country": "US",
+    "lat": 36.52977,
+    "lng": -87.35945,
+    "state": "Tennessee"
+  },
+  "934": {
+    "city": "North Bay Shore",
+    "country": "US",
+    "lat": 40.73621,
+    "lng": -73.26262,
+    "state": "New York"
+  },
+  "935": {
+    "city": "Chula Vista",
+    "country": "US",
+    "lat": 32.64005,
+    "lng": -117.0842,
+    "state": "California"
+  },
+  "936": {
+    "city": "Conroe",
+    "country": "US",
+    "lat": 30.31188,
+    "lng": -95.45605,
+    "state": "Texas"
+  },
+  "937": {
+    "city": "Beavercreek",
+    "country": "US",
+    "lat": 39.70923,
+    "lng": -84.06327,
+    "state": "Ohio"
+  },
+  "938": {
+    "city": "Anniston",
+    "country": "US",
+    "lat": 33.65983,
+    "lng": -85.83163,
+    "state": "Alabama"
+  },
+  "940": {
+    "city": "Denton",
+    "country": "US",
+    "lat": 33.21484,
+    "lng": -97.13307,
+    "state": "Texas"
+  },
+  "941": {
+    "city": "South Bradenton",
+    "country": "US",
+    "lat": 27.4631,
+    "lng": -82.58176,
+    "state": "Florida"
+  },
+  "947": {
+    "city": "West Bloomfield Township",
+    "country": "US",
+    "lat": 42.56891,
+    "lng": -83.38356,
+    "state": "Michigan"
+  },
+  "949": {
+    "city": "Aliso Viejo",
+    "country": "US",
+    "lat": 33.56504,
+    "lng": -117.72712,
+    "state": "California"
+  },
+  "951": {
+    "city": "Banning",
+    "country": "US",
+    "lat": 33.92557,
+    "lng": -116.87641,
+    "state": "California"
+  },
+  "952": {
+    "city": "Bloomington",
+    "country": "US",
+    "lat": 44.8408,
+    "lng": -93.29828,
+    "state": "Minnesota"
+  },
+  "954": {
+    "city": "Coconut Creek",
+    "country": "US",
+    "lat": 26.25175,
+    "lng": -80.17894,
+    "state": "Florida"
+  },
+  "956": {
+    "city": "Brownsville",
+    "country": "US",
+    "lat": 25.90175,
+    "lng": -97.49748,
+    "state": "Texas"
+  },
+  "959": {
+    "city": "Bristol",
+    "country": "US",
+    "lat": 41.67176,
+    "lng": -72.94927,
+    "state": "Connecticut"
+  },
+  "970": {
+    "city": "Fort Collins",
+    "country": "US",
+    "lat": 40.58526,
+    "lng": -105.08442,
+    "state": "Colorado"
+  },
+  "971": {
+    "city": "Aloha",
+    "country": "US",
+    "lat": 45.49428,
+    "lng": -122.86705,
+    "state": "Oregon"
+  },
+  "972": {
+    "city": "Allen",
+    "country": "US",
+    "lat": 33.10317,
+    "lng": -96.67055,
+    "state": "Texas"
+  },
+  "973": {
+    "city": "Belleville",
+    "country": "US",
+    "lat": 40.79371,
+    "lng": -74.15014,
+    "state": "New Jersey"
+  },
+  "978": {
+    "city": "Beverly",
+    "country": "US",
+    "lat": 42.55843,
+    "lng": -70.88005,
+    "state": "Massachusetts"
+  },
+  "979": {
+    "city": "Bryan",
+    "country": "US",
+    "lat": 30.67436,
+    "lng": -96.36996,
+    "state": "Texas"
+  },
+  "980": {
+    "city": "Charlotte",
+    "country": "US",
+    "lat": 35.22709,
+    "lng": -80.84313,
+    "state": "North Carolina"
+  },
+  "983": {
+    "city": "Arvada",
+    "country": "US",
+    "lat": 39.80276,
+    "lng": -105.08748,
+    "state": "Colorado"
+  },
+  "984": {
+    "city": "Apex",
+    "country": "US",
+    "lat": 35.73265,
+    "lng": -78.85029,
+    "state": "North Carolina"
   },
   "985": {
+    "city": "Houma",
+    "country": "US",
     "lat": 29.59577,
     "lng": -90.71953,
-    "city": "Houma",
-    "state": "Louisiana",
-    "country": "US"
+    "state": "Louisiana"
+  },
+  "986": {
+    "city": "Boise",
+    "country": "US",
+    "lat": 43.6135,
+    "lng": -116.20345,
+    "state": "Idaho"
   },
   "989": {
+    "city": "Bay City",
+    "country": "US",
     "lat": 43.59447,
     "lng": -83.88886,
-    "city": "Bay City",
-    "state": "Michigan",
-    "country": "US"
+    "state": "Michigan"
   }
 }

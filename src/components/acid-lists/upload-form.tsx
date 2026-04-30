@@ -37,7 +37,7 @@ export default function UploadForm({ dialerId }: UploadFormProps) {
     setIsLoading(true);
     setError(null);
     try {
-      const { dids } = await parseCSV(pendingFile);
+      const { dids, unmapped } = await parseCSV(pendingFile);
       const didStrings = dids.map((d) => d.cleaned);
       if (didStrings.length === 0) {
         setError("No DIDs parsed from this CSV.");
@@ -57,7 +57,13 @@ export default function UploadForm({ dialerId }: UploadFormProps) {
         setError(body.error ?? `HTTP ${res.status}`);
         return;
       }
-      setStatus(`Uploaded ${didStrings.length} DIDs as "${listName.trim()}".`);
+      const unmappedNote =
+        unmapped.length > 0
+          ? ` (${unmapped.length} had unrecognized area codes — still uploaded)`
+          : "";
+      setStatus(
+        `Uploaded ${didStrings.length} DIDs as "${listName.trim()}"${unmappedNote}.`
+      );
       setPendingFile(null);
       setListName("");
       startTransition(() => router.refresh());
