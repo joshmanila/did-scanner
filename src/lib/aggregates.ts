@@ -369,7 +369,7 @@ export async function getDialerOverview(
 
   const augmented = didRollups.map((r) => {
     const td = Number(r.totalDials);
-    const perDay = activeDays > 0 ? td / activeDays : td;
+    const perDay = activeDays > 0 ? td / activeDays : 0;
     const band = utilBand(td, activeDays);
     return {
       didId: r.didId,
@@ -537,7 +537,7 @@ export async function getDidRowsForDialer(
       did: r.did,
       areaCode: r.areaCode,
       totalDials,
-      dialsPerDay: activeDays > 0 ? totalDials / activeDays : totalDials,
+      dialsPerDay: activeDays > 0 ? totalDials / activeDays : 0,
       totalAnswered,
       answeredPct: totalDials > 0 ? totalAnswered / totalDials : 0,
       avgLengthSec: totalAnswered > 0 ? totalSec / totalAnswered : 0,

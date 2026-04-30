@@ -80,6 +80,26 @@ export async function runFullSync(
     throw new Error(`Dialer not found: ${dialerId}`);
   }
 
+  // Mark any prior "running" rows for this dialer older than 10 min as
+  // failed — they were killed mid-stream (Vercel timeout) and never reached
+  // their own catch handler.
+  const staleCutoff = new Date(Date.now() - 10 * 60 * 1000);
+  await db
+    .update(syncRuns)
+    .set({
+      status: "failed",
+      completedAt: new Date(),
+      errorMessage:
+        "Sync killed mid-run (likely Vercel function timeout). Marked failed by next sync start.",
+    })
+    .where(
+      and(
+        eq(syncRuns.dialerId, dialerId),
+        eq(syncRuns.status, "running"),
+        sql`${syncRuns.startedAt} < ${staleCutoff}`
+      )
+    );
+
   const syncRunRows = await db
     .insert(syncRuns)
     .values({
@@ -100,7 +120,7 @@ export async function runFullSync(
     const campaignMap = new Map<string, CampaignSeen>();
     let pagesFetched = 0;
     let rowsProcessed = 0;
-    const diag = { callerIdHits: 0, fellBackToNumberDialed: 0, noDid: 0 };
+    const diag = { callerIdHits: 0, noDid: 0 };
 
     const iterator = client.streamCallLogs({
       start_date: formatConvosoDate(windowFrom),
@@ -116,7 +136,7 @@ export async function runFullSync(
       }
     }
     console.log(
-      `[sync/full] diag dialer=${dialer.name} rows=${rowsProcessed} callerIdHits=${diag.callerIdHits} fellBackToNumberDialed=${diag.fellBackToNumberDialed} noDid=${diag.noDid}`
+      `[sync/full] diag dialer=${dialer.name} rows=${rowsProcessed} callerIdHits=${diag.callerIdHits} noDid=${diag.noDid}`
     );
 
     const uniqueDids = new Set<string>();
@@ -186,17 +206,14 @@ function processRow(
   didBuckets: Map<string, DidDailyBucket>,
   dialerBuckets: Map<string, DialerDailyBucket>,
   campaignMap: Map<string, CampaignSeen>,
-  diag: { callerIdHits: number; fellBackToNumberDialed: number; noDid: number }
+  diag: { callerIdHits: number; noDid: number }
 ) {
-  const fromCaller = cleanDid(row.caller_id_displayed);
-  const fromDialed = fromCaller ? null : cleanDid(row.number_dialed);
-  const did = fromCaller ?? fromDialed;
+  const did = cleanDid(row.caller_id_displayed);
   if (!did) {
     diag.noDid += 1;
     return;
   }
-  if (fromCaller) diag.callerIdHits += 1;
-  else diag.fellBackToNumberDialed += 1;
+  diag.callerIdHits += 1;
   const areaCode = did.slice(0, 3);
   const callDateMs = parseConvosoDateAsUtcMs(row.call_date);
   const statDate = nyDateString(new Date(callDateMs));

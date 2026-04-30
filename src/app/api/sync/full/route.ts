@@ -4,7 +4,7 @@ import { dialers } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import { runFullSync } from "@/lib/sync/full";
 
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 function authorized(request: Request): boolean {
   const expected = process.env.VERCEL_CRON_SECRET;

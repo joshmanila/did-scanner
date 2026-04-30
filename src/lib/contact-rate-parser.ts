@@ -24,6 +24,15 @@ function cleanDid(raw: string | null | undefined): string | null {
   return null;
 }
 
+function parseIntStripped(raw: string | undefined): number | null {
+  if (raw === undefined) return null;
+  const stripped = raw.replace(/,/g, "").trim();
+  if (stripped === "") return 0;
+  const n = parseInt(stripped, 10);
+  if (!Number.isFinite(n)) return null;
+  return n;
+}
+
 function splitRow(line: string): string[] {
   if (line.includes("\t")) return line.split("\t");
   if (line.includes(",")) return line.split(",");
@@ -94,9 +103,9 @@ export function parseContactRateCsv(input: string): ContactRateParseResult {
       skipped += 1;
       continue;
     }
-    const calls = parseInt(cells[callsIdx] ?? "0", 10);
-    const contacts = parseInt(cells[contactsIdx] ?? "0", 10);
-    if (!Number.isFinite(calls) || !Number.isFinite(contacts)) {
+    const calls = parseIntStripped(cells[callsIdx]);
+    const contacts = parseIntStripped(cells[contactsIdx]);
+    if (calls === null || contacts === null) {
       skipped += 1;
       continue;
     }
